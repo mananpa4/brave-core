@@ -137,6 +137,10 @@ BASE_FEATURE(kWebKitAdvancedPrivacyProtections,
 // navigation requests.
 BASE_FEATURE(kWebKitGlobalPrivacyControl, base::FEATURE_ENABLED_BY_DEFAULT);
 
+// Use upstream's HTTPS upgrade implementation instead of Brave's own.
+BASE_FEATURE(kBraveIOSUseUpstreamHttpsUpgrades,
+             base::FEATURE_DISABLED_BY_DEFAULT);
+
 constexpr base::FeatureParam<int> kComponentUpdateCheckIntervalMins{
     &kAdBlockDefaultResourceUpdateInterval, "update_interval_mins", 100};
 
