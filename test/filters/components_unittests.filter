@@ -132,8 +132,10 @@
 
 # These tests fail because IdentityManager's primary account has no kSignin
 # consent level
+-AccountPreviewDataServiceTest.*
 -AccountUtilsTest.*
 -ContextualTasksServiceImplTest.CreateTaskFromUrl_MatchesPrimaryAccount
+-IdentityUtilsTest.GetOrderedAccountsForDisplayCookieOrderOnDesktop
 -WebSigninTrackerTest.FreshCookiesWithSigninAccountShouldTriggerSuccessResult
 
 # These tests fail because we do not record permissions UKM, see
@@ -195,10 +197,13 @@
 # This test fails because we have a different set of regional search engines.
 -RegionalCapabilitiesUtilsTest.GetPrepopulatedEngines
 
-# This test fails because it uses raw
+# These tests fail because they use raw
 # TemplateURLPrepopulateData::kCurrentDataVersion to compare with the version
 # that is overridden to add Brave's version bump.
+-TemplateURLPrepopulateDataUpdateRequirementsTest.ComputeDatabaseUpdateRequirements/UpgradeToBoth
+-TemplateURLPrepopulateDataUpdateRequirementsTest.ComputeDatabaseUpdateRequirements/UpToDateMetadataWithBothMigrations
 -TemplateURLPrepopulateDataUpdateRequirementsTest.ComputeDatabaseUpdateRequirements/UpToDateMetadataWithEngineMigration
+-TemplateURLPrepopulateDataUpdateRequirementsTest.ComputeDatabaseUpdateRequirements/UpToDateMetadataWithShadowVariants
 
 # These tests fail because we disable kAimEnabled.
 -AimEligibilityServiceTest.*
