@@ -1,0 +1,14 @@
+# Copyright (c) 2026 The Brave Authors. All rights reserved.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at https://mozilla.org/MPL/2.0/.
+
+substitutions:
+  - description: |
+      Register Brave's Manage Profile Polymer overrides before the component.
+    regex:
+      pattern: "import {getTemplate} from './manage_profile.html.js';"
+      replace: |-
+        import '../br/settings_manage_profile.js';
+        import {getTemplate} from './manage_profile.html.js';
+    count: 1

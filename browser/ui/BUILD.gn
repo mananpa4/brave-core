@@ -307,6 +307,12 @@ source_set("ui") {
 
   deps += [ "//brave/browser/ui/brave_origin" ]
 
+  deps += [ ":custom_profile_image_buildflags" ]
+
+  if (enable_brave_custom_profile_image_webui) {
+    deps += [ "//brave/browser/ui/webui/custom_profile_image_strings" ]
+  }
+
   if (!is_android) {
     sources += [
       "bookmark/bookmark_helper.cc",

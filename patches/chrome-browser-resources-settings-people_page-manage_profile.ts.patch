@@ -1,0 +1,12 @@
+diff --git a/chrome/browser/resources/settings/people_page/manage_profile.ts b/chrome/browser/resources/settings/people_page/manage_profile.ts
+index 921e4fb41a208d537eefc5bb50166c5a077a5461..1006a73c8b5f43964b13657420f92571294f6e8d 100644
+--- a/chrome/browser/resources/settings/people_page/manage_profile.ts
++++ b/chrome/browser/resources/settings/people_page/manage_profile.ts
+@@ -30,6 +30,7 @@ import type {Route} from '../router.js';
+ import {RouteObserverMixin, Router} from '../router.js';
+ import {SettingsViewMixin} from '../settings_page/settings_view_mixin.js';
+ 
++import '../br/settings_manage_profile.js';
+ import {getTemplate} from './manage_profile.html.js';
+ import type {ManageProfileBrowserProxy} from './manage_profile_browser_proxy.js';
+ import {ManageProfileBrowserProxyImpl, ProfileShortcutStatus} from './manage_profile_browser_proxy.js';

@@ -5,10 +5,15 @@
 
 #include "brave/browser/ui/webui/settings/brave_settings_localized_strings_provider.h"
 
+#include "base/feature_list.h"
 #include "base/strings/string_number_conversions.h"
 #include "base/strings/string_util.h"
 #include "base/strings/utf_string_conversions.h"
 #include "brave/browser/shell_integrations/buildflags/buildflags.h"
+#include "brave/browser/ui/custom_profile_image_buildflags.h"
+#if BUILDFLAG(ENABLE_CUSTOM_PROFILE_IMAGE)
+#include "brave/browser/ui/webui/custom_profile_image_strings/custom_profile_image_strings.h"
+#endif  // BUILDFLAG(ENABLE_CUSTOM_PROFILE_IMAGE)
 #include "brave/browser/ui/webui/brave_settings_ui.h"
 #include "brave/browser/ui/webui/settings/brave_privacy_handler.h"
 #include "brave/components/ai_chat/core/common/buildflags/buildflags.h"
@@ -1124,6 +1129,11 @@ void BraveAddCommonStrings(content::WebUIDataSource* html_source,
   };
 
   html_source->AddLocalizedStrings(localized_strings);
+#if BUILDFLAG(ENABLE_CUSTOM_PROFILE_IMAGE)
+  html_source->AddLocalizedString("customProfileImageTitle",
+                                  IDS_CUSTOM_PROFILE_IMAGE_TITLE);
+  brave::AddCustomProfileImageData(html_source);
+#endif  // BUILDFLAG(ENABLE_CUSTOM_PROFILE_IMAGE)
   html_source->AddString("braveShieldsExampleTemplate", "example.com");
   html_source->AddString("webRTCLearnMoreURL", kWebRTCLearnMoreURL);
   html_source->AddString("googleLoginLearnMoreURL", kGoogleLoginLearnMoreURL);
