@@ -55,9 +55,8 @@ static_assert(std::size(kPublicKeySHA256) == crypto::kSHA256Length,
 // but `kBraveLocalAIEnabled` is managed by Brave Origin and can flip at any
 // time.
 bool IsComponentAllowed(const PrefService* local_state) {
-  return local_state &&
-         base::FeatureList::IsEnabled(kBraveOnDeviceSpeechRecognition) &&
-         local_state->GetBoolean(prefs::kBraveLocalAIEnabled);
+  return base::FeatureList::IsEnabled(kBraveOnDeviceSpeechRecognition) &&
+         (!local_state || local_state->GetBoolean(prefs::kBraveLocalAIEnabled));
 }
 
 // Owns the component registration for the whole session and watches the master
