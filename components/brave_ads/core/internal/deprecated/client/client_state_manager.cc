@@ -123,6 +123,8 @@ void ClientStateManager::LoadCallback(ResultCallback callback,
   } else if (!FromJson(*json)) {
     BLOG(0, "Failed to parse client state, resetting to default state");
 
+    is_valid_ = false;
+
     client_ = {};
 
     SaveState();

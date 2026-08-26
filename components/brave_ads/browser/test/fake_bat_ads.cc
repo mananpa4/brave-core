@@ -60,6 +60,14 @@ void FakeBatAds::GetDiagnostics(GetDiagnosticsCallback callback) {
   std::move(callback).Run(/*value=*/std::nullopt);
 }
 
+void FakeBatAds::TestDiagnosticsConditionMatcher(
+    const std::string& /*pref_path*/,
+    const std::string& /*condition*/,
+    const std::optional<std::string>& /*test_value*/,
+    bat_ads::mojom::BatAds::TestDiagnosticsConditionMatcherCallback callback) {
+  std::move(callback).Run(/*current_value=*/"Unknown", /*matches=*/"Invalid");
+}
+
 void FakeBatAds::GetStatementOfAccounts(
     GetStatementOfAccountsCallback callback) {
   std::move(callback).Run(/*mojom_statement=*/nullptr);

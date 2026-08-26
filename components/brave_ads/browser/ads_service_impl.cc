@@ -1207,6 +1207,28 @@ void AdsServiceImpl::GetDiagnostics(GetDiagnosticsCallback callback) {
           /*diagnostics=*/std::nullopt));
 }
 
+void AdsServiceImpl::TestDiagnosticsConditionMatcher(
+    const std::string& pref_path,
+    const std::string& condition,
+    std::optional<std::string> test_value,
+    TestDiagnosticsConditionMatcherCallback callback) {
+  if (!bat_ads_associated_remote_.is_bound()) {
+    return std::move(callback).Run(/*current_value=*/"Unknown",
+                                   /*matches=*/"Invalid");
+  }
+
+  bat_ads_associated_remote_->TestDiagnosticsConditionMatcher(
+      pref_path, condition, std::move(test_value),
+      mojo::WrapCallbackWithDefaultInvokeIfNotRun(
+          base::BindOnce(
+              [](TestDiagnosticsConditionMatcherCallback callback,
+                 const std::string& current_value, const std::string& matches) {
+                std::move(callback).Run(current_value, matches);
+              },
+              std::move(callback)),
+          /*current_value=*/"Unknown", /*matches=*/"Invalid"));
+}
+
 void AdsServiceImpl::GetStatementOfAccounts(
     GetStatementOfAccountsCallback callback) {
   if (!bat_ads_associated_remote_.is_bound()) {

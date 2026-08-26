@@ -70,6 +70,7 @@ TEST_F(BraveAdsAdsInternalsUtilTest, BuildAdsInternalsContainsAdEventJsonKeys) {
   ASSERT_EQ(1u, ad_events->size());
   const base::DictValue* const ad_event = (*ad_events)[0].GetIfDict();
   ASSERT_TRUE(ad_event);
+  EXPECT_TRUE(ad_event->Find("Creative Instance ID"));
   EXPECT_TRUE(ad_event->Find("Target URL"));
   EXPECT_TRUE(ad_event->Find("Ad Type"));
   EXPECT_TRUE(ad_event->Find("Event Type"));

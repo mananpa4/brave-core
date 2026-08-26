@@ -120,6 +120,21 @@ void AdsImpl::GetDiagnostics(GetDiagnosticsCallback callback) {
   DiagnosticManager::GetInstance().GetDiagnostics(std::move(callback));
 }
 
+void AdsImpl::TestDiagnosticsConditionMatcher(
+    const std::string& pref_path,
+    const std::string& condition,
+    std::optional<std::string> test_value,
+    TestDiagnosticsConditionMatcherCallback callback) {
+  if (task_queue_.should_queue()) {
+    return task_queue_.Add(base::BindOnce(
+        &AdsImpl::TestDiagnosticsConditionMatcher, weak_factory_.GetWeakPtr(),
+        pref_path, condition, test_value, std::move(callback)));
+  }
+
+  DiagnosticManager::TestDiagnosticsConditionMatcher(
+      pref_path, condition, test_value, std::move(callback));
+}
+
 void AdsImpl::GetStatementOfAccounts(GetStatementOfAccountsCallback callback) {
   if (task_queue_.should_queue()) {
     return task_queue_.Add(base::BindOnce(&AdsImpl::GetStatementOfAccounts,

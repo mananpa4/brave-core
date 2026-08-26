@@ -9,12 +9,14 @@
 #include <optional>
 #include <string>
 
+#include "base/functional/callback.h"
 #include "base/memory/raw_ptr.h"
 #include "base/memory/raw_ref.h"
 #include "base/memory/weak_ptr.h"
 #include "base/values.h"
 #include "brave/components/brave_ads/buildflags/buildflags.h"
 #include "brave/components/brave_ads/core/browser/service/ads_service_callback.h"
+#include "brave/components/brave_ads/core/browser/service/ads_service_observer.h"
 #include "brave/components/services/bat_ads/public/interfaces/bat_ads.mojom.h"
 #include "components/prefs/pref_change_registrar.h"
 #include "mojo/public/cpp/bindings/receiver.h"
@@ -28,9 +30,34 @@ namespace brave_ads {
 class AdsService;
 }  // namespace brave_ads
 
-class AdsInternalsHandler final : public bat_ads::mojom::AdsInternals {
+namespace variations {
+class VariationsService;
+}  // namespace variations
+
+class AdsInternalsHandler final : public bat_ads::mojom::AdsInternals,
+                                  public brave_ads::AdsServiceObserver {
  public:
-  AdsInternalsHandler(brave_ads::AdsService* ads_service, PrefService& prefs);
+  // Avoids a direct dependency on `NTPBackgroundImagesService`, which would
+  // introduce a build dependency cycle back to this component (see
+  // `//brave/components/ntp_background_images/browser` -> ... ->
+  // `//brave/components/brave_ads/browser`).
+  using GetComponentIdCallback =
+      base::RepeatingCallback<std::optional<std::string>()>;
+
+  // Same rationale as `GetComponentIdCallback` above.
+  using GetIsSponsoredImagesLoadedCallback = base::RepeatingCallback<bool()>;
+
+  AdsInternalsHandler(
+      brave_ads::AdsService* ads_service,
+      PrefService& prefs,
+      variations::VariationsService* variations_service,
+      GetComponentIdCallback get_ntp_sponsored_images_component_id_callback,
+      GetComponentIdCallback get_country_resource_component_id_callback,
+      GetComponentIdCallback get_language_resource_component_id_callback,
+      GetIsSponsoredImagesLoadedCallback
+          get_is_sponsored_images_loaded_callback,
+      GetComponentIdCallback
+          get_ntp_sponsored_images_manifest_version_callback);
 
   AdsInternalsHandler(const AdsInternalsHandler&) = delete;
   AdsInternalsHandler& operator=(const AdsInternalsHandler&) = delete;
@@ -49,6 +76,11 @@ class AdsInternalsHandler final : public bat_ads::mojom::AdsInternals {
   void ClearAdsData(brave_ads::ResultCallback callback) override;
   void GetDiagnostics(GetDiagnosticsCallback callback) override;
   void SetDiagnosticId(const std::string& diagnostic_id) override;
+  void TestDiagnosticsConditionMatcher(
+      const std::string& pref_path,
+      const std::string& condition,
+      const std::optional<std::string>& test_value,
+      TestDiagnosticsConditionMatcherCallback callback) override;
 
   void GetInternalsCallback(GetAdsInternalsCallback callback,
                             std::optional<base::DictValue> dict);
@@ -58,9 +90,26 @@ class AdsInternalsHandler final : public bat_ads::mojom::AdsInternals {
   void OnBraveRewardsEnabledPrefChanged(const std::string& path);
   void UpdateBraveRewardsEnabled();
 
+  void OnWalletConnectedPrefChanged(const std::string& path);
+  void UpdateWalletConnected();
+
+  // brave_ads::AdsServiceObserver:
+  void OnDidInitializeAdsService() override;
+
   const raw_ptr<brave_ads::AdsService> ads_service_;  // Not owned.
 
   const raw_ref<PrefService> prefs_;
+
+  const raw_ptr<variations::VariationsService>
+      variations_service_;  // Not owned.
+
+  const GetComponentIdCallback get_ntp_sponsored_images_component_id_callback_;
+  const GetComponentIdCallback get_country_resource_component_id_callback_;
+  const GetComponentIdCallback get_language_resource_component_id_callback_;
+  const GetIsSponsoredImagesLoadedCallback
+      get_is_sponsored_images_loaded_callback_;
+  const GetComponentIdCallback
+      get_ntp_sponsored_images_manifest_version_callback_;
 
   mojo::Receiver<bat_ads::mojom::AdsInternals> ads_internals_receiver_{this};
 

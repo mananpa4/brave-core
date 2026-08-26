@@ -59,6 +59,12 @@ class AdsImpl final : public Ads {
   // diagnostics from brave://rewards-internals to brave://ads-internals.
   void GetDiagnostics(GetDiagnosticsCallback callback) override;
 
+  void TestDiagnosticsConditionMatcher(
+      const std::string& pref_path,
+      const std::string& condition,
+      std::optional<std::string> test_value,
+      TestDiagnosticsConditionMatcherCallback callback) override;
+
   void GetStatementOfAccounts(GetStatementOfAccountsCallback callback) override;
 
   void ParseAndSaveNewTabPageAds(base::DictValue dict,

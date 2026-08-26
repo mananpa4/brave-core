@@ -150,6 +150,11 @@ interface BatAds {
 
   GetDiagnostics() => (mojo_base.mojom.ListValue? value);
 
+  TestDiagnosticsConditionMatcher(string pref_path,
+                       string condition,
+                       string? test_value) =>
+      (string current_value, string matches);
+
   GetStatementOfAccounts() => (brave_ads.mojom.StatementInfo? mojom_statement);
 
   ParseAndSaveNewTabPageAds(mojo_base.mojom.DictionaryValue value) => (bool success);
@@ -199,10 +204,19 @@ interface AdsInternals {
   ClearAdsData() => (bool success);
   GetDiagnostics() => (string response);
   SetDiagnosticId(string diagnostic_id);
+  TestDiagnosticsConditionMatcher(string pref_path,
+                       string condition,
+                       string? test_value) =>
+      (string current_value, string matches);
 };
 
 interface AdsInternalsPage {
   UpdateBraveRewardsEnabled(bool enabled);
+  UpdateWalletConnected(bool connected);
+  // Ads finish initializing asynchronously after startup, well after the
+  // WebUI may have already loaded and fetched diagnostics; this lets the
+  // WebUI know it's worth fetching them again.
+  UpdateDidInitializeAdsService();
 };
 
 // Exposes the Brave Rewards diagnostic log to brave://ads-internals so it can
