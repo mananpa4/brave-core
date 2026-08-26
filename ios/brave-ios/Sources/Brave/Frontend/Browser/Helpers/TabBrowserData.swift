@@ -85,6 +85,10 @@ class TabBrowserData: NSObject, TabObserver {
   var alertShownCount: Int = 0
   var blockAllAlerts: Bool = false
 
+  /// The number of times the render process terminated without a navigation
+  /// committing in between. Reset on a successful commit.
+  var renderProcessCrashCount: Int = 0
+
   var responses = [URL: URLResponse]()
 
   private var _syncTab: BraveSyncTab?

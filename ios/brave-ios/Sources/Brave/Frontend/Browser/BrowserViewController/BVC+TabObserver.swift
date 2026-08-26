@@ -107,6 +107,7 @@ extension BrowserViewController: TabObserver {
     tab.currentRequestURL = nil
     tab.redirectSourceURL = nil
     tab.isInternalRedirect = false
+    tab.browserData?.renderProcessCrashCount = 0
 
     // Dismiss any alerts that are showing on page navigation.
     if let alert = tab.shownPromptAlert {
@@ -223,11 +224,19 @@ extension BrowserViewController: TabObserver {
   }
 
   public func tabRenderProcessDidTerminate(_ tab: some TabState) {
-    guard let url = tab.lastCommittedURL else { return }
-    if url.isWebPage(includeDataURIs: false) {
-      // For now just reload the page when the process crashes
-      tab.reload()
-    }
+    guard let browserData = tab.browserData, let url = tab.lastCommittedURL else { return }
+
+    browserData.renderProcessCrashCount += 1
+
+    // Reloading an error page can terminate the render process again, which
+    // would reload again. Leave the terminated page up instead of looping.
+    guard url.isWebPage(includeDataURIs: false), !InternalURL.isValid(url: url) else { return }
+
+    // Only reload if a navigation has committed since the last termination, so
+    // a page that reliably crashes is loaded at most once more.
+    guard browserData.renderProcessCrashCount == 1 else { return }
+
+    tab.reload()
   }
 
   public func tabDidUpdateURL(_ tab: some TabState) {
