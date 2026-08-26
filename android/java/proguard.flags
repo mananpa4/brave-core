@@ -51,6 +51,13 @@
 
 -keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
 
+# Gson is a plain java_prebuilt jar, so the consumer rules shipped inside it are
+# not applied. Keep fields Gson reflects over from being stripped; their names may
+# still be obfuscated because @SerializedName pins the JSON key.
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+
 -keep class org.chromium.chrome.browser.tabmodel.TabCollectionTabModelImpl {
     *** shouldGroupWithParent(...);
     *** isTabModelRestored(...);

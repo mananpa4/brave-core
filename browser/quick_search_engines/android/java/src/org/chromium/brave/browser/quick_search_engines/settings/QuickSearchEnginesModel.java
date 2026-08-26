@@ -7,6 +7,14 @@ package org.chromium.brave.browser.quick_search_engines.settings;
 
 import androidx.annotation.IntDef;
 
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Persisted to shared preferences as JSON by {@link
+ * org.chromium.brave.browser.quick_search_engines.utils.SharedPreferencesHelper}. Every persisted
+ * field needs an explicit {@link SerializedName}: without one Gson derives the JSON key from the
+ * field name, which R8 rewrites, so the stored format would differ between builds.
+ */
 public class QuickSearchEnginesModel {
     @IntDef({
         QuickSearchEnginesModelType.SEARCH_ENGINE,
@@ -17,10 +25,19 @@ public class QuickSearchEnginesModel {
         int AI_ASSISTANT = 1;
     }
 
+    @SerializedName("shortName")
     private final String mShortName;
+
+    @SerializedName("keyword")
     private final String mKeyword;
+
+    @SerializedName("url")
     private final String mUrl;
+
+    @SerializedName("isEnabled")
     private boolean mIsEnabled;
+
+    @SerializedName("type")
     private final @QuickSearchEnginesModelType int mType;
 
     public QuickSearchEnginesModel(

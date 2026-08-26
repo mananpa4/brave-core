@@ -76,10 +76,25 @@ public class QuickSearchEnginesUtil {
      */
     public static Map<String, QuickSearchEnginesModel> getQuickSearchEnginesFromPref() {
         SharedPreferencesHelper sharedPreferencesHelper = new SharedPreferencesHelper();
-        return sharedPreferencesHelper.getMap(
-                BravePreferenceKeys.BRAVE_QUICK_SEARCH_ENGINES,
-                String.class,
-                QuickSearchEnginesModel.class);
+        Map<String, QuickSearchEnginesModel> searchEnginesMap =
+                sharedPreferencesHelper.getMap(
+                        BravePreferenceKeys.BRAVE_QUICK_SEARCH_ENGINES,
+                        String.class,
+                        QuickSearchEnginesModel.class);
+        if (searchEnginesMap == null) {
+            return null;
+        }
+        // Gson leaves any field it finds no matching JSON key for at its default value instead of
+        // failing, so a value written in an older format deserializes into entries whose members
+        // are all null. Discard the whole thing and let the caller rebuild from defaults.
+        for (QuickSearchEnginesModel searchEngine : searchEnginesMap.values()) {
+            if (searchEngine == null || searchEngine.getKeyword() == null) {
+                ChromeSharedPreferences.getInstance()
+                        .removeKey(BravePreferenceKeys.BRAVE_QUICK_SEARCH_ENGINES);
+                return null;
+            }
+        }
+        return searchEnginesMap;
     }
 
     /**

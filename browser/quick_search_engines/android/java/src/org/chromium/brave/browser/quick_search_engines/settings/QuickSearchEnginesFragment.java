@@ -180,6 +180,9 @@ public class QuickSearchEnginesFragment extends ChromeBaseSettingsFragment
     private void updateQuickSearchEnginesInPref(QuickSearchEnginesModel quickSearchEnginesModel) {
         Map<String, QuickSearchEnginesModel> searchEnginesMap =
                 QuickSearchEnginesUtil.getQuickSearchEnginesFromPref();
+        if (searchEnginesMap == null) {
+            return;
+        }
         searchEnginesMap.put(quickSearchEnginesModel.getKeyword(), quickSearchEnginesModel);
         QuickSearchEnginesUtil.saveSearchEnginesIntoPref(searchEnginesMap);
     }
