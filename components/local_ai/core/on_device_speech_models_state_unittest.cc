@@ -14,22 +14,22 @@ namespace local_ai {
 
 namespace {
 
-// Records every value published, so a test can tell "notified not installed"
-// from "not notified at all".
+// Records every directory published, so a test can tell "notified with no
+// model" from "not notified at all", and one version from the next.
 class TestObserver : public OnDeviceSpeechModelsState::Observer {
  public:
   TestObserver() = default;
   ~TestObserver() override = default;
 
   // OnDeviceSpeechModelsState::Observer:
-  void OnSpeechModelInstalledChanged(bool installed) override {
-    calls_.push_back(installed);
+  void OnSpeechModelDirChanged(const base::FilePath& model_dir) override {
+    calls_.push_back(model_dir);
   }
 
-  const std::vector<bool>& calls() const { return calls_; }
+  const std::vector<base::FilePath>& calls() const { return calls_; }
 
  private:
-  std::vector<bool> calls_;
+  std::vector<base::FilePath> calls_;
 };
 
 }  // namespace
@@ -71,27 +71,37 @@ TEST_F(OnDeviceSpeechModelsStateUnitTest, IsModelInstalledFollowsInstallDir) {
 }
 
 // Tests that a consumer can follow the model by observing alone, without
-// asking. Removal matters as much as install here: a consumer holding derived
-// state would otherwise go on reporting a model that is gone.
-TEST_F(OnDeviceSpeechModelsStateUnitTest, ObservesInstallAndRemoval) {
+// asking. Every move matters: an update lands on a new version directory and
+// deletes the old one, and removal takes the model away entirely, so a
+// consumer holding anything derived from the last directory has to redo it.
+TEST_F(OnDeviceSpeechModelsStateUnitTest, ObservesEveryModelDirChange) {
+  const base::FilePath v1{FILE_PATH_LITERAL("/brave/speech/models/1.0")};
+  const base::FilePath v2{FILE_PATH_LITERAL("/brave/speech/models/2.0")};
   state()->AddObserver(&observer_);
 
-  state()->SetInstallDir(install_dir_);
+  state()->SetInstallDir(v1);
 
   // A consumer created after the component arrived hears about it too, rather
   // than reporting that it is waiting for something already here.
   TestObserver late_observer;
   state()->AddObserver(&late_observer);
-  EXPECT_EQ(std::vector<bool>({true}), late_observer.calls());
+  EXPECT_EQ(std::vector<base::FilePath>({v1.AppendASCII(kModelDirName)}),
+            late_observer.calls());
   state()->RemoveObserver(&late_observer);
 
-  // A component update landing on the same directory changed nothing.
-  state()->SetInstallDir(install_dir_);
+  // An update landing on the same directory changed nothing.
+  state()->SetInstallDir(v1);
+
+  state()->SetInstallDir(v2);
+  EXPECT_EQ(v2.AppendASCII(kModelDirName), state()->GetModelDir());
 
   state()->SetInstallDir(base::FilePath());
 
-  // The state on subscribing, the install, then the removal.
-  EXPECT_EQ(std::vector<bool>({false, true, false}), observer_.calls());
+  // Subscribing with nothing installed, the install, the update, the removal.
+  EXPECT_EQ(std::vector<base::FilePath>(
+                {base::FilePath(), v1.AppendASCII(kModelDirName),
+                 v2.AppendASCII(kModelDirName), base::FilePath()}),
+            observer_.calls());
 }
 
 }  // namespace local_ai

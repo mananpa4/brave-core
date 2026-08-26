@@ -23,7 +23,7 @@ OnDeviceSpeechModelsState::~OnDeviceSpeechModelsState() = default;
 void OnDeviceSpeechModelsState::AddObserver(Observer* observer) {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   observers_.AddObserver(observer);
-  observer->OnSpeechModelInstalledChanged(IsModelInstalled());
+  observer->OnSpeechModelDirChanged(model_dir_);
 }
 
 void OnDeviceSpeechModelsState::RemoveObserver(Observer* observer) {
@@ -40,13 +40,12 @@ void OnDeviceSpeechModelsState::SetInstallDir(
   install_dir_ = install_dir;
   model_dir_ = install_dir_.empty() ? base::FilePath()
                                     : install_dir_.AppendASCII(kModelDirName);
-  NotifyInstalledChanged();
+  NotifyModelDirChanged();
 }
 
-void OnDeviceSpeechModelsState::NotifyInstalledChanged() {
+void OnDeviceSpeechModelsState::NotifyModelDirChanged() {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-  observers_.Notify(&Observer::OnSpeechModelInstalledChanged,
-                    IsModelInstalled());
+  observers_.Notify(&Observer::OnSpeechModelDirChanged, model_dir_);
 }
 
 const base::FilePath& OnDeviceSpeechModelsState::GetInstallDir() const {

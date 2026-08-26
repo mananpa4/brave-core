@@ -25,12 +25,14 @@ inline constexpr std::string_view kModelDirName =
 // recognition model. The component installer populates it on `ComponentReady`.
 class OnDeviceSpeechModelsState {
  public:
-  // Notified when a model becomes installed or is removed.
+  // Notified when the model directory changes, which covers a model arriving,
+  // a model being removed, and a component update moving it to a new version.
   class Observer : public base::CheckedObserver {
    public:
-    // A consumer that needs the directory itself reads `GetModelDir()`. A
-    // component update moves it and fires this again with the same value.
-    virtual void OnSpeechModelInstalledChanged(bool installed) = 0;
+    // `model_dir` is empty when no model is installed. A consumer holding
+    // anything derived from it has to redo that work on every call, because an
+    // update deletes the version directory it came from.
+    virtual void OnSpeechModelDirChanged(const base::FilePath& model_dir) = 0;
   };
 
   static OnDeviceSpeechModelsState* GetInstance();
@@ -39,8 +41,8 @@ class OnDeviceSpeechModelsState {
   OnDeviceSpeechModelsState& operator=(const OnDeviceSpeechModelsState&) =
       delete;
 
-  // Adding an observer fires `OnSpeechModelInstalledChanged` immediately with
-  // the current state, so an observer added after `ComponentReady` does not
+  // Adding an observer fires `OnSpeechModelDirChanged` immediately with the
+  // current directory, so an observer added after `ComponentReady` does not
   // miss a model that is already here.
   void AddObserver(Observer* observer);
   void RemoveObserver(Observer* observer);
@@ -63,7 +65,7 @@ class OnDeviceSpeechModelsState {
   OnDeviceSpeechModelsState();
   ~OnDeviceSpeechModelsState();
 
-  void NotifyInstalledChanged();
+  void NotifyModelDirChanged();
 
   base::FilePath install_dir_;
   base::FilePath model_dir_;
