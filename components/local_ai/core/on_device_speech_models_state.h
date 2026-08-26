@@ -23,10 +23,6 @@ inline constexpr std::string_view kModelDirName =
 
 // Singleton holding the install directory of Brave's on-device speech
 // recognition model. The component installer populates it on `ComponentReady`.
-//
-// A failed install is not state here. It is reported to whoever asked for the
-// install, which is the only thing waiting on it, and it leaves a model already
-// on disk installed.
 class OnDeviceSpeechModelsState {
  public:
   // Notified when a model becomes installed or is removed.
