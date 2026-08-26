@@ -74,14 +74,14 @@ class OnDeviceSpeechModelsComponentInstallerPolicy
   raw_ptr<PrefService> local_state_ = nullptr;
 };
 
-// Called once while components are registered at startup, and then again
-// whenever the `kBraveLocalAIEnabled` master switch changes. Registers or
-// removes the component to match that switch and the feature. Taking the model
-// off disk is only ever done from here.
+// Called once, while components are registered at startup. Sets up the
+// registrar, which from then on follows the `kBraveLocalAIEnabled` master
+// switch and the feature for the rest of the session, registering the
+// component or taking the model back off disk to match.
 //
 // Brave Origin manages the switch and verifies the purchase asynchronously, so
-// its value can land after components are registered, which is why this
-// follows it rather than reading it once.
+// its value can land after components are registered, which is why the switch
+// is followed rather than read once.
 void ManageOnDeviceSpeechModelsComponentRegistration(
     component_updater::ComponentUpdateService* cus,
     PrefService* local_state);
@@ -91,15 +91,16 @@ void ManageOnDeviceSpeechModelsComponentRegistration(
 // `local_state` are destroyed.
 void ShutdownOnDeviceSpeechModelsComponentRegistration();
 
-// Registers the component, which also requests the download, and is
-// idempotent. Registers nothing when the feature or the master switch is off,
-// or when there is no update service to register with.
+// Registers the component, which publishes a copy already on disk and asks the
+// updater to download one that is not. Safe to call repeatedly.
+//
+// Registers nothing while the feature or the master switch is off. It also
+// needs `ManageOnDeviceSpeechModelsComponentRegistration` to have run, which
+// is what hands it the update service and the local state.
 //
 // `callback` is always run, asynchronously, for every outcome, including
-// `Error::INVALID_ARGUMENT` on the paths that register nothing.
+// `Error::INVALID_ARGUMENT` when nothing is registered.
 void MaybeRegisterOnDeviceSpeechModelsComponent(
-    component_updater::ComponentUpdateService* cus,
-    PrefService* local_state,
     component_updater::Callback callback = base::DoNothing());
 
 }  // namespace local_ai

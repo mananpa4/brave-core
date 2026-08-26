@@ -9,18 +9,18 @@
 #include <iterator>
 #include <memory>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "base/feature_list.h"
 #include "base/files/file_path.h"
 #include "base/files/file_util.h"
 #include "base/functional/bind.h"
+#include "base/functional/callback_helpers.h"
 #include "base/memory/raw_ptr.h"
 #include "base/memory/scoped_refptr.h"
 #include "base/no_destructor.h"
-#include "base/path_service.h"
 #include "base/task/bind_post_task.h"
-#include "base/task/thread_pool.h"
 #include "base/values.h"
 #include "base/version.h"
 #include "brave/components/brave_component_updater/browser/brave_on_demand_updater.h"
@@ -28,7 +28,6 @@
 #include "brave/components/local_ai/core/on_device_speech_models_state.h"
 #include "brave/components/local_ai/core/pref_names.h"
 #include "components/component_updater/component_installer.h"
-#include "components/component_updater/component_updater_paths.h"
 #include "components/component_updater/component_updater_service.h"
 #include "components/prefs/pref_change_registrar.h"
 #include "components/prefs/pref_service.h"
@@ -52,22 +51,6 @@ constexpr uint8_t kPublicKeySHA256[32] = {
 static_assert(std::size(kPublicKeySHA256) == crypto::kSHA256Length,
               "Wrong hash length");
 
-base::FilePath GetComponentDir() {
-  base::FilePath components_dir =
-      base::PathService::CheckedGet(component_updater::DIR_COMPONENT_USER);
-
-  return components_dir.Append(kComponentInstallDir);
-}
-
-void DeleteComponentDirectory() {
-  // Posted because removing the model is hundreds of megabytes of blocking
-  // file I/O.
-  base::ThreadPool::PostTask(
-      FROM_HERE, {base::MayBlock(), base::TaskPriority::BEST_EFFORT},
-      base::BindOnce(base::IgnoreResult(&base::DeletePathRecursively),
-                     GetComponentDir()));
-}
-
 // Whether the component may be installed. The feature is fixed for the session
 // but `kBraveLocalAIEnabled` is managed by Brave Origin and can flip at any
 // time.
@@ -77,10 +60,10 @@ bool IsComponentAllowed(const PrefService* local_state) {
          local_state->GetBoolean(prefs::kBraveLocalAIEnabled);
 }
 
-// Watches the master switch so the component stays in sync with it for the
-// whole session. `MaybeRegisterOnDeviceSpeechModelsComponent` still decides
-// what a given state means, including which of its guards wins, so this only
-// adds the pref subscription and the removal, which registering never does.
+// Owns the component registration for the whole session and watches the master
+// switch so it stays in sync with it. Registering and removing the model both
+// go through the one `ComponentInstaller` this holds, which is what orders a
+// removal against an install rather than racing it on an unrelated sequence.
 class OnDeviceSpeechModelsComponentRegistrar {
  public:
   static OnDeviceSpeechModelsComponentRegistrar* GetInstance() {
@@ -98,6 +81,7 @@ class OnDeviceSpeechModelsComponentRegistrar {
              PrefService* local_state) {
     CHECK(pref_change_registrar_.IsEmpty() && !cus_);
     CHECK(local_state);
+    started_ = true;
     cus_ = cus;
     pref_change_registrar_.Init(local_state);
     pref_change_registrar_.Add(
@@ -108,8 +92,35 @@ class OnDeviceSpeechModelsComponentRegistrar {
   }
 
   void Shutdown() {
+    started_ = false;
     pref_change_registrar_.Reset();
     cus_ = nullptr;
+    installer_.reset();
+    registration_pending_ = false;
+    RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+  }
+
+  // Registers the component, which also requests the download. Joins a
+  // registration already in flight instead of starting a second one.
+  void Register(component_updater::Callback callback) {
+    // Keep delivery consistently asynchronous across all branches below.
+    callback = base::BindPostTaskToCurrentDefault(std::move(callback));
+
+    if (!cus_ || !IsComponentAllowed(pref_change_registrar_.prefs())) {
+      std::move(callback).Run(update_client::Error::INVALID_ARGUMENT);
+      return;
+    }
+
+    pending_callbacks_.push_back(std::move(callback));
+    if (registration_pending_) {
+      return;
+    }
+    registration_pending_ = true;
+    EnsureInstaller();
+    installer_->Register(
+        cus_,
+        base::BindOnce(&OnDeviceSpeechModelsComponentRegistrar::OnRegistered,
+                       base::Unretained(this)));
   }
 
  private:
@@ -119,31 +130,92 @@ class OnDeviceSpeechModelsComponentRegistrar {
   ~OnDeviceSpeechModelsComponentRegistrar() = default;
 
   void Sync() {
-    PrefService* local_state = pref_change_registrar_.prefs();
-    if (!IsComponentAllowed(local_state)) {
+    if (!IsComponentAllowed(pref_change_registrar_.prefs())) {
       Unregister();
       return;
     }
-    MaybeRegisterOnDeviceSpeechModelsComponent(cus_, local_state);
+    Register(base::DoNothing());
   }
 
-  // Removing the model is not an update, so none of this asks the update
-  // service for permission or needs one to exist. Registration is the only
-  // thing that does.
-  void Unregister() {
-    if (cus_) {
-      // Unregistering is what stops the updater bringing the model back.
-      cus_->UnregisterComponent(kOnDeviceSpeechModelsComponentId);
+  void OnRegistered() {
+    registration_pending_ = false;
+    // `Shutdown` ran while this was in flight. Falling through would read the
+    // prefs it dropped as the master switch being off and remove the model.
+    if (!started_) {
+      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+      return;
     }
-    // Published before the delete is posted, so nothing acts on a model whose
-    // files are on their way out. A delete that lags or fails is caught by
-    // `VerifyInstallation` at the next startup.
-    OnDeviceSpeechModelsState::GetInstance()->SetInstallDir(base::FilePath());
-    DeleteComponentDirectory();
+    // The switch turned off while this was in flight, so the unregister it ran
+    // found nothing and left the files alone. The component reaches the update
+    // service only now, and no further pref change is coming to try again, so
+    // finish the removal here.
+    if (!IsComponentAllowed(pref_change_registrar_.prefs())) {
+      Unregister();
+      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+      return;
+    }
+    // Registering has already published whatever was on disk, so a model
+    // already downloaded stays usable. Only the download is refused, which is
+    // what --disable-component-update forbids and what trips a DCHECK in
+    // BraveOnDemandUpdater.
+    if (brave_component_updater::BraveOnDemandUpdater::GetInstance()
+            ->is_component_update_disabled()) {
+      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+      return;
+    }
+    brave_component_updater::BraveOnDemandUpdater::GetInstance()
+        ->EnsureInstalled(
+            kOnDeviceSpeechModelsComponentId,
+            base::BindOnce(
+                &OnDeviceSpeechModelsComponentRegistrar::RunPendingCallbacks,
+                base::Unretained(this)));
   }
 
+  void Unregister() {
+    // Only remove the files ourselves when the service did not (it uninstalls
+    // what it had registered) and no registration in flight may still install
+    // them.
+    const bool was_registered =
+        cus_ && cus_->UnregisterComponent(kOnDeviceSpeechModelsComponentId);
+    // Published before the files go, so nothing acts on a model whose files
+    // are on their way out.
+    OnDeviceSpeechModelsState::GetInstance()->SetInstallDir(base::FilePath());
+    if (!was_registered && !registration_pending_) {
+      EnsureInstaller();
+      installer_->Uninstall();
+    }
+  }
+
+  void RunPendingCallbacks(update_client::Error error) {
+    std::vector<component_updater::Callback> callbacks;
+    callbacks.swap(pending_callbacks_);
+    for (auto& callback : callbacks) {
+      std::move(callback).Run(error);
+    }
+  }
+
+  void EnsureInstaller() {
+    if (!installer_) {
+      installer_ = base::MakeRefCounted<component_updater::ComponentInstaller>(
+          std::make_unique<OnDeviceSpeechModelsComponentInstallerPolicy>(
+              pref_change_registrar_.prefs()));
+    }
+  }
+
+  bool started_ = false;
   raw_ptr<component_updater::ComponentUpdateService> cus_ = nullptr;
   PrefChangeRegistrar pref_change_registrar_;
+  // True from `Register` until `OnRegistered`. The component is absent from
+  // the update service for that whole window, so a second `Register` would
+  // register it twice and an `Unregister` would find nothing to unregister.
+  bool registration_pending_ = false;
+  // Answered together, because everyone who asked while one registration was
+  // in flight is waiting on that same registration.
+  std::vector<component_updater::Callback> pending_callbacks_;
+  // Reused: registration and uninstall share the installer's task runner, so a
+  // per-registration instance would let an uninstall delete what the next
+  // registration installed.
+  scoped_refptr<component_updater::ComponentInstaller> installer_;
 };
 
 }  // namespace
@@ -229,51 +301,9 @@ void ShutdownOnDeviceSpeechModelsComponentRegistration() {
 }
 
 void MaybeRegisterOnDeviceSpeechModelsComponent(
-    component_updater::ComponentUpdateService* cus,
-    PrefService* local_state,
     component_updater::Callback callback) {
-  // Keep delivery consistently asynchronous across all branches below.
-  callback = base::BindPostTaskToCurrentDefault(std::move(callback));
-
-  CHECK(local_state);
-
-  if (!IsComponentAllowed(local_state) || !cus) {
-    std::move(callback).Run(update_client::Error::INVALID_ARGUMENT);
-    return;
-  }
-
-  auto installer = base::MakeRefCounted<component_updater::ComponentInstaller>(
-      std::make_unique<OnDeviceSpeechModelsComponentInstallerPolicy>(
-          local_state));
-  installer->Register(
-      cus,
-      base::BindOnce(
-          [](component_updater::ComponentUpdateService* cus,
-             PrefService* local_state, component_updater::Callback callback) {
-            // The switch turned off while this was in flight, so the
-            // unregister it ran found nothing. The component reaches the
-            // update service only now, and no further pref change is coming
-            // to try again, so take it out here. The model itself is already
-            // gone.
-            if (!IsComponentAllowed(local_state)) {
-              cus->UnregisterComponent(kOnDeviceSpeechModelsComponentId);
-              std::move(callback).Run(update_client::Error::INVALID_ARGUMENT);
-              return;
-            }
-            // Registering has already published whatever was on disk, so a
-            // model already downloaded stays usable. Only the download is
-            // refused, which is what --disable-component-update forbids and
-            // what trips a DCHECK in BraveOnDemandUpdater.
-            if (brave_component_updater::BraveOnDemandUpdater::GetInstance()
-                    ->is_component_update_disabled()) {
-              std::move(callback).Run(update_client::Error::INVALID_ARGUMENT);
-              return;
-            }
-            brave_component_updater::BraveOnDemandUpdater::GetInstance()
-                ->EnsureInstalled(kOnDeviceSpeechModelsComponentId,
-                                  std::move(callback));
-          },
-          cus, local_state, std::move(callback)));
+  OnDeviceSpeechModelsComponentRegistrar::GetInstance()->Register(
+      std::move(callback));
 }
 
 }  // namespace local_ai
