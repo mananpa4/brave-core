@@ -271,9 +271,11 @@ TEST_F(
 
   base::RunLoop run_loop;
   EXPECT_CALL(*cus_, RegisterComponent(testing::_))
-      .WillRepeatedly(testing::Return(true));
+      .Times(1)
+      .WillOnce(testing::Return(true));
   EXPECT_CALL(on_demand_updater_,
               EnsureInstalled(kOnDeviceSpeechModelsComponentId, testing::_))
+      .Times(1)
       .WillOnce([quit = run_loop.QuitClosure()]() { quit.Run(); });
   ManageOnDeviceSpeechModelsComponentRegistration(cus_.get(),
                                                   local_state_.get());
