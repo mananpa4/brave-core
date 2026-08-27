@@ -1,5 +1,31 @@
 # Upstream Test Failures
 
+<a id="TUF-000"></a>
+
+## ✅ Auto-Generated Filters for Flaky Upstream Tests
+
+**Upstream tests with a flake rate ≥1% over the past 30 days (per Chromium LUCI
+Analysis) are filtered automatically.** The filter files in
+`test/filters/generated/` are produced by a script and picked up by
+`npm run test` alongside the hand-written files in `test/filters/`. Do not edit
+them by hand; refresh them instead:
+
+```bash
+# in src/brave/
+python3 script/update-upstream-flake-filters.py
+
+# Only specific suites, or different thresholds:
+python3 script/update-upstream-flake-filters.py browser_tests --days 30 \
+    --min-flake-rate 1.0
+```
+
+Candidate discovery is based on LUCI Analysis failure clusters, which only
+expose the top 200 clusters per query — a test flaking at a very low volume can
+be missed. The rules below still apply when manually filtering such tests in the
+hand-written filter files.
+
+---
+
 <a id="TUF-001"></a>
 
 ## ❌ Never Use Patches to Disable Upstream Test Failures
