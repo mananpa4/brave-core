@@ -1,0 +1,275 @@
+## AUTO-GENERATED FILE -- DO NOT EDIT.
+##
+## Upstream net_unittests tests with a flake rate >= 1.0% over the
+## past 30 days per Chromium LUCI Analysis. Regenerate with:
+##   python3 script/update-upstream-flake-filters.py
+
+# 1.3% flake rate over 30 days per LUCI Analysis (103008 passed, 6 failed, 1347 flaky).
+-All/SocketBIOAdapterTest.ReadEOFAsync/1
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_HasHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_HasHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_HasHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_HasHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BodyEndMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BytesUsageMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BytesUsageMismatchCorruptionDetectedAndRolledBack/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BytesUsageMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.BytesUsageMismatchCorruptionDetectedAndRolledBack/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/HasHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/HasHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/NoHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/NoHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderGrow/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/HasHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 16 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/HasHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/NoHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/NoHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderReplace/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/HasHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/HasHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/NoHints_HasBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/NoHints_HasBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.HeaderShrink/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/HasHints_NoBody_HasHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/HasHints_NoBody_HasHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/HasHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/HasHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/NoHints_NoBody_HasHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/NoHints_NoBody_HasHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/NoHints_NoBody_NoHead_NonWal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 12 failed, 0 flaky).
+-All/SqlPersistentStoreWriteEntryTest.MultipleBuffers/NoHints_NoBody_NoHead_Wal
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-BbrSenderTest.ShallowDrain
+
+# 2.2% flake rate over 30 days per LUCI Analysis (158531 passed, 3 failed, 3613 flaky).
+-CertNetFetcherURLRequestTest.CancelAll
+
+# 2.8% flake rate over 30 days per LUCI Analysis (157696 passed, 3 failed, 4556 flaky).
+-CertNetFetcherURLRequestTest.ParallelFetchDuplicates
+
+# 1.4% flake rate over 30 days per LUCI Analysis (103021 passed, 1506 failed, 0 flaky).
+-CertVerifyProcBuiltinTest.UnparsableMismatchedTBSSignatureAlgorithmRoot
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-CubicBytesTest.AboveOrigin
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_B2ON_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_B2ON_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_QBIC_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_QBIC_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_TBBR_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/RFCv1_TBBR_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_B2ON_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_B2ON_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_QBIC_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_QBIC_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_TBBR_poll_2__16
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 90 failed, 0 flaky).
+-EndToEndTests/EndToEndTest.TestHugeResponseWithPacketLoss/draft29_TBBR_poll_2__8
+
+# 94.4% flake rate over 30 days per LUCI Analysis (5 passed, 83 failed, 2 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_B2ON_poll_2__16
+
+# 91.1% flake rate over 30 days per LUCI Analysis (8 passed, 79 failed, 3 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_B2ON_poll_2__8
+
+# 93.3% flake rate over 30 days per LUCI Analysis (6 passed, 79 failed, 5 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_QBIC_poll_2__16
+
+# 92.2% flake rate over 30 days per LUCI Analysis (7 passed, 81 failed, 2 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_QBIC_poll_2__8
+
+# 97.8% flake rate over 30 days per LUCI Analysis (2 passed, 87 failed, 1 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_TBBR_poll_2__16
+
+# 94.4% flake rate over 30 days per LUCI Analysis (5 passed, 81 failed, 4 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/RFCv1_TBBR_poll_2__8
+
+# 91.1% flake rate over 30 days per LUCI Analysis (8 passed, 77 failed, 5 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_B2ON_poll_2__16
+
+# 98.9% flake rate over 30 days per LUCI Analysis (1 passed, 84 failed, 5 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_B2ON_poll_2__8
+
+# 95.6% flake rate over 30 days per LUCI Analysis (4 passed, 83 failed, 3 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_QBIC_poll_2__16
+
+# 92.2% flake rate over 30 days per LUCI Analysis (7 passed, 79 failed, 4 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_QBIC_poll_2__8
+
+# 95.6% flake rate over 30 days per LUCI Analysis (4 passed, 78 failed, 8 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_TBBR_poll_2__16
+
+# 96.7% flake rate over 30 days per LUCI Analysis (3 passed, 82 failed, 5 flaky).
+-EndToEndTests/EndToEndTest.WebTransportSessionResetReliability/draft29_TBBR_poll_2__8
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 1505 failed, 0 flaky).
+-FileStreamTest.ContentUriRead
+
+# 1.4% flake rate over 30 days per LUCI Analysis (58316 passed, 5 failed, 829 flaky).
+-HttpCacheEarlyInitTestCheckDiskTrue.EmptyIndexFiles
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-HttpStreamFactoryJobControllerTest.ResumeMainJobImmediatelyOnStreamFailed
+
+# 4.7% flake rate over 30 days per LUCI Analysis (363 passed, 18 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpProxyTest.Test/TunnelRead_ERR_SSL_PROTOCOL_ERROR_http
+
+# 4.7% flake rate over 30 days per LUCI Analysis (363 passed, 18 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpProxyTest.Test/TunnelRead_ERR_TIMED_OUT_http
+
+# 4.5% flake rate over 30 days per LUCI Analysis (363 passed, 17 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpsProxyTest.Test/TunnelRead_ERR_SSL_PROTOCOL_ERROR_http
+
+# 4.2% flake rate over 30 days per LUCI Analysis (363 passed, 16 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpsProxyTest.Test/TunnelRead_ERR_TIMED_OUT_http
+
+# 4.7% flake rate over 30 days per LUCI Analysis (363 passed, 18 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpsProxyTest.TestCanFalloverToNextProxyReceivesProxyDelegate/TunnelRead_ERR_SSL_PROTOCOL_ERROR_http
+
+# 4.5% flake rate over 30 days per LUCI Analysis (363 passed, 17 failed, 0 flaky).
+-JobControllerReconsiderProxyAfterErrorHttpsProxyTest.TestCanFalloverToNextProxyReceivesProxyDelegate/TunnelRead_ERR_TIMED_OUT_http
+
+# 1.3% flake rate over 30 days per LUCI Analysis (160029 passed, 16 failed, 2156 flaky).
+-NetworkChangeNotifierConnectionCostTest.AddObserver
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-OgHttp2AdapterTest.ClientHandlesInvalidTrailers
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-QuicSentPacketManagerTest.RetransmitTwiceThenAckPreviousBeforeSend
+
+# 17.5% flake rate over 30 days per LUCI Analysis (49106 passed, 90 failed, 10307 flaky).
+-RegistrationTest.AttestationKeyGenerationFailure
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-Tests/QuicSpdyStreamTest.HeadersAccumulatorNullptr/RFCv1
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2168 failed, 0 flaky).
+-Tests/QuicSpdyStreamTest.HeadersAccumulatorNullptr/RFCv2
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-Tests/QuicSpdyStreamTest.HeadersAccumulatorNullptr/draft29

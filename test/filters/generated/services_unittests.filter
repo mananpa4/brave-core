@@ -1,0 +1,224 @@
+## AUTO-GENERATED FILE -- DO NOT EDIT.
+##
+## Upstream services_unittests tests with a flake rate >= 1.0% over the
+## past 30 days per Chromium LUCI Analysis. Regenerate with:
+##   python3 script/update-upstream-flake-filters.py
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeBelowLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 19 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_NoReadAndDiscardBody_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 18 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 20 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 18 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 18 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 19 failed, 0 flaky).
+-All/SimpleURLLoaderTest.BigResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SimpleURLLoaderTest.CloseClientPipeOrder/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SimpleURLLoaderTest.CloseClientPipeOrder/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 21 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback/HEADERS_ONLY_and_NoReadAndDiscardBody_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 20 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback/HEADERS_ONLY_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 19 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback/HEADERS_ONLY_and_ReadAndDiscardBodyIgnored_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 19 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 20 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback2/HEADERS_ONLY_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 16 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback2/HEADERS_ONLY_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback2/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.DeleteInDownloadProgressCallback2/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SimpleURLLoaderTest.MoreDataThanExpected/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 13 failed, 0 flaky).
+-All/SimpleURLLoaderTest.MoreDataThanExpected/HEADERS_ONLY_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 18 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 17 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeAboveLimitPartialResponse/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 14 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeBelowLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeMatchingLimit/AS_STREAM_and_NoReadAndDiscardBody_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 17 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 18 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyIgnored_and_NewLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 15 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_InProgressLoad
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 17 failed, 0 flaky).
+-All/SimpleURLLoaderTest.ResponseBodyWithSizeMatchingLimit/AS_STREAM_and_ReadAndDiscardBodyImplemented_and_NewLoad
+
+# 2.3% flake rate over 30 days per LUCI Analysis (159645 passed, 10 failed, 3750 flaky).
+-All/SnooperNodeTest.ContinuousAudioFlowAdaptsToSkew/Surround5_1ToSurround5_1
+
+# 1.4% flake rate over 30 days per LUCI Analysis (166133 passed, 4 failed, 2305 flaky).
+-All/SnooperNodeTest.HandlesMissingInput/Stereo48kToMono8k
+
+# 2.7% flake rate over 30 days per LUCI Analysis (163888 passed, 7 failed, 4540 flaky).
+-All/SnooperNodeTest.HandlesMissingInput/Stereo64ToStereo480
+
+# 1.0% flake rate over 30 days per LUCI Analysis (2148 passed, 0 failed, 22 flaky).
+-BackgroundTracingManagerTest.SavedCountPreventsStart
+
+# 1.1% flake rate over 30 days per LUCI Analysis (166854 passed, 2 failed, 1770 flaky).
+-CertNetFetcherURLLoaderTest.ParallelFetchDuplicates
+
+# 42.0% flake rate over 30 days per LUCI Analysis (1259 passed, 57 failed, 853 flaky).
+-CoordinatorImplTest.DumpsAreAddedToTraceWhenRequested
+
+# 1.9% flake rate over 30 days per LUCI Analysis (165295 passed, 38 failed, 3180 flaky).
+-CoordinatorImplTest.DumpsArentAddedToTraceUnlessRequested
+
+# 80.8% flake rate over 30 days per LUCI Analysis (9620 passed, 2 failed, 40526 flaky).
+-HeapProfilingDataSourceTest.EmitSamples
+
+# 3.7% flake rate over 30 days per LUCI Analysis (48243 passed, 27 failed, 1827 flaky).
+-HeapProfilingDataSourceTest.MultipleInstances
+
+# 4.8% flake rate over 30 days per LUCI Analysis (72487 passed, 8 failed, 3631 flaky).
+-HistogramSamplesDataSourceTest.EmitsProcessAndThreadTrackDescriptors
+
+# 4.8% flake rate over 30 days per LUCI Analysis (72475 passed, 6 failed, 3634 flaky).
+-HistogramSamplesDataSourceTest.MultipleHistogramSamples
+
+# 28.1% flake rate over 30 days per LUCI Analysis (54717 passed, 0 failed, 21418 flaky).
+-HistogramSamplesDataSourceTest.RecordAllHistogramsWithoutTrackEvent
+
+# 1.9% flake rate over 30 days per LUCI Analysis (165409 passed, 18 failed, 3183 flaky).
+-ImageDecoderImplTest.DecodeImageSizeLimit
+
+# 4.4% flake rate over 30 days per LUCI Analysis (161101 passed, 33 failed, 7405 flaky).
+-MemoryTracingIntegrationTest.GenerationChangeDoesntReenterMDM
+
+# 11.5% flake rate over 30 days per LUCI Analysis (149178 passed, 119 failed, 19292 flaky).
+-MemoryTracingIntegrationTest.TestBackgroundTracingSetup
+
+# 2.9% flake rate over 30 days per LUCI Analysis (163606 passed, 5 failed, 4920 flaky).
+-MemoryTracingIntegrationTest.TraceConfigExpectationsWhenIsCoordinator
+
+# 2.0% flake rate over 30 days per LUCI Analysis (165234 passed, 34 failed, 3286 flaky).
+-NetworkContextTest.EnableNetworkErrorLoggingWithStore
+
+# 1.4% flake rate over 30 days per LUCI Analysis (166272 passed, 32 failed, 2285 flaky).
+-NetworkContextTest.EnableReportingWithStore
+
+# 22.4% flake rate over 30 days per LUCI Analysis (38 passed, 11 failed, 0 flaky).
+-NetworkContextTest.SocketLayerConditionsUpdateKeepsCapturedSession
+
+# 2.9% flake rate over 30 days per LUCI Analysis (193283 passed, 1 failed, 5731 flaky).
+-NetworkServiceBoostIOThreadTest.DoesNotBoostIOThreadWhenFeatureIsOff
+
+# 1.2% flake rate over 30 days per LUCI Analysis (19414 passed, 0 failed, 237 flaky).
+-PlatformSensorProviderTestWinrt.SensorCreationReturnCheck
+
+# 2.9% flake rate over 30 days per LUCI Analysis (163633 passed, 4 failed, 4952 flaky).
+-ProxyResolverV8Test.BadReturnType
+
+# 10.4% flake rate over 30 days per LUCI Analysis (151045 passed, 125 failed, 17445 flaky).
+-ProxyResolverV8Test.Direct
+
+# 9.2% flake rate over 30 days per LUCI Analysis (153146 passed, 80 failed, 15350 flaky).
+-ProxyResolverV8Test.IPv6HostnamesNotBracketed
+
+# 10.4% flake rate over 30 days per LUCI Analysis (150935 passed, 53 failed, 17543 flaky).
+-ScopedTraceTest.MultipleAddSteps
+
+# 1.9% flake rate over 30 days per LUCI Analysis (165278 passed, 13 failed, 3225 flaky).
+-ScopedTraceTest.PassScopedTraceToFunc
+
+# 2.4% flake rate over 30 days per LUCI Analysis (164574 passed, 22 failed, 3988 flaky).
+-ScopedTraceTest.SingleScopeWithoutStep
+
+# 7.2% flake rate over 30 days per LUCI Analysis (141023 passed, 59 failed, 10870 flaky).
+-TracingObserverProtoTest.AddOsDumpToTraceIfEnabled
+
+# 11.6% flake rate over 30 days per LUCI Analysis (134424 passed, 115 failed, 17475 flaky).
+-TracingObserverProtoTest.AddOsDumpToTraceIfEnabled_When_TraceLog_Disabled
+
+# 13.2% flake rate over 30 days per LUCI Analysis (37971 passed, 39 failed, 5730 flaky).
+-TracingSampleProfilerTest.CustomSamplingInterval
+
+# 14.8% flake rate over 30 days per LUCI Analysis (129537 passed, 101 failed, 22360 flaky).
+-TracingSampleProfilerTest.JoinRunningTracing
+
+# 3.0% flake rate over 30 days per LUCI Analysis (163465 passed, 2 failed, 5016 flaky).
+-TracingSampleProfilerTest.OnSampleCompleted
+
+# 19.9% flake rate over 30 days per LUCI Analysis (103523 passed, 65 failed, 25630 flaky).
+-TracingScenarioSystemBackendTest.ScenarioConfigWithoutSystemBackend
+
+# 1.0% flake rate over 30 days per LUCI Analysis (148659 passed, 1505 failed, 0 flaky).
+-UDPSocketTest.JoinMulticastGroup

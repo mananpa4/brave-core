@@ -1,0 +1,251 @@
+## AUTO-GENERATED FILE -- DO NOT EDIT.
+##
+## Upstream content_unittests tests with a flake rate >= 1.0% over the
+## past 30 days per Chromium LUCI Analysis. Regenerate with:
+##   python3 script/update-upstream-flake-filters.py
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-BackgroundSyncManagerTest.WakeBrowserCalledForOneShotSync
+
+# 19.5% flake rate over 30 days per LUCI Analysis (24175 passed, 18 failed, 5824 flaky).
+-BrowserAccessibilityAndroidTest.TestImageInnerText_AnnotationSucceeded
+
+# 3.6% flake rate over 30 days per LUCI Analysis (29038 passed, 5 failed, 1077 flaky).
+-BrowserAccessibilityAndroidTest.TestImageRoleDescription_UnlabeledImage
+
+# 1.4% flake rate over 30 days per LUCI Analysis (29467 passed, 0 failed, 429 flaky).
+-BrowserAccessibilityAndroidTest.TestIsLeafContentEditableWithChildren_ExposeNonAtomicChildrenFeatureDisabled
+
+# 7.2% flake rate over 30 days per LUCI Analysis (1002 passed, 0 failed, 78 flaky).
+-BrowserAccessibilityAndroidTest.TestIsLeafFocusableWithNameFromAttributeAndTextChildren
+
+# 90.5% flake rate over 30 days per LUCI Analysis (2862 passed, 1299 failed, 25879 flaky).
+-BrowserAccessibilityAndroidTest.TestJavaNodeCache_AttributeChange
+
+# 2.3% flake rate over 30 days per LUCI Analysis (18996 passed, 0 failed, 438 flaky).
+-BrowserAccessibilityAndroidTest.TestUnlabeledImageIsInterestingOnAndroid
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 1505 failed, 0 flaky).
+-BrowserAccessibilityAndroidTest.TextStyling_Links
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 1476 failed, 0 flaky).
+-BrowserAccessibilityAndroidTest.TextStyling_TextPositions
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-BtmServiceHistogramTest.Deletion_Enforced
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-BtmServiceStateRemovalTest.BrowsingDataDeletion_Enabled
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-BtmServiceStateRemovalTest.BrowsingDataDeletion_RespectsStorageAccessGrantExceptions
+
+# 1.3% flake rate over 30 days per LUCI Analysis (31252 passed, 1 failed, 411 flaky).
+-ChildProcessTaskPortProviderTest.ChildLifecycle
+
+# 3.6% flake rate over 30 days per LUCI Analysis (190259 passed, 61 failed, 7144 flaky).
+-FencedFrameConfigMojomTraitsTest.ConfigMojomTraitsNullInternalUrnTest
+
+# 10.5% flake rate over 30 days per LUCI Analysis (129242 passed, 552 failed, 14691 flaky).
+-FilePathWatcherTest.DeleteAndRecreate
+
+# 11.0% flake rate over 30 days per LUCI Analysis (128603 passed, 552 failed, 15357 flaky).
+-FilePathWatcherTest.DirectoryChain
+
+# 11.2% flake rate over 30 days per LUCI Analysis (128282 passed, 553 failed, 15650 flaky).
+-FilePathWatcherTest.ModifiedFile
+
+# 4.2% flake rate over 30 days per LUCI Analysis (138462 passed, 3964 failed, 2047 flaky).
+-FilePathWatcherTest.MoveChild
+
+# 8.0% flake rate over 30 days per LUCI Analysis (132887 passed, 552 failed, 11072 flaky).
+-FilePathWatcherTest.MoveOverwritingFile
+
+# 10.2% flake rate over 30 days per LUCI Analysis (129723 passed, 552 failed, 14201 flaky).
+-FilePathWatcherTest.MoveParent
+
+# 7.7% flake rate over 30 days per LUCI Analysis (133419 passed, 552 failed, 10543 flaky).
+-FilePathWatcherTest.MovedToFile
+
+# 11.0% flake rate over 30 days per LUCI Analysis (128594 passed, 552 failed, 15323 flaky).
+-FilePathWatcherTest.MultipleWatchersSingleFile
+
+# 9.4% flake rate over 30 days per LUCI Analysis (130950 passed, 553 failed, 13011 flaky).
+-FilePathWatcherTest.NewFile
+
+# 10.0% flake rate over 30 days per LUCI Analysis (129961 passed, 552 failed, 13962 flaky).
+-FilePathWatcherTest.NonExistentDirectory
+
+# 7.2% flake rate over 30 days per LUCI Analysis (133996 passed, 552 failed, 9920 flaky).
+-FilePathWatcherTest.RecursiveWatch
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 551 failed, 0 flaky).
+-FilePathWatcherTest.UseDummyChangeInfoIfNotSupported
+
+# 2.9% flake rate over 30 days per LUCI Analysis (191930 passed, 7 failed, 5665 flaky).
+-FileSystemAccessWatcherManagerTest.WatchLocalDirectory
+
+# 7.8% flake rate over 30 days per LUCI Analysis (6344 passed, 533 failed, 0 flaky).
+-FontUniqueNameLookupTest.TestMatchPostScriptNameTtc
+
+# 3.3% flake rate over 30 days per LUCI Analysis (190992 passed, 2 failed, 6588 flaky).
+-FrameSinkVideoCaptureDeviceTest.SetsVideoRotation
+
+# 3.1% flake rate over 30 days per LUCI Analysis (191340 passed, 2 failed, 6201 flaky).
+-FrameSinkVideoCaptureDeviceTest.ShutsDownOnFatalError
+
+# 29.2% flake rate over 30 days per LUCI Analysis (139910 passed, 5 failed, 57684 flaky).
+-FrameSinkVideoCaptureDeviceTest.SuspendsAndResumes
+
+# 37.1% flake rate over 30 days per LUCI Analysis (22 passed, 13 failed, 0 flaky).
+-IndexedDB/SqliteBackingStoreRolloutStageTest.MigrateDataToSqliteGentleIsGentle/Default
+
+# 37.1% flake rate over 30 days per LUCI Analysis (22 passed, 13 failed, 0 flaky).
+-IndexedDB/SqliteBackingStoreRolloutStageTest.MigrateDataToSqliteGentleIsGentle/NonDefault
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2159 failed, 0 flaky).
+-IndexedDBTest.PutWithInvalidBlob/LevelDB
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-IndexedDBTest.PutWithInvalidBlob/SQLite
+
+# 4.7% flake rate over 30 days per LUCI Analysis (2068 passed, 72 failed, 29 flaky).
+-InputRouterImplTest.GestureTypesIgnoringAck
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-InputRouterImplTest.TimeoutMonitorStopWithMainThreadTouchAction
+
+# 48.7% flake rate over 30 days per LUCI Analysis (101299 passed, 1 failed, 96115 flaky).
+-LevelDbBackingStoreTest.CompactionTaskTiming
+
+# 40.6% flake rate over 30 days per LUCI Analysis (117299 passed, 1 failed, 80325 flaky).
+-LevelDbBackingStoreTest.TombstoneSweeperTiming
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 664 failed, 0 flaky).
+-MediaStreamManagerCapturedSurfaceControlActionTest.FailsIfSelfCapture/0
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 664 failed, 0 flaky).
+-MediaStreamManagerCapturedSurfaceControlActionTest.FailsIfSelfCapture/1
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 664 failed, 0 flaky).
+-MediaStreamManagerCapturedSurfaceControlActionTest.FailsIfSelfCapture/2
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 664 failed, 0 flaky).
+-MediaStreamManagerCapturedSurfaceControlActionTest.FailsIfSelfCapture/3
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 664 failed, 0 flaky).
+-MediaStreamManagerCapturedSurfaceControlActionTest.FailsIfSelfCapture/4
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 1505 failed, 0 flaky).
+-MouseCursorOverlayControllerAndroidTest.RestrictsToWebContents
+
+# 28.4% flake rate over 30 days per LUCI Analysis (96616 passed, 3 failed, 38359 flaky).
+-MouseCursorOverlayControllerAuraTest.RestrictsToWebContents
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.CompletedPrefetchWithNoCandidateIsEvicted/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.ImmediatePrefetchLimitIsDynamic/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.InProgressPrefetchWithNoCandidateIsCancelled/6
+
+# 1.7% flake rate over 30 days per LUCI Analysis (345 passed, 6 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.NextPrefetchQueuedImmediatelyAfterReset/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.PrefetchFailsAndIsReset/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.PrefetchReset/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.PrefetchWithNoCandidateIsNotStarted/6
+
+# 1.4% flake rate over 30 days per LUCI Analysis (345 passed, 5 failed, 0 flaky).
+-ParametrizedTests/PrefetchServiceLimitsTest.RemoveCandidateForFailedPrefetch/6
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-PrefetchCanaryCheckerTest.NetworkConnectionShardsCache
+
+# 2.4% flake rate over 30 days per LUCI Analysis (126759 passed, 15 failed, 3051 flaky).
+-RenderFrameHostImplTest.CalculateStorageKeyFirstPartyOverride
+
+# 4.2% flake rate over 30 days per LUCI Analysis (189080 passed, 2 failed, 8387 flaky).
+-RenderWidgetHostInputEventRouterTest.AsyncTargetingCoordinateValidation
+
+# 6.1% flake rate over 30 days per LUCI Analysis (185506 passed, 2 failed, 12038 flaky).
+-RenderWidgetHostInputEventRouterTest.CanCallShowContextMenuAtPoint
+
+# 9.0% flake rate over 30 days per LUCI Analysis (179809 passed, 2 failed, 17719 flaky).
+-RenderWidgetHostInputEventRouterTest.CancelNestedBubblingOnNewGestureToBubblingTarget
+
+# 8.7% flake rate over 30 days per LUCI Analysis (180500 passed, 2 failed, 17125 flaky).
+-RenderWidgetHostInputEventRouterTest.DoBubbleIfSourceDeviceMismatch
+
+# 9.6% flake rate over 30 days per LUCI Analysis (178526 passed, 2 failed, 18981 flaky).
+-RenderWidgetHostInputEventRouterTest.DoNotBubbleIfUnrelatedGestureInTarget
+
+# 6.5% flake rate over 30 days per LUCI Analysis (184497 passed, 2 failed, 12915 flaky).
+-RenderWidgetHostInputEventRouterTest.DoNotCoalesceGestureEvents
+
+# 5.4% flake rate over 30 days per LUCI Analysis (186824 passed, 2 failed, 10699 flaky).
+-RenderWidgetHostInputEventRouterTest.DoNotCoalesceTouchEvents
+
+# 8.6% flake rate over 30 days per LUCI Analysis (180673 passed, 2 failed, 16963 flaky).
+-RenderWidgetHostInputEventRouterTest.DoNotSendMouseLeaveEventsForDisconnectedGuestView
+
+# 1.5% flake rate over 30 days per LUCI Analysis (194690 passed, 2 failed, 2947 flaky).
+-RenderWidgetHostInputEventRouterTest.EnsureDroppedTouchEventsAreAcked
+
+# 8.6% flake rate over 30 days per LUCI Analysis (180646 passed, 2 failed, 16940 flaky).
+-RenderWidgetHostInputEventRouterTest.FilteredGestureDoesntInterruptBubbling
+
+# 1.8% flake rate over 30 days per LUCI Analysis (193854 passed, 2 failed, 3647 flaky).
+-RenderWidgetHostInputEventRouterTest.FindViewFromFrameSinkIdWithAncestorVerification
+
+# 8.0% flake rate over 30 days per LUCI Analysis (181840 passed, 2 failed, 15770 flaky).
+-RenderWidgetHostInputEventRouterTest.NestedDoNotBubbleIfUnrelatedGestureInTarget
+
+# 7.5% flake rate over 30 days per LUCI Analysis (62761 passed, 0 failed, 5082 flaky).
+-RenderWidgetHostInputEventRouterTest.PromotesMouseTargetPastUnregisteredAncestor
+
+# 4.8% flake rate over 30 days per LUCI Analysis (188091 passed, 2 failed, 9501 flaky).
+-RenderWidgetHostInputEventRouterTest.QueryResultAfterChildViewDead
+
+# 2.6% flake rate over 30 days per LUCI Analysis (22878 passed, 0 failed, 602 flaky).
+-RenderWidgetHostInputEventRouterTest.RestartTouchscreenBubblingAfterRootUnregisters
+
+# 1.9% flake rate over 30 days per LUCI Analysis (23005 passed, 0 failed, 452 flaky).
+-RenderWidgetHostInputEventRouterTest.UnregisterDetachedIntermediateScrollBubblingTarget
+
+# 3.0% flake rate over 30 days per LUCI Analysis (191618 passed, 2 failed, 5980 flaky).
+-RenderWidgetHostTest.DoNotAcceptPopupBoundsUntilScreenRectsAcked
+
+# 2.3% flake rate over 30 days per LUCI Analysis (193122 passed, 2 failed, 4454 flaky).
+-RenderWidgetHostTest.SynchronizeVisualProperties
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2169 failed, 0 flaky).
+-RendererWebAudioDeviceImplBufferSizeTest.ExactLatency_HighHardwareBufferSize_CapsAtMaxBufferSize
+
+# 4.3% flake rate over 30 days per LUCI Analysis (189132 passed, 44 failed, 8368 flaky).
+-RequestTest.FailureDialogImmediateDismiss
+
+# 1.2% flake rate over 30 days per LUCI Analysis (195156 passed, 29 failed, 2330 flaky).
+-RequestTest.UseOtherAccountThenClose
+
+# 7.6% flake rate over 30 days per LUCI Analysis (27758 passed, 9 failed, 2266 flaky).
+-ServiceWorkerControlleeRequestHandlerTest.FallbackWithNoOfflineHeader
+
+# 3.2% flake rate over 30 days per LUCI Analysis (191189 passed, 3 failed, 6373 flaky).
+-WebContentsFrameTrackerTest.CalculatesPreferredSizeNoLargerThanCaptureSize
+
+# 100.0% flake rate over 30 days per LUCI Analysis (0 passed, 2171 failed, 0 flaky).
+-WebContentsImplTest.NoEarlyStop
+
+# 7.8% flake rate over 30 days per LUCI Analysis (182144 passed, 65 failed, 15342 flaky).
+-WebContentsImplTest.RegisterProtocolHandlerInvalidURLSyntax
+
+# 8.4% flake rate over 30 days per LUCI Analysis (187715 passed, 7 failed, 17214 flaky).
+-WebRtcInternalsMessageHandlerTest.DontRunJSBeforeNavigationCommitted
