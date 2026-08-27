@@ -309,7 +309,7 @@ public class SendTokenStore: ObservableObject, WalletObserverStore {
       self.selectedSendToken = prefilledToken
     } else {
       // need to try and select correct network.
-      let allNetworksForTokenCoin = await rpcService.allNetworks().filter({
+      let allNetworksForTokenCoin = await rpcService.allNetworks().networks.filter({
         $0.coin == prefilledToken.coin
       })
       guard

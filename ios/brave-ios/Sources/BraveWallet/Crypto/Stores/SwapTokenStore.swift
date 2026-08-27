@@ -254,7 +254,7 @@ public class SwapTokenStore: ObservableObject, WalletObserverStore {
       _selectedWalletAccountChanged: { [weak self] account in
         Task { @MainActor [self] in
           guard let network = await self?.rpcService.network(coin: account.coin, origin: nil),
-            let isSwapSupported = await self?.swapService.isSwapSupported(chainId: network.chainId),
+            let isSwapSupported = await self?.rpcService.isSwapSupported(chainId: network.chainId),
             isSwapSupported
           else {
             self?.accountInfo = account
@@ -273,7 +273,7 @@ public class SwapTokenStore: ObservableObject, WalletObserverStore {
       rpcService: rpcService,
       _chainChangedEvent: { [weak self] chainId, coin, origin in
         Task { @MainActor [self] in
-          guard let isSwapSupported = await self?.swapService.isSwapSupported(chainId: chainId),
+          guard let isSwapSupported = await self?.rpcService.isSwapSupported(chainId: chainId),
             isSwapSupported
           else { return }
           guard
@@ -1045,7 +1045,7 @@ public class SwapTokenStore: ObservableObject, WalletObserverStore {
         } else {
           self.rpcService.allNetworks { allNetworks in
             guard
-              let networkForToken = allNetworks.first(where: {
+              let networkForToken = allNetworks.networks.first(where: {
                 $0.coin == prefilledToken.coin && $0.chainId == prefilledToken.chainId
               })
             else {

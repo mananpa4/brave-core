@@ -179,7 +179,7 @@ class AccountActivityStore: ObservableObject, WalletObserverStore {
         // Defaults to checking `eth` & `sol` coin type, but
         // we can provide additional local check against user's
         // custom networks with swap service
-        let isSwapSupportedForNetwork = await swapService.isSwapSupported(
+        let isSwapSupportedForNetwork = await rpcService.isSwapSupported(
           chainId: network.chainId
         )
         if isSwapSupportedForNetwork && !self.isSwapSupported {

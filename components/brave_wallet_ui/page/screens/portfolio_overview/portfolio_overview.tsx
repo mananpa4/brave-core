@@ -51,6 +51,7 @@ import {
 import { getBalance } from '../../../utils/balance-utils'
 import { getAssetIdKey } from '../../../utils/asset-utils'
 import {
+  getNetworkId,
   networkEntityAdapter, //
 } from '../../../common/slices/entities/network.entity'
 import { networkSupportsAccount } from '../../../utils/network-utils'
@@ -271,9 +272,7 @@ export const PortfolioOverview = () => {
   // filteredOutPortfolioNetworkKeys pref and visible networks.
   const visibleTokensForFilteredChains = React.useMemo(() => {
     return userTokensWithRewards.filter((token) =>
-      visiblePortfolioNetworkIds.includes(
-        networkEntityAdapter.selectId(token).toString(),
-      ),
+      visiblePortfolioNetworkIds.includes(getNetworkId(token)),
     )
   }, [userTokensWithRewards, visiblePortfolioNetworkIds])
 

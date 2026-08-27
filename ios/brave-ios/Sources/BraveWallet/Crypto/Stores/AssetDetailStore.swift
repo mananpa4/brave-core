@@ -214,7 +214,7 @@ class AssetDetailStore: ObservableObject, WalletObserverStore {
       switch assetDetailType {
       case .blockchainToken(let token):
         // not come from Market tab
-        let allNetworks = await rpcService.allNetworks()
+        let allNetworks = await rpcService.allNetworks().networks
         let selectedNetwork = await rpcService.network(coin: token.coin, origin: nil)
         let network =
           allNetworks.first(where: { $0.coin == token.coin && $0.chainId == token.chainId })
@@ -224,7 +224,7 @@ class AssetDetailStore: ObservableObject, WalletObserverStore {
           await meldIntegrationService.convertToMeldCryptoCurrency(for: assetDetailToken)
         self.meldCryptoCurrency = matchedCryptoCurrency
         self.isSendSupported = true
-        self.isSwapSupported = await swapService.isSwapSupported(chainId: token.chainId)
+        self.isSwapSupported = await rpcService.isSwapSupported(chainId: token.chainId)
 
         // fetch accounts
         self.allAccountsForToken = allAccounts.accounts.accountsFor(network: network)

@@ -9,13 +9,7 @@ import { skipToken } from '@reduxjs/toolkit/query/react'
 import { BraveWallet } from '../../constants/types'
 
 // entities
-import {
-  networkEntityAdapter,
-  selectMainnetNetworksFromQueryResult,
-  selectAllNetworksFromQueryResult,
-  selectOffRampNetworksFromQueryResult,
-  selectVisibleNetworksFromQueryResult,
-} from './entities/network.entity'
+import { getNetworkId, networkSelectors } from './entities/network.entity'
 
 // api
 import { createWalletApiBase } from './api-base.slice'
@@ -197,7 +191,6 @@ export const {
   useGetActiveOriginQuery,
   useGetAddressByteCodeQuery,
   useGetAddressFromNameServiceUrlQuery,
-  useGetAllKnownNetworksQuery,
   useGetAvailableShieldedAccountQuery,
   useGetBitcoinBalancesQuery,
   useGetChainTipStatusQuery,
@@ -249,7 +242,6 @@ export const {
   useGetSimpleHashSpamNftsQuery,
   useGetSolanaEstimatedFeeQuery,
   useGetSwapStatusQuery,
-  useGetSwapSupportedNetworksQuery,
   useGetTokenBalancesForChainIdQuery,
   useGetTokenBalancesRegistryQuery,
   useGetTokenInfoQuery,
@@ -276,7 +268,6 @@ export const {
   useLazyGetAccountInfosRegistryQuery,
   useLazyGetAccountTokenCurrentBalanceQuery,
   useLazyGetAddressByteCodeQuery,
-  useLazyGetAllKnownNetworksQuery,
   useLazyGetAvailableShieldedAccountQuery,
   useLazyGetBitcoinBalancesQuery,
   useLazyGetChainTipStatusQuery,
@@ -291,7 +282,6 @@ export const {
   useLazyGetSelectedChainQuery,
   useLazyGetSellAssetUrlQuery,
   useLazyGetSolanaEstimatedFeeQuery,
-  useLazyGetSwapSupportedNetworksQuery,
   useLazyGetTokenBalancesForChainIdQuery,
   useLazyGetTokenBalancesRegistryQuery,
   useLazyGetTokenSpotPricesQuery,
@@ -370,25 +360,12 @@ export const {
 
 // Derived Data Queries
 
-export const useGetMainnetsQuery = (opts?: { skip?: boolean }) => {
-  const queryResults = useGetNetworksRegistryQuery(undefined, {
-    selectFromResult: (res) => ({
-      isLoading: res.isLoading,
-      error: res.error,
-      data: selectMainnetNetworksFromQueryResult(res),
-    }),
-    skip: opts?.skip,
-  })
-
-  return queryResults
-}
-
 export const useGetNetworksQuery = (opts?: { skip?: boolean }) => {
   const queryResults = useGetNetworksRegistryQuery(undefined, {
     selectFromResult: (res) => ({
       isLoading: res.isLoading,
       error: res.error,
-      data: selectAllNetworksFromQueryResult(res),
+      data: networkSelectors.selectAll(res.data),
     }),
     skip: opts?.skip,
   })
@@ -401,7 +378,7 @@ export const useGetOffRampNetworksQuery = (opts?: { skip?: boolean }) => {
     selectFromResult: (res) => ({
       isLoading: res.isLoading,
       error: res.error,
-      data: selectOffRampNetworksFromQueryResult(res),
+      data: networkSelectors.selectOffRampNetworks(res.data),
     }),
     skip: opts?.skip,
   })
@@ -417,7 +394,23 @@ export const useGetVisibleNetworksQuery = (
     selectFromResult: (res) => ({
       isLoading: res.isLoading,
       error: res.error,
-      data: selectVisibleNetworksFromQueryResult(res),
+      data: networkSelectors.selectVisibleNetworks(res.data),
+    }),
+    skip: opts?.skip,
+  })
+
+  return queryResults
+}
+
+export const useGetSwapSupportedNetworksQuery = (
+  arg?: undefined | typeof skipToken,
+  opts?: { skip?: boolean },
+) => {
+  const queryResults = useGetNetworksRegistryQuery(arg, {
+    selectFromResult: (res) => ({
+      isLoading: res.isLoading,
+      error: res.error,
+      data: networkSelectors.selectSwapNetworks(res.data),
     }),
     skip: opts?.skip,
   })
@@ -440,9 +433,9 @@ export const useGetNetworkQuery = (
         isLoading: res.isLoading || res.isFetching,
         error: res.error,
         data:
-          res.data && args !== skipToken
-            ? res.data.entities[networkEntityAdapter.selectId(args)]
-            : undefined,
+          args === skipToken
+            ? undefined
+            : networkSelectors.selectById(res.data, getNetworkId(args)),
       }),
     },
   )

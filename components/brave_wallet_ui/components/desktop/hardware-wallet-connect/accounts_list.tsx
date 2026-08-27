@@ -24,8 +24,9 @@ import {
 } from '../../../common/slices/api.slice'
 import { makeNetworkAsset } from '../../../options/asset-options'
 import {
-  networkEntityAdapter, //
-  selectAllNetworksFromQueryResult,
+  getNetworkId,
+  networkEntityAdapter,
+  networkSelectors,
 } from '../../../common/slices/entities/network.entity'
 
 // Components
@@ -134,32 +135,34 @@ export const HardwareWalletAccountsList = ({
   )
 
   // memos
+  const visibleNetworks = React.useMemo(() => {
+    return networkSelectors.selectVisibleNetworks(networksRegistry)
+  }, [networksRegistry, currentHardwareImportScheme.coin])
+
+  const selectedNetwork = networkSelectors.selectById(
+    networksRegistry,
+    selectedNetworkId,
+  )
+
   const accountNativeAsset = React.useMemo(() => {
-    if (!networksRegistry) {
-      return undefined
-    }
-    return makeNetworkAsset(networksRegistry.entities[selectedNetworkId])
-  }, [networksRegistry, selectedNetworkId])
+    return makeNetworkAsset(selectedNetwork)
+  }, [selectedNetwork])
 
   const networksSubset = React.useMemo(() => {
-    if (!networksRegistry) {
-      return []
-    }
-
     if (currentHardwareImportScheme.fixedNetwork) {
-      return selectAllNetworksFromQueryResult({
-        data: networksRegistry,
-      }).filter(
-        (n) =>
-          n.coin === currentHardwareImportScheme.coin
-          && n.chainId === currentHardwareImportScheme.fixedNetwork,
-      )
+      return networkSelectors
+        .selectAll(networksRegistry)
+        .filter(
+          (n) =>
+            n.coin === currentHardwareImportScheme.coin
+            && n.chainId === currentHardwareImportScheme.fixedNetwork,
+        )
     }
 
-    return networksRegistry.visibleIdsByCoinType[
-      currentHardwareImportScheme.coin
-    ].map((id) => networksRegistry.entities[id]!)
-  }, [networksRegistry, currentHardwareImportScheme])
+    return visibleNetworks.filter(
+      (n) => n.coin === currentHardwareImportScheme.coin,
+    )
+  }, [networksRegistry, currentHardwareImportScheme, visibleNetworks])
 
   const showSchemesDropdown = coinsSupportingSchemesDropdown.includes(
     currentHardwareImportScheme.coin,
@@ -243,7 +246,7 @@ export const HardwareWalletAccountsList = ({
     }
 
     // set network dropdown default value
-    setSelectedNetworkId(networksRegistry.visibleIdsByCoinType[coin][0])
+    setSelectedNetworkId(getNetworkId(visibleNetworks[0]))
   }, [networksRegistry, coin, selectedNetworkId])
 
   // render
@@ -259,7 +262,7 @@ export const HardwareWalletAccountsList = ({
           >
             <NetworkFilterSelector
               networkListSubset={networksSubset}
-              selectedNetwork={networksRegistry?.entities[selectedNetworkId]}
+              selectedNetwork={selectedNetwork}
               onSelectNetwork={onSelectNetwork}
               disableAllAccountsOption
               isV2

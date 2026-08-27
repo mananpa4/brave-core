@@ -9,7 +9,6 @@ import { EntityId } from '@reduxjs/toolkit'
 // constants
 import {
   BraveWallet,
-  SupportedTestNetworks,
   SupportedOffRampNetworks,
   BraveRewardsInfo,
   WalletStatus,
@@ -29,8 +28,9 @@ import {
 } from '../slices/entities/blockchain-token.entity'
 import {
   NetworksRegistry,
+  getNetworkId,
   networkEntityAdapter,
-  emptyNetworksRegistry,
+  networkSelectors,
 } from '../slices/entities/network.entity'
 
 // utils
@@ -122,108 +122,35 @@ export class BaseQueryCache {
     if (!this._networksRegistry) {
       const { jsonRpcService } = getAPIProxy()
 
-      // network type flags
-      const { enabledCoins } = await this.getWalletInfo()
+      const visibleIds: EntityId[] = []
+      const offRampIds: EntityId[] = []
 
-      const visibleIds: string[] = []
-      const hiddenIds: string[] = []
-      const visibleIdsByCoinType: Record<EntityId, EntityId[]> = {}
-      const hiddenIdsByCoinType: Record<EntityId, string[]> = {}
-      const mainnetIds: string[] = []
-      const testnetIds: string[] = []
-      const offRampIds: string[] = []
+      const { networks, hiddenChainIds, ankrChainIds, swapChainIds } = (
+        await jsonRpcService.getAllNetworks()
+      ).allNetworks
 
-      const { networks } = await jsonRpcService.getAllNetworks()
+      networks.forEach(({ chainId }) => {
+        if (!hiddenChainIds.includes(chainId)) {
+          visibleIds.push(chainId)
+        }
 
-      // Get all networks for supported coin types
-      const networkLists: BraveWallet.NetworkInfo[][] = await mapLimit(
-        enabledCoins,
-        10,
-        async (coin: BraveWallet.CoinType) => {
-          // hidden networks for coin
-          let hiddenNetworkIds: string[] = []
-          try {
-            const { chainIds } = await jsonRpcService.getHiddenNetworks(coin)
-            hiddenNetworkIds = chainIds.map(
-              (id) =>
-                networkEntityAdapter.selectId({
-                  coin,
-                  chainId: id,
-                }) as string,
-            )
-          } catch (error) {
-            console.log(error)
-            console.log(
-              `Unable to fetch Hidden ChainIds for coin: ${
-                coin //
-              }`,
-            )
-            throw new Error(
-              `Unable to fetch Hidden ChainIds for coin: ${
-                coin //
-              }`,
-            )
-          }
+        // off-ramps
+        if (SupportedOffRampNetworks.includes(chainId)) {
+          offRampIds.push(chainId)
+        }
+      })
 
-          visibleIdsByCoinType[coin] = []
-          hiddenIdsByCoinType[coin] = []
-
-          networks.forEach(async ({ chainId, coin: networkCoin }) => {
-            if (networkCoin !== coin) {
-              return
-            }
-            const networkId = networkEntityAdapter
-              .selectId({
-                chainId,
-                coin,
-              })
-              .toString()
-
-            // TODO(https://github.com/brave/brave-browser/issues/55218): Validate by keyring id instead of chain id.
-            if (SupportedTestNetworks.includes(chainId)) {
-              testnetIds.push(networkId)
-            } else {
-              mainnetIds.push(networkId)
-            }
-
-            if (hiddenNetworkIds.includes(networkId)) {
-              hiddenIdsByCoinType[coin].push(networkId)
-              hiddenIds.push(networkId)
-            } else {
-              // visible networks for coin
-              visibleIdsByCoinType[coin].push(networkId)
-              visibleIds.push(networkId)
-            }
-
-            // off-ramps
-            if (SupportedOffRampNetworks.includes(chainId)) {
-              offRampIds.push(networkId)
-            }
-          })
-
-          // all networks
-          return networks
-        },
-      )
-
-      const networksList = networkLists.flat(1)
-
-      // normalize list into a registry
-      const normalizedNetworksState = networkEntityAdapter.setAll(
+      this._networksRegistry = networkEntityAdapter.setAll(
         {
-          ...emptyNetworksRegistry,
-          visibleIdsByCoinType,
-          hiddenIds,
-          hiddenIdsByCoinType,
-          visibleIds,
+          ...networkEntityAdapter.getInitialState(),
+          hiddenIds: hiddenChainIds,
+          visibleIds: visibleIds,
           offRampIds,
-          mainnetIds,
-          testnetIds,
+          ankrChainIds,
+          swapChainIds,
         },
-        networksList,
+        networks,
       )
-
-      this._networksRegistry = normalizedNetworksState
     }
     return this._networksRegistry
   }
@@ -348,10 +275,11 @@ export class BaseQueryCache {
       }
 
       const metadata: BraveWallet.NftMetadata = result.metadatas[0]
-
-      const tokenNetwork = (await cache.getNetworksRegistry()).entities[
-        networkEntityAdapter.selectId(tokenArg)
-      ]
+      const networkRegistry = await cache.getNetworksRegistry()
+      const tokenNetwork = networkSelectors.selectById(
+        networkRegistry,
+        tokenArg.chainId,
+      )
 
       const nftMetadata: NFTMetadataReturnType = {
         metadataUrl: '',
@@ -392,15 +320,18 @@ export class BaseQueryCache {
   getSpamNftsForAccountId = async (accountId: BraveWallet.AccountId) => {
     if (!this.spamNftsForAccountRegistry[accountId.uniqueKey]) {
       const { braveWalletService } = getAPIProxy()
-      const { address, coin } = accountId
+      const { address } = accountId
       const networksRegistry = await cache.getNetworksRegistry()
 
-      const chainIds = networksRegistry.ids.map((network) => {
-        return {
-          coin: coin,
-          chainId: networksRegistry.entities[network]!.chainId,
-        }
-      })
+      const chainIds = networkSelectors
+        .selectAll(networksRegistry)
+        .filter((network) => network.coin === accountId.coin)
+        .map((network) => {
+          return {
+            coin: network.coin,
+            chainId: network.chainId,
+          }
+        })
 
       let currentCursor: string | null = null
       const accountSpamNfts = []
@@ -616,15 +547,17 @@ export async function makeTokensRegistry({
   > = {}
 
   const userTokenListsForNetworks = await mapLimit(
-    Object.entries(networksRegistry.entities),
+    networkSelectors.selectAll(networksRegistry),
     10,
-    async ([networkId, network]: [string, BraveWallet.NetworkInfo]) => {
+    async (network: BraveWallet.NetworkInfo) => {
       if (!network) {
         return []
       }
 
       const fullTokensListForNetwork: BraveWallet.BlockchainToken[] =
         await fetchAssetsForNetwork({ listType, network, cache })
+
+      const networkId = getNetworkId(network)
 
       idsByChainId[networkId] = []
       visibleTokenIdsByChainId[networkId] = []

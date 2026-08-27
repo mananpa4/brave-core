@@ -114,10 +114,9 @@ class AssetDetailStoreTests: XCTestCase {
       )
     }
 
+    rpcService.swapSupportedChainIds = MockJsonRpcService.allKnownNetworks.map(\.chainId)
+
     let swapService = BraveWallet.TestSwapService()
-    swapService._isSwapSupported = {
-      $1(true)
-    }
 
     let bitcoinWalletService = BraveWallet.TestBitcoinWalletService()
     let zcashWalletService = BraveWallet.TestZCashWalletService()
@@ -330,10 +329,9 @@ class AssetDetailStoreTests: XCTestCase {
 
     let solTxManagerProxy = BraveWallet.TestSolanaTxManagerProxy()
 
+    rpcService.swapSupportedChainIds = MockJsonRpcService.allKnownNetworks.map(\.chainId)
+
     let swapService = BraveWallet.TestSwapService()
-    swapService._isSwapSupported = {
-      $1(true)
-    }
 
     let mockBtcBalance: Double = 0.0001
     let btcBalanceSatoshi =

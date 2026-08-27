@@ -340,7 +340,7 @@ public class UserAssetsStore: ObservableObject, WalletObserverStore {
     by chainId: String,
     coin: BraveWallet.CoinType
   ) async -> BraveWallet.NetworkInfo? {
-    let allNetworks = await rpcService.allNetworks()
+    let allNetworks = await rpcService.allNetworks().networks
     return allNetworks.first {
       $0.coin == coin && $0.chainId.caseInsensitiveCompare(chainId) == .orderedSame
     }
