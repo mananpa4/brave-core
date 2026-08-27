@@ -17,6 +17,7 @@ from datetime import datetime, timedelta, timezone
 
 LUCI_ANALYSIS_HOST = "https://analysis.api.luci.app"
 TEST_HISTORY_SERVICE = "luci.analysis.v1.TestHistory"
+CLUSTERS_SERVICE = "luci.analysis.v1.Clusters"
 CHROMIUM_PROJECT = "chromium"
 _ALLOWED_SCHEMES = ("https://", )
 
@@ -216,6 +217,52 @@ def get_test_verdicts(test_id, days):
             break
 
     return all_verdicts
+
+
+def query_cluster_summaries(failure_filter, earliest, latest):
+    """Query top failure clusters, ordered by failure count.
+
+    Note: the API returns at most 200 clusters and does not paginate.
+
+    Args:
+        failure_filter: AIP-160 filter applied to each failure, e.g.
+            'test_id:":browser_tests!gtest"' (substring match).
+        earliest: datetime, start of the time range.
+        latest: datetime, end of the time range.
+
+    Returns:
+        List of cluster summary dicts from the API.
+    """
+    body = {
+        "project": CHROMIUM_PROJECT,
+        "failureFilter": failure_filter,
+        "orderBy": "metrics.`failures`.value desc",
+        "metrics": [f"projects/{CHROMIUM_PROJECT}/metrics/failures"],
+        "timeRange": {
+            "earliest": earliest.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "latest": latest.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        },
+        "pageSize": 1000,
+    }
+    result = prpc_request(CLUSTERS_SERVICE, "QueryClusterSummaries", body)
+    return result.get("clusterSummaries", [])
+
+
+def query_cluster_failures(algorithm, cluster_id):
+    """Query recent failure examples for a cluster.
+
+    Args:
+        algorithm: Clustering algorithm name (e.g., "testname-v4").
+        cluster_id: Cluster ID string.
+
+    Returns:
+        List of failure example dicts (with exact test IDs) from the API.
+    """
+    parent = (f"projects/{CHROMIUM_PROJECT}/clusters/{algorithm}/"
+              f"{cluster_id}/failures")
+    result = prpc_request(CLUSTERS_SERVICE, "QueryClusterFailures",
+                          {"parent": parent})
+    return result.get("failures", [])
 
 
 # Flake rate thresholds used to classify upstream flakiness. See
