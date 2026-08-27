@@ -10,6 +10,7 @@ tests in the Chromium project, and to analyze the results.
 """
 
 import json
+import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timedelta, timezone
@@ -63,22 +64,32 @@ def prpc_request(service, method, body):
         method="POST",
     )
 
-    try:
-        with _safe_urlopen(req, timeout=30) as resp:
-            raw = resp.read()
-    except urllib.error.HTTPError as e:
-        if e.code == 403:
+    max_attempts = 3
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with _safe_urlopen(req, timeout=30) as resp:
+                raw = resp.read()
+            break
+        except urllib.error.HTTPError as e:
+            if e.code == 403:
+                raise LuciAnalysisError(
+                    "403 Forbidden from LUCI Analysis API. The API may"
+                    " require authentication for this query.") from e
+            if e.code == 404:
+                raise LuciAnalysisError(f"404 Not Found for method {method}.") \
+                    from e
+            # Retry transient server errors.
+            if e.code >= 500 and attempt < max_attempts:
+                time.sleep(2**attempt)
+                continue
             raise LuciAnalysisError(
-                "403 Forbidden from LUCI Analysis API. The API may require"
-                " authentication for this query.") from e
-        if e.code == 404:
-            raise LuciAnalysisError(f"404 Not Found for method {method}.") \
-                from e
-        raise LuciAnalysisError(
-            f"HTTP {e.code} from LUCI Analysis API: {e.reason}") from e
-    except urllib.error.URLError as e:
-        raise LuciAnalysisError(
-            f"Could not connect to LUCI Analysis API: {e.reason}") from e
+                f"HTTP {e.code} from LUCI Analysis API: {e.reason}") from e
+        except urllib.error.URLError as e:
+            if attempt < max_attempts:
+                time.sleep(2**attempt)
+                continue
+            raise LuciAnalysisError(
+                f"Could not connect to LUCI Analysis API: {e.reason}") from e
 
     # Strip the pRPC XSSI prefix. The prefix is )]}' followed by a newline.
     # Find the first newline and skip everything up to and including it.
