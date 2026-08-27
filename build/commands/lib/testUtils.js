@@ -64,6 +64,10 @@ const getTestsToRun = (config, suite) => {
 //   - unit-tests.filter              -> Base filters
 //   - unit_tests-windows.filters:    -> Platform specific
 //   - unit_tests-windows-x86.filters -> Platform & Architecture specific
+//
+// Each filter is looked up both in test/filters/ (hand-written) and in
+// test/filters/generated/ (auto-generated upstream flake filters, see
+// script/update-upstream-flake-filters.py).
 const getApplicableFilters = (config, suite) => {
   let filterFilePaths = []
 
@@ -93,15 +97,16 @@ const getApplicableFilters = (config, suite) => {
     possibleFilters.push([suite, targetPlatform, 'msan'].join('-'))
   }
 
+  const filterDirs = [
+    path.join(config.braveCoreDir, 'test', 'filters'),
+    path.join(config.braveCoreDir, 'test', 'filters', 'generated'),
+  ]
   possibleFilters.forEach((filterName) => {
-    let filterFilePath = path.join(
-      config.braveCoreDir,
-      'test',
-      'filters',
-      `${filterName}.filter`,
-    )
-    if (fs.existsSync(filterFilePath)) {
-      filterFilePaths.push(filterFilePath)
+    for (const filterDir of filterDirs) {
+      let filterFilePath = path.join(filterDir, `${filterName}.filter`)
+      if (fs.existsSync(filterFilePath)) {
+        filterFilePaths.push(filterFilePath)
+      }
     }
   })
 
