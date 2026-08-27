@@ -260,14 +260,6 @@ extension Strings {
       comment:
         "The model's purpose - Describes what it can do best"
     )
-    public static let introMessageClaudeHaikuModelPurposeDescription = NSLocalizedString(
-      "aichat.introMessageClaudeHaikuModelPurposeDescription",
-      tableName: "BraveLeo",
-      bundle: .module,
-      value: "Lightning fast chat",
-      comment:
-        "The model's purpose - Describes what it can do best"
-    )
     public static let introMessageClaudeSonnetModelPurposeDescription = NSLocalizedString(
       "aichat.introMessageClaudeSonnetModelPurposeDescription",
       tableName: "BraveLeo",
@@ -290,14 +282,6 @@ extension Strings {
       bundle: .module,
       value:
         "Hi, I'm Leo. I'm an AI assistant by Brave. I'm powered by Claude Instant, a model created by Anthropic to power conversational and text processing tasks. Claude Instant is Brave-hosted through our own secure infrastructure.",
-      comment: "The model intro message when you first enter the chat assistant"
-    )
-    public static let introMessageClaudeHaikuMessageDescription = NSLocalizedString(
-      "aichat.introMessageClaudeHaikuMessageDescription",
-      tableName: "BraveLeo",
-      bundle: .module,
-      value:
-        "Hi, I'm Leo. I'm an AI assistant by Brave. I'm powered by Claude Haiku, a model created by Anthropic to power conversational and text processing tasks. Claude Haiku is Brave-hosted through our own secure infrastructure.",
       comment: "The model intro message when you first enter the chat assistant"
     )
     public static let introMessageClaudeSonnetMessageDescription = NSLocalizedString(

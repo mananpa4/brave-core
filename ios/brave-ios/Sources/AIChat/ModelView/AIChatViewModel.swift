@@ -12,7 +12,6 @@ import WebKit
 
 public enum AIChatModelKey: String {
   case chatQwen = "chat-qwen"
-  case chatClaudeHaiku = "chat-claude-haiku"
   case chatClaudeSonnet = "chat-claude-sonnet"
 }
 
@@ -365,9 +364,6 @@ extension AiChat.Model {
     case .chatQwen:
       return Strings.AIChat.introMessageQwenMessageDescription
 
-    case .chatClaudeHaiku:
-      return Strings.AIChat.introMessageClaudeHaikuMessageDescription
-
     case .chatClaudeSonnet:
       return Strings.AIChat.introMessageClaudeSonnetMessageDescription
     }
@@ -381,9 +377,6 @@ extension AiChat.Model {
     switch modelKey {
     case .chatQwen:
       return Strings.AIChat.introMessageQwenModelPurposeDescription
-
-    case .chatClaudeHaiku:
-      return Strings.AIChat.introMessageClaudeHaikuModelPurposeDescription
 
     case .chatClaudeSonnet:
       return Strings.AIChat.introMessageClaudeSonnetModelPurposeDescription
