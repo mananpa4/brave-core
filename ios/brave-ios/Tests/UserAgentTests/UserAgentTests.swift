@@ -48,8 +48,14 @@ class UserAgentTests: XCTestCase {
     let webView = WKWebView(frame: .zero)
     webView.customUserAgent = UserAgent.mobile
 
-    webView.evaluateJavaScript("navigator.userAgent") { result, error in
-      let userAgent = result as! String
+    webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
+      // capture `webView` to keep it alive until completion
+      _ = webView
+      guard let userAgent = result as? String else {
+        XCTFail("Failed to evaluate user agent: \(String(describing: error))")
+        expectation.fulfill()
+        return
+      }
       if !self.mobileBraveUARegex(userAgent) || self.desktopBraveUARegex(userAgent) {
         XCTFail("User agent did not match expected pattern! \(userAgent)")
       }
@@ -95,8 +101,14 @@ class UserAgentTests: XCTestCase {
     let webView = WKWebView(frame: .zero)
     webView.customUserAgent = UserAgent.mobileMasked
 
-    webView.evaluateJavaScript("navigator.userAgent") { result, error in
-      let userAgent = result as! String
+    webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
+      // capture `webView` to keep it alive until completion
+      _ = webView
+      guard let userAgent = result as? String else {
+        XCTFail("Failed to evaluate user agent: \(String(describing: error))")
+        expectation.fulfill()
+        return
+      }
       if !self.mobileUARegex(userAgent) || self.desktopUARegex(userAgent) {
         XCTFail("User agent did not match expected pattern! \(userAgent)")
       }
@@ -114,7 +126,9 @@ class UserAgentTests: XCTestCase {
     let webView = WKWebView(frame: .zero)
     let wkWebView = WKWebView()
 
-    webView.evaluateJavaScript("navigator.userAgent") { result, error in
+    webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
+      // capture `webView` to keep it alive until completion
+      _ = webView
 
       guard let braveFirstPartOfUA = (result as? String)?.components(separatedBy: "Gecko") else {
         XCTFail("Could not unwrap BraveWebView UA")
