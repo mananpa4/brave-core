@@ -143,7 +143,11 @@ source_set("ui") {
   allow_circular_includes_from = brave_ui_allow_circular_includes_from
   deps += brave_ui_allow_circular_includes_from
 
-  public_deps = [ ":ui_public_dependencies" ]
+  public_deps = [
+    ":ui_public_dependencies",
+    "//chrome/browser/ui/views/tabs:tab_container",
+    "//chrome/browser/ui/views/tabs:tab_group",
+  ]
 
   if (toolkit_views) {
     public_deps += [
