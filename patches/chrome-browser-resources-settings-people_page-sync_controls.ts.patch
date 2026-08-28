@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/resources/settings/people_page/sync_controls.ts b/chrome/browser/resources/settings/people_page/sync_controls.ts
-index 1e5afaf147008936350b929ba416d992423bee00..ead63e5d272c6bbde6d42db1a07c62291c4843aa 100644
+index cd299c7b2d4f42db8f59608c9e89485d68f40c69..35aa008a6f072b00195bf38d45ed11c267dbc8fb 100644
 --- a/chrome/browser/resources/settings/people_page/sync_controls.ts
 +++ b/chrome/browser/resources/settings/people_page/sync_controls.ts
-@@ -145,7 +145,7 @@ export class SettingsSyncControlsElement extends
+@@ -143,7 +143,7 @@ export class SettingsSyncControlsElement extends
  
      const router = Router.getInstance();
      const currentRoute = router.getCurrentRoute();
@@ -11,7 +11,7 @@ index 1e5afaf147008936350b929ba416d992423bee00..ead63e5d272c6bbde6d42db1a07c6229
        this.syncBrowserProxy_.didNavigateToSyncPage();
      }
      if (loadTimeData.getBoolean('replaceSyncPromosWithSignInPromos') &&
-@@ -377,6 +377,7 @@ export class SettingsSyncControlsElement extends
+@@ -375,6 +375,7 @@ export class SettingsSyncControlsElement extends
  
    protected disableTypeCheckBox_(dataTypeManaged: boolean|undefined|null):
        boolean {
@@ -19,7 +19,7 @@ index 1e5afaf147008936350b929ba416d992423bee00..ead63e5d272c6bbde6d42db1a07c6229
      if (!this.syncStatus) {
        return true;
      }
-@@ -386,7 +387,7 @@ export class SettingsSyncControlsElement extends
+@@ -384,7 +385,7 @@ export class SettingsSyncControlsElement extends
      }
  
      if (this.syncStatus.signedInState === SignedInState.SYNCING) {

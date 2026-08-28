@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/signin/signin_promo_util.cc b/chrome/browser/signin/signin_promo_util.cc
-index a7141697fee9cfb72f32fc1f1a9ad74babfe3c68..dd2afae419921f5cdade09eb0fac3de2e9f07350 100644
+index 67c28823e94c1020f7bc9880f6bb632430df6db3..caf686c22cb27cf8f044aa3db22c5867aff9eb5c 100644
 --- a/chrome/browser/signin/signin_promo_util.cc
 +++ b/chrome/browser/signin/signin_promo_util.cc
 @@ -646,6 +646,7 @@ bool CanShowPromoForSyncableDataType(SignInPromoType type, Profile& profile) {

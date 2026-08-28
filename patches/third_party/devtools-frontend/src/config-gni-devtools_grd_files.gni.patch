@@ -1,5 +1,5 @@
 diff --git a/config/gni/devtools_grd_files.gni b/config/gni/devtools_grd_files.gni
-index c8f7387d94e4b357b7d8b731c027eae9221d248e..c7eee1a7e6dedd45e8b4b3609a2c92ca48dfe604 100644
+index 6f89c723578cc500aeadb69244031c203f45b93d..b1ef8f7ce8c892e823210544f4b1177a573aece1 100644
 --- a/config/gni/devtools_grd_files.gni
 +++ b/config/gni/devtools_grd_files.gni
 @@ -2807,6 +2807,7 @@ grd_files_unbundled_sources = [

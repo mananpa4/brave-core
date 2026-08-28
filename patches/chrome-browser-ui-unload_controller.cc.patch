@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/unload_controller.cc b/chrome/browser/ui/unload_controller.cc
-index e5cd22968a6d8569e1853a1926f0c187adc56fba..9f4334f402757588bca20a4372d06f6cdba70cf3 100644
+index 7d2ebd30120607460c89fa3cc0d7808e09d0578b..d4087d04cec14ad8160ae8bf63990d6c19c7679f 100644
 --- a/chrome/browser/ui/unload_controller.cc
 +++ b/chrome/browser/ui/unload_controller.cc
 @@ -177,6 +177,9 @@ void UnloadController::OnWindowClosing() {

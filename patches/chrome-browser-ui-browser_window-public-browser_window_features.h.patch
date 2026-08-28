@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/browser_window/public/browser_window_features.h b/chrome/browser/ui/browser_window/public/browser_window_features.h
-index c9b7439741a43a4586c8652c37331731045aa8d6..1b36925d58eb41d14f26be4069a0abdcd72db15e 100644
+index 922d88ca30163a84c6d613aa216e521c0f1e630c..102bf85cfe08863fb3b8f7a3dbd40d275c5c5cd7 100644
 --- a/chrome/browser/ui/browser_window/public/browser_window_features.h
 +++ b/chrome/browser/ui/browser_window/public/browser_window_features.h
-@@ -286,29 +286,29 @@ class AppBrowserController;
+@@ -289,29 +289,29 @@ class AppBrowserController;
  // Do not add more public accessors. Instead use the UnownedUserData design
  // pattern, see ui/base/unowned_user_data/README.md.
  // TODO(crbug.com/481268779a): Remove existing public accessors.
@@ -41,7 +41,7 @@ index c9b7439741a43a4586c8652c37331731045aa8d6..1b36925d58eb41d14f26be4069a0abdc
  
    ui::AcceleratorProvider* accelerator_provider() {
      return accelerator_provider_;
-@@ -481,6 +481,7 @@ class BrowserWindowFeatures {
+@@ -393,6 +393,7 @@ class BrowserWindowFeatures {
    // of this class, we use lowercase_with_underscores even though the
    // implementation is not inlined.
    SidePanelUI* side_panel_ui();
@@ -49,7 +49,7 @@ index c9b7439741a43a4586c8652c37331731045aa8d6..1b36925d58eb41d14f26be4069a0abdc
  
    SigninViewController* signin_view_controller() {
      return signin_view_controller_.get();
-@@ -545,7 +546,12 @@ class BrowserWindowFeatures {
+@@ -416,7 +417,12 @@ class BrowserWindowFeatures {
    static ui::UserDataFactoryWithOwner<BrowserWindowInterface>&
    GetUserDataFactoryForTesting();
  
