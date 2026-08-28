@@ -1398,6 +1398,10 @@ provideStrings({
   braveWalletTokenContractAddress: 'Token Contract Address',
   braveWalletTokenDecimal: 'Token Decimal',
   braveWalletTokenMintAddress: 'Mint address',
+  braveWalletTokenAssetId: 'Asset ID',
+  braveWalletInvalidTokenAssetIdError: 'Invalid or empty token asset ID',
+  braveWalletUnsupportedNetworkForCustomAssetError:
+    "Custom assets aren't supported on this network",
   braveWalletTransactionHasFeeEstimatesError: 'Unable to fetch fee estimates',
 
   braveWalletEditNftModalTitle: 'Edit NFT',

@@ -598,16 +598,37 @@ export const SendScreen = React.memo(() => {
       }
 
       case BraveWallet.CoinType.DOT: {
-        await sendPolkadotTransaction({
-          network: networkFromParams,
-          fromAccount,
-          to: toAddress,
-          sendingMaxAmount,
-          value: new Amount(sendAmount)
-            .multiplyByDecimals(tokenFromParams.decimals)
-            .toHex(),
-        })
-        setSendAmount('')
+        setTransactionProcessFailedMessage(undefined)
+        try {
+          const { contractAddress } = tokenFromParams
+          let assetId: number | undefined
+          if (contractAddress !== '') {
+            assetId = Number(contractAddress)
+            if (!Number.isInteger(assetId)) {
+              throw new Error(`invalid Polkadot asset id: ${contractAddress}`)
+            }
+          }
+
+          await sendPolkadotTransaction({
+            network: networkFromParams,
+            fromAccount,
+            to: toAddress,
+            sendingMaxAmount,
+            value: new Amount(sendAmount)
+              .multiplyByDecimals(tokenFromParams.decimals)
+              .toHex(),
+            assetId,
+          }).unwrap()
+          setSendAmount('')
+        } catch (error) {
+          console.error('Polkadot send failed:', error)
+          setTransactionProcessFailedMessage(
+            getLocale('braveWalletProcessTransactionErrorMessage').replace(
+              '$1',
+              tokenFromParams.symbol,
+            ),
+          )
+        }
       }
     }
   }, [

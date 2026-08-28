@@ -10,7 +10,10 @@ import Alert from '@brave/leo/react/alert'
 import Button from '@brave/leo/react/button'
 
 // utils
-import { BraveWallet } from '../../../constants/types'
+import {
+  BraveWallet,
+  CustomNftSupportedCoinTypes,
+} from '../../../constants/types'
 import Amount from '../../../utils/amount'
 import { getLocale } from '$web-common/locale'
 import {
@@ -133,7 +136,9 @@ export const AddNftForm = (props: Props) => {
       : skipToken,
   )
 
-  const networkList = useGetCustomAssetSupportedNetworks()
+  const networkList = useGetCustomAssetSupportedNetworks(
+    CustomNftSupportedCoinTypes,
+  )
 
   const metadataLookupArg: GetBlockchainTokenIdArg | undefined =
     React.useMemo(() => {
