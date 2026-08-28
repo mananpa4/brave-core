@@ -80,7 +80,6 @@ class OnDeviceSpeechModelsComponentRegistrar {
              PrefService* local_state) {
     CHECK(pref_change_registrar_.IsEmpty() && !cus_);
     CHECK(local_state);
-    started_ = true;
     cus_ = cus;
     pref_change_registrar_.Init(local_state);
     pref_change_registrar_.Add(
@@ -91,7 +90,6 @@ class OnDeviceSpeechModelsComponentRegistrar {
   }
 
   void Shutdown() {
-    started_ = false;
     pref_change_registrar_.Reset();
     cus_ = nullptr;
     installer_.reset();
@@ -138,9 +136,10 @@ class OnDeviceSpeechModelsComponentRegistrar {
 
   void OnRegistered() {
     registration_pending_ = false;
-    // `Shutdown` ran while this was in flight. Falling through would read the
-    // prefs it dropped as the master switch being off and remove the model.
-    if (!started_) {
+    // `Shutdown` ran while this was in flight, so there is no update service
+    // left to finish against. Falling through would read the prefs it dropped
+    // as the master switch being off and remove the model.
+    if (!cus_) {
       RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
       return;
     }
@@ -201,7 +200,8 @@ class OnDeviceSpeechModelsComponentRegistrar {
     }
   }
 
-  bool started_ = false;
+  // Held from `Start` until `Shutdown`, which is also what tells an in-flight
+  // registration that it landed too late to be finished.
   raw_ptr<component_updater::ComponentUpdateService> cus_ = nullptr;
   PrefChangeRegistrar pref_change_registrar_;
   // True from `Register` until `OnRegistered`. The component is absent from
