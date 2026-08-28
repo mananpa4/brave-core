@@ -12,6 +12,8 @@ import { SettingsManageProfileElement } from '../people_page/manage_profile.js'
 // <if expr="enable_custom_profile_image">
 import 'chrome://resources/brave/custom_profile_image_row.js'
 
+import { getTrustedHTML } from 'chrome://resources/js/static_types.js'
+
 import { CustomProfileImageStrings } from '../brave_generated_resources_webui_strings.js'
 import { loadTimeData } from '../i18n_setup.js'
 // </if>
@@ -57,14 +59,15 @@ function createCustomProfileImageSection() {
   const section = document.createElement('div')
   section.className =
     'cr-row manage-profile-section custom-profile-image-section'
-  section.innerHTML = `
-    <h1 class="cr-title-text">${loadTimeData.getString(
-      CustomProfileImageStrings.CUSTOM_PROFILE_IMAGE_TITLE,
-    )}</h1>
+  section.innerHTML = getTrustedHTML`
+    <h1 class="cr-title-text"></h1>
     <div class="content">
       <br-custom-profile-image-row hide-title></br-custom-profile-image-row>
     </div>
   `
+  section.querySelector('h1')!.textContent = loadTimeData.getString(
+    CustomProfileImageStrings.CUSTOM_PROFILE_IMAGE_TITLE,
+  )
   return section
 }
 // </if>
