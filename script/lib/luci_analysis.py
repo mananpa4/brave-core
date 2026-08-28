@@ -219,6 +219,38 @@ def get_test_verdicts(test_id, days):
     return all_verdicts
 
 
+def get_test_variants(test_id):
+    """Get the builder variants a test has run on.
+
+    Args:
+        test_id: Full LUCI test ID string.
+
+    Returns:
+        List of dicts with "variantHash" and "variant" (the definition,
+        including the bot "os") from the API.
+    """
+    all_variants = []
+    page_token = None
+
+    while True:
+        body = {
+            "project": CHROMIUM_PROJECT,
+            "testId": test_id,
+            "pageSize": 1000,
+        }
+        if page_token:
+            body["pageToken"] = page_token
+
+        result = prpc_request(TEST_HISTORY_SERVICE, "QueryVariants", body)
+        all_variants.extend(result.get("variants", []))
+
+        page_token = result.get("nextPageToken")
+        if not page_token:
+            break
+
+    return all_variants
+
+
 def query_cluster_summaries(failure_filter, earliest, latest):
     """Query top failure clusters, ordered by failure count.
 
