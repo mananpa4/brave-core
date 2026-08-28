@@ -227,8 +227,8 @@ importers:
         specifier: 0.0.241
         version: 0.0.241
       '@types/diff':
-        specifier: 7.0.1
-        version: 7.0.1
+        specifier: 7.0.2
+        version: 7.0.2
       '@types/dom-navigation':
         specifier: 1.0.3
         version: 1.0.3
@@ -691,11 +691,11 @@ packages:
       styled-components: 6.4.3
 
   '@brave/leo-sf-symbols@https://codeload.github.com/brave/leo-sf-symbols/tar.gz/d6c826a443dd10bc02e2349812fe3f9727460e0d':
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/brave/leo-sf-symbols/tar.gz/d6c826a443dd10bc02e2349812fe3f9727460e0d}
+    resolution: {gitHosted: true, integrity: sha512-1OaBt4sIgP1VmFuIKAsWdUHQQxh4lK3J2zgBoTiIwxbtG+enMIAhkdkCcrrVGey2SXI0Y19BvV0UKRnfq8mCQg==, tarball: https://codeload.github.com/brave/leo-sf-symbols/tar.gz/d6c826a443dd10bc02e2349812fe3f9727460e0d}
     version: 1.0.103
 
   '@brave/leo@https://codeload.github.com/brave/leo/tar.gz/53850d6d6b12ea0e675dba71c8460f51b22bf90a':
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/brave/leo/tar.gz/53850d6d6b12ea0e675dba71c8460f51b22bf90a}
+    resolution: {gitHosted: true, integrity: sha512-nK93PUqi0kdzvcwEiho5mpdFraR9uOJYBWrcG0qJIwKsGxJszpVbIhLqHECA4O8BrqaX39WVrJXDu/ZwC6D+rw==, tarball: https://codeload.github.com/brave/leo/tar.gz/53850d6d6b12ea0e675dba71c8460f51b22bf90a}
     version: 0.0.1
     hasBin: true
     peerDependencies:
@@ -2478,8 +2478,8 @@ packages:
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
 
-  '@types/diff@7.0.1':
-    resolution: {integrity: sha512-R/BHQFripuhW6XPXy05hIvXJQdQ4540KnTvEFHSLjXfHYM41liOLKgIJEyYYiQe796xpaMHfe4Uj/p7Uvng2vA==}
+  '@types/diff@7.0.2':
+    resolution: {integrity: sha512-JSWRMozjFKsGlEjiiKajUjIJVKuKdE3oVy2DNtK+fUo8q82nhFZ2CPQwicAIkXrofahDXrWJ7mjelvZphMS98Q==}
 
   '@types/doctrine@0.0.9':
     resolution: {integrity: sha512-eOIHzCUSH7SMfonMG1LsC2f8vxBFtho6NGBznK41R84YzPuvSBzrhEps33IsQiOW9+VL6NQ9DbjQJznk/S4uRA==}
@@ -4399,6 +4399,7 @@ packages:
   eslint@9.39.2:
     resolution: {integrity: sha512-LEyamqS7W5HB3ujJyvi0HQK/dtVINZvd5mAAp9eT5S/ujByGjiZLCzPcHVzuXbpJDJF/cxwHlfceVUDZ2lnSTw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -10827,7 +10828,7 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
-  '@types/diff@7.0.1': {}
+  '@types/diff@7.0.2': {}
 
   '@types/doctrine@0.0.9': {}
 
