@@ -51,9 +51,9 @@ void BindProbabilityColumnTypes(const mojom::DBActionInfoPtr& mojom_db_action) {
   };
 }
 
-size_t BindProbabilityColumns(const mojom::DBActionInfoPtr& mojom_db_action,
-                              const TextClassificationProbabilityMap&
-                                  probabilities) {
+size_t BindProbabilityColumns(
+    const mojom::DBActionInfoPtr& mojom_db_action,
+    const TextClassificationProbabilityMap& probabilities) {
   CHECK(mojom_db_action);
   CHECK(!probabilities.empty());
 
@@ -135,9 +135,8 @@ std::string BuildInsertProbabilitiesSql(
   const std::string visit_id_subquery = base::ReplaceStringPlaceholders(
       "(SELECT MAX(id) FROM $1)", {kVisitsTableName}, nullptr);
   const std::vector<std::string> row_placeholders(
-      row_count,
-      base::ReplaceStringPlaceholders("($1, ?, ?)", {visit_id_subquery},
-                                      nullptr));
+      row_count, base::ReplaceStringPlaceholders("($1, ?, ?)",
+                                                 {visit_id_subquery}, nullptr));
 
   return base::ReplaceStringPlaceholders(
       R"(
@@ -219,7 +218,7 @@ void TextClassificationProbabilities::SaveAll(
     }
 
     InsertVisit(mojom_db_transaction,
-               newest_created_at - base::Milliseconds(index++));
+                newest_created_at - base::Milliseconds(index++));
     InsertProbabilities(mojom_db_transaction, probabilities);
   }
 
@@ -235,7 +234,8 @@ void TextClassificationProbabilities::PruneToMaximumEntries(
 
   // Keep the `maximum_entries` most recent visits and their probabilities,
   // and delete the rest.
-  Execute(mojom_db_transaction, R"(
+  Execute(
+      mojom_db_transaction, R"(
       DELETE FROM
         $1
       WHERE
@@ -248,7 +248,7 @@ void TextClassificationProbabilities::PruneToMaximumEntries(
             created_at DESC
           LIMIT $3
         ))",
-          {kTableName, kVisitsTableName, base::NumberToString(maximum_entries)});
+      {kTableName, kVisitsTableName, base::NumberToString(maximum_entries)});
 
   Execute(mojom_db_transaction, R"(
       DELETE FROM
@@ -306,7 +306,7 @@ void TextClassificationProbabilities::GetAll(
             v.id DESC)",
       {kTableName, kVisitsTableName}, nullptr);
   mojom_db_action->bind_column_types = {
-      mojom::DBBindColumnType::kInt64,  // v.id
+      mojom::DBBindColumnType::kInt64,   // v.id
       mojom::DBBindColumnType::kString,  // p.segment
       mojom::DBBindColumnType::kDouble   // p.page_score
   };
@@ -420,7 +420,7 @@ void TextClassificationProbabilities::Migrate(
               ON v.created_at = l.created_at)");
 
       DropTable(mojom_db_transaction,
-               "text_classification_probabilities_legacy");
+                "text_classification_probabilities_legacy");
       break;
     }
 

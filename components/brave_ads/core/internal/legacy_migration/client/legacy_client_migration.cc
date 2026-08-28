@@ -35,7 +35,7 @@ void SuccessfullyMigrated(ResultCallback callback) {
 }
 
 void PruneTextClassificationProbabilitiesCallback(ResultCallback callback,
-                                                   bool success) {
+                                                  bool success) {
   if (!success) {
     BLOG(0, "Failed to prune migrated text classification probabilities");
     return std::move(callback).Run(/*success=*/false);
@@ -91,7 +91,8 @@ void LoadClientStateCallback(ResultCallback callback,
       json::reader::ParseTextClassificationProbabilities(*json).value_or({});
 
   const auto barrier_callback = base::BarrierCallback<bool>(
-      /*num_callbacks=*/2, base::BindOnce(&MigrationCallback, std::move(callback)));
+      /*num_callbacks=*/2,
+      base::BindOnce(&MigrationCallback, std::move(callback)));
 
   database::table::PurchaseIntentSignalHistory
       purchase_intent_signal_history_database_table;
