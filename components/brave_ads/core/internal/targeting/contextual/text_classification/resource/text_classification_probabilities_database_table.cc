@@ -348,11 +348,84 @@ void TextClassificationProbabilities::Migrate(
   CHECK(mojom_db_transaction);
 
   switch (to_version) {
+    case 59: {
+      // Historical flat schema. Preserved here, rather than folded into
+      // `Create`, so that installs upgrading from a version below 59 arrive
+      // at version 60 with the same flat table shape as installs that were
+      // already sitting at 59, giving `case 60` one stable shape to convert.
+      Execute(mojom_db_transaction, R"(
+          CREATE TABLE text_classification_probabilities (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            segment TEXT NOT NULL,
+            page_score REAL NOT NULL,
+            created_at TIMESTAMP NOT NULL
+          ))");
+
+      CreateTableIndex(mojom_db_transaction, kTableName,
+                       /*columns=*/{"created_at"});
+      break;
+    }
+
+    case 60: {
+      // Converts the flat schema 59 table into the normalized
+      // visits/probabilities tables built by `Create`, preserving existing
+      // rows instead of discarding them.
+      Execute(mojom_db_transaction, R"(
+          ALTER TABLE text_classification_probabilities
+          RENAME TO text_classification_probabilities_legacy)");
+
+      Execute(mojom_db_transaction, R"(
+          CREATE TABLE text_classification_probability_visits (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at TIMESTAMP NOT NULL
+          ))");
+
+      CreateTableIndex(mojom_db_transaction, kVisitsTableName,
+                       /*columns=*/{"created_at"});
+
+      Execute(mojom_db_transaction, R"(
+          CREATE TABLE text_classification_probabilities (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            visit_id INTEGER NOT NULL REFERENCES
+                text_classification_probability_visits (id),
+            segment TEXT NOT NULL,
+            page_score REAL NOT NULL
+          ))");
+
+      CreateTableIndex(mojom_db_transaction, kTableName,
+                       /*columns=*/{"visit_id"});
+
+      Execute(mojom_db_transaction, R"(
+          INSERT INTO text_classification_probability_visits (
+            created_at
+          )
+          SELECT DISTINCT
+            created_at
+          FROM
+            text_classification_probabilities_legacy)");
+
+      Execute(mojom_db_transaction, R"(
+          INSERT INTO text_classification_probabilities (
+            visit_id,
+            segment,
+            page_score
+          )
+          SELECT
+            v.id,
+            l.segment,
+            l.page_score
+          FROM
+            text_classification_probabilities_legacy AS l
+            INNER JOIN text_classification_probability_visits AS v
+              ON v.created_at = l.created_at)");
+
+      DropTable(mojom_db_transaction,
+               "text_classification_probabilities_legacy");
+      break;
+    }
+
     default: {
-      // No migration needed. Versions at or below
-      // `kRazeDatabaseThresholdVersionNumber` are razed and recreated via
-      // `Create` instead of migrated incrementally, which covers the jump
-      // from the original flat schema 59 table to this normalized schema.
+      // No migration needed.
       break;
     }
   }
