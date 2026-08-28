@@ -5,7 +5,6 @@
 
 #include "brave/components/brave_ads/core/internal/legacy_migration/client/legacy_client_migration.h"
 
-#include <cstdint>
 #include <optional>
 #include <string>
 #include <utility>
@@ -22,6 +21,7 @@
 #include "brave/components/brave_ads/core/internal/legacy_migration/legacy_migration_util.h"
 #include "brave/components/brave_ads/core/internal/targeting/behavioral/purchase_intent/resource/purchase_intent_signal_history_database_table.h"
 #include "brave/components/brave_ads/core/internal/targeting/contextual/text_classification/resource/text_classification_probabilities_database_table.h"
+#include "brave/components/brave_ads/core/internal/targeting/contextual/text_classification/text_classification_feature.h"
 #include "brave/components/brave_ads/core/public/ads_client/ads_client.h"
 #include "brave/components/brave_ads/core/public/ads_constants.h"
 
@@ -32,6 +32,17 @@ namespace {
 void SuccessfullyMigrated(ResultCallback callback) {
   MaybeDeleteFile(kClientJsonFilename);
   std::move(callback).Run(/*success=*/true);
+}
+
+void PruneTextClassificationProbabilitiesCallback(ResultCallback callback,
+                                                   bool success) {
+  if (!success) {
+    BLOG(0, "Failed to prune migrated text classification probabilities");
+    return std::move(callback).Run(/*success=*/false);
+  }
+
+  BLOG(3, "Successfully migrated client state");
+  SuccessfullyMigrated(std::move(callback));
 }
 
 void MigrationCallback(ResultCallback callback,
@@ -45,8 +56,15 @@ void MigrationCallback(ResultCallback callback,
     }
   }
 
-  BLOG(3, "Successfully migrated client state");
-  SuccessfullyMigrated(std::move(callback));
+  // The legacy client state was not bounded by
+  // `kTextClassificationPageProbabilitiesHistorySize`, so prune migrated
+  // rows down to the same limit enforced when appending new history.
+  database::table::TextClassificationProbabilities
+      text_classification_probabilities_database_table;
+  text_classification_probabilities_database_table.PruneToMaximumEntries(
+      kTextClassificationPageProbabilitiesHistorySize.Get(),
+      base::BindOnce(&PruneTextClassificationProbabilitiesCallback,
+                     std::move(callback)));
 }
 
 void LoadClientStateCallback(ResultCallback callback,
@@ -73,26 +91,19 @@ void LoadClientStateCallback(ResultCallback callback,
       json::reader::ParseTextClassificationProbabilities(*json).value_or({});
 
   const auto barrier_callback = base::BarrierCallback<bool>(
-      /*num_callbacks=*/1 + text_classification_probabilities.size(),
-      base::BindOnce(&MigrationCallback, std::move(callback)));
+      /*num_callbacks=*/2, base::BindOnce(&MigrationCallback, std::move(callback)));
 
   database::table::PurchaseIntentSignalHistory
       purchase_intent_signal_history_database_table;
   purchase_intent_signal_history_database_table.Save(
       purchase_intent_signal_history, barrier_callback);
 
+  // The legacy format did not record a timestamp per visit, so `SaveAll`
+  // assigns each visit a synthetic one based on `base::Time::Now()`.
   database::table::TextClassificationProbabilities
       text_classification_probabilities_database_table;
-
-  // Assign each visit a strictly decreasing synthetic timestamp so the
-  // original newest-first ordering can be reconstructed from `created_at`,
-  // since the legacy format did not record a timestamp per visit.
-  const base::Time now = base::Time::Now();
-  int64_t index = 0;
-  for (const auto& probabilities : text_classification_probabilities) {
-    text_classification_probabilities_database_table.Save(
-        probabilities, now - base::Milliseconds(index++), barrier_callback);
-  }
+  text_classification_probabilities_database_table.SaveAll(
+      text_classification_probabilities, base::Time::Now(), barrier_callback);
 }
 
 }  // namespace

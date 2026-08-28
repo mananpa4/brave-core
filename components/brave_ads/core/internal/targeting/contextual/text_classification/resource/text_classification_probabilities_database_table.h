@@ -36,6 +36,12 @@ class TextClassificationProbabilities final : public TableInterface {
             base::Time created_at,
             ResultCallback callback);
 
+  // Saves multiple page visits' worth of probabilities as a single atomic
+  // transaction, rather than one transaction per visit.
+  void SaveAll(const TextClassificationProbabilityList& probabilities_history,
+               base::Time newest_created_at,
+               ResultCallback callback);
+
   // Deletes probabilities for the oldest visits beyond `maximum_entries`.
   void PruneToMaximumEntries(size_t maximum_entries, ResultCallback callback);
 
