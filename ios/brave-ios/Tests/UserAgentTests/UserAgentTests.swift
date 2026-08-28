@@ -12,6 +12,13 @@ import XCTest
 
 class UserAgentTests: XCTestCase {
 
+  let basicHTML: String = """
+    <!DOCTYPE html>
+    <html lang="en">
+      <body></body
+    </html>
+    """
+
   // MARK: Brave User Agent
 
   let desktopBraveUARegex: (String) -> Bool = { ua in
@@ -47,6 +54,7 @@ class UserAgentTests: XCTestCase {
 
     let webView = WKWebView(frame: .zero)
     webView.customUserAgent = UserAgent.mobile
+    webView.loadHTMLString(basicHTML, baseURL: nil)
 
     webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
       // capture `webView` to keep it alive until completion
@@ -100,6 +108,7 @@ class UserAgentTests: XCTestCase {
 
     let webView = WKWebView(frame: .zero)
     webView.customUserAgent = UserAgent.mobileMasked
+    webView.loadHTMLString(basicHTML, baseURL: nil)
 
     webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
       // capture `webView` to keep it alive until completion
@@ -124,7 +133,9 @@ class UserAgentTests: XCTestCase {
     let expectation = self.expectation(description: "First part of UA comparison")
 
     let webView = WKWebView(frame: .zero)
+    webView.loadHTMLString(basicHTML, baseURL: nil)
     let wkWebView = WKWebView()
+    wkWebView.loadHTMLString(basicHTML, baseURL: nil)
 
     webView.evaluateJavaScript("navigator.userAgent") { [webView] result, error in
       // capture `webView` to keep it alive until completion
