@@ -80,6 +80,11 @@ class OnDeviceSpeechModelsComponentInstallerPolicy
 // Brave Origin manages the switch and verifies the purchase asynchronously, so
 // its value can land after components are registered, which is why the switch
 // is followed rather than read once.
+//
+// `local_state` is required. `cus` may be null, which leaves the registrar
+// with nothing to register against and every request refused. Calling this
+// again without `ShutdownOnDeviceSpeechModelsComponentRegistration` first
+// CHECK-fails.
 void ManageOnDeviceSpeechModelsComponentRegistration(
     component_updater::ComponentUpdateService* cus,
     PrefService* local_state);

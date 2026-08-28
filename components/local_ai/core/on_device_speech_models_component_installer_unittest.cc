@@ -319,8 +319,7 @@ TEST_F(
 TEST_F(
     OnDeviceSpeechModelsComponentInstallerUnitTest,
     ManageOnDeviceSpeechModelsComponentRegistration_RemovesWhenLocalAIPrefChanges) {
-  CreateDirectory(install_dir_);
-  ASSERT_TRUE(PathExists(install_dir_));
+  ASSERT_TRUE(CreateDirectory(install_dir_));
   auto* state = OnDeviceSpeechModelsState::GetInstance();
   state->SetInstallDir(install_dir_);
   ASSERT_TRUE(state->IsModelInstalled());
@@ -368,7 +367,7 @@ TEST_F(
 TEST_F(
     OnDeviceSpeechModelsComponentInstallerUnitTest,
     ManageOnDeviceSpeechModelsComponentRegistration_RegistersWhenLocalAIPrefTurnsOn) {
-  CreateDirectory(install_dir_);
+  ASSERT_TRUE(CreateDirectory(install_dir_));
   local_state_->SetBoolean(prefs::kBraveLocalAIEnabled, false);
 
   EXPECT_CALL(*cus_, RegisterComponent(testing::_)).Times(0);
@@ -404,7 +403,7 @@ TEST_F(
 TEST_F(
     OnDeviceSpeechModelsComponentInstallerUnitTest,
     ManageOnDeviceSpeechModelsComponentRegistration_TogglingWhileRegistrationPending) {
-  CreateDirectory(install_dir_);
+  ASSERT_TRUE(CreateDirectory(install_dir_));
   int register_count = 0;
   base::RunLoop run_loop;
   // Nothing is registered for the whole toggle, because the registration
@@ -430,8 +429,8 @@ TEST_F(
 
   // Turning the switch off removes the files on the installer's own task
   // runner, which a second registration would have been queued ahead of. So
-  // seeing them go is what makes the count below proof that no second
-  // registration was started, rather than that none had landed yet.
+  // seeing them go is what makes the `register_count` expectation proof that
+  // no second registration was started, rather than that none had landed yet.
   local_state_->SetBoolean(prefs::kBraveLocalAIEnabled, false);
   ASSERT_TRUE(
       base::test::RunUntil([&]() { return !PathExists(install_dir_); }));
@@ -610,7 +609,7 @@ TEST_F(
 TEST_F(
     OnDeviceSpeechModelsComponentInstallerUnitTest,
     MaybeRegisterOnDeviceSpeechModelsComponent_UnregistersWhenSwitchedOffDuringRegistration) {
-  CreateDirectory(install_dir_);
+  ASSERT_TRUE(CreateDirectory(install_dir_));
   EXPECT_CALL(*cus_, RegisterComponent(testing::_))
       .Times(1)
       .WillOnce(testing::Return(true));
