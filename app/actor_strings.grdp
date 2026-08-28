@@ -124,6 +124,9 @@
   <message name="IDS_ACTOR_NOTIFICATION_BODY_WORKING" desc="Notification body text when the actor is working on a task." formatter_data="android_java">
     <ph name="TASK_TITLE">%s<ex>My Task</ex></ph>: Gemini is working on your task and will let you know if more action is needed
   </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_WORKING_WITH_STEP_INFO" desc="Notification body text when the actor is working on a task with step progress." formatter_data="android_java">
+    <ph name="TASK_TITLE">%1$s<ex>My Task</ex></ph>: <ph name="STEP_PROGRESS">%2$s<ex>Searching flights</ex></ph>
+  </message>
   <message name="IDS_ACTOR_NOTIFICATION_BODY_USER_INPUT" desc="Notification body text when the actor is waiting for user input." formatter_data="android_java">
     <ph name="TASK_TITLE">%s<ex>My Task</ex></ph>: Gemini needs your help to continue working on this task
   </message>
@@ -152,6 +155,18 @@
   </message>
   <message name="IDS_ACTOR_NOTIFICATION_BODY_TASK_STARTS_SOON" desc="Notification body text when the actor task will start soon." formatter_data="android_java" translateable="false">
     Your task will start soon.
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_LIVE_STATUS_REVIEW" desc="Status chip text displayed when an actor task requires user review or approval." formatter_data="android_java">
+    Review
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_LIVE_STATUS_DONE" desc="Status chip text displayed when an actor task completes successfully." formatter_data="android_java">
+    Done
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_LIVE_STATUS_PAUSED" desc="Status chip text displayed when an actor task is paused." formatter_data="android_java">
+    Paused
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_LIVE_STATUS_STOPPED" desc="Status chip text displayed when an actor task is stopped." formatter_data="android_java">
+    Stopped
   </message>
 
     <!-- Glic Peek View UI State Strings -->
