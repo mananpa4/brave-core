@@ -348,13 +348,11 @@ void TextClassificationProbabilities::Migrate(
   CHECK(mojom_db_transaction);
 
   switch (to_version) {
-    case 59: {
-      Create(mojom_db_transaction);
-      break;
-    }
-
     default: {
-      // No migration needed.
+      // No migration needed. Versions at or below
+      // `kRazeDatabaseThresholdVersionNumber` are razed and recreated via
+      // `Create` instead of migrated incrementally, which covers the jump
+      // from the original flat schema 59 table to this normalized schema.
       break;
     }
   }

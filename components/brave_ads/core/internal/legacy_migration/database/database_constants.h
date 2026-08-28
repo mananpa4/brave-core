@@ -8,8 +8,8 @@
 
 namespace brave_ads::database {
 
-inline constexpr int kVersionNumber = 59;
-inline constexpr int kCompatibleVersionNumber = 59;
+inline constexpr int kVersionNumber = 60;
+inline constexpr int kCompatibleVersionNumber = 60;
 
 // If the database version number is less than or equal to this value, the
 // database will be razed and recreated during migration rather than migrated
@@ -18,7 +18,13 @@ inline constexpr int kCompatibleVersionNumber = 59;
 // unreachable too. Versions at or below this threshold are over a year old,
 // so their per-table migration code has been removed; raise this value again
 // once the next batch of migration paths turns a year old.
-inline constexpr int kRazeDatabaseThresholdVersionNumber = 50;
+//
+// 59 is also included here even though it is not a year old: the schema 59
+// build of `text_classification_probabilities` shipped with a flat table
+// design that some installs already created, and there is no incremental
+// path from that flat table to the normalized visits/probabilities tables
+// introduced afterward, so those installs must be razed and recreated too.
+inline constexpr int kRazeDatabaseThresholdVersionNumber = 59;
 
 }  // namespace brave_ads::database
 
