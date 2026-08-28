@@ -25,11 +25,14 @@ class TestObserver : public OnDeviceSpeechModelsState::Observer {
   void OnSpeechModelDirChanged(const base::FilePath& model_dir) override {
     calls_.push_back(model_dir);
   }
+  void OnSpeechModelInstallError() override { ++error_count_; }
 
   const std::vector<base::FilePath>& calls() const { return calls_; }
+  int error_count() const { return error_count_; }
 
  private:
   std::vector<base::FilePath> calls_;
+  int error_count_ = 0;
 };
 
 }  // namespace
@@ -102,6 +105,16 @@ TEST_F(OnDeviceSpeechModelsStateUnitTest, ObservesEveryModelDirChange) {
                 {base::FilePath(), v1.AppendASCII(kModelDirName),
                  v2.AppendASCII(kModelDirName), base::FilePath()}),
             observer_.calls());
+}
+
+// Tests that a failed install reaches observers. It is the one thing the state
+// reports that is not a directory change.
+TEST_F(OnDeviceSpeechModelsStateUnitTest, NotifiesInstallError) {
+  state()->AddObserver(&observer_);
+
+  state()->NotifyInstallError();
+
+  EXPECT_EQ(1, observer_.error_count());
 }
 
 }  // namespace local_ai

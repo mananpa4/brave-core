@@ -11,8 +11,6 @@
 #include <vector>
 
 #include "base/files/file_path.h"
-#include "base/functional/callback.h"
-#include "base/functional/callback_helpers.h"
 #include "base/memory/raw_ptr.h"
 #include "base/values.h"
 #include "components/component_updater/component_installer.h"
@@ -91,17 +89,12 @@ void ManageOnDeviceSpeechModelsComponentRegistration(
 // `local_state` are destroyed.
 void ShutdownOnDeviceSpeechModelsComponentRegistration();
 
-// Registers the component, which publishes a copy already on disk and asks the
-// updater to download one that is not. Safe to call repeatedly.
-//
-// Registers nothing while the feature or the master switch is off. It also
-// needs `ManageOnDeviceSpeechModelsComponentRegistration` to have run, which
-// is what hands it the update service and the local state.
-//
-// `callback` is always run, asynchronously, for every outcome, including
-// `Error::INVALID_ARGUMENT` when nothing is registered.
-void MaybeRegisterOnDeviceSpeechModelsComponent(
-    component_updater::Callback callback = base::DoNothing());
+// Registers the component, publishing a copy already on disk and asking the
+// updater to download one that is not. Safe to call repeatedly, and registers
+// nothing while the feature or the master switch is off, or before
+// `ManageOnDeviceSpeechModelsComponentRegistration` has run. The outcome
+// arrives later, on `OnDeviceSpeechModelsState` observers.
+void MaybeRegisterOnDeviceSpeechModelsComponent();
 
 }  // namespace local_ai
 

@@ -25,14 +25,21 @@ inline constexpr std::string_view kModelDirName =
 // recognition model. The component installer populates it on `ComponentReady`.
 class OnDeviceSpeechModelsState {
  public:
-  // Notified when the model directory changes, which covers a model arriving,
-  // a model being removed, and a component update moving it to a new version.
+  // Follows the model: where it is, and when an install failed to deliver one.
   class Observer : public base::CheckedObserver {
    public:
-    // `model_dir` is empty when no model is installed. A consumer holding
-    // anything derived from it has to redo that work on every call, because an
-    // update deletes the version directory it came from.
+    // Notified when the model directory changes, which covers a model
+    // arriving, a model being removed, and a component update moving it to a
+    // new version. `model_dir` is empty when no model is installed. A consumer
+    // holding anything derived from it has to redo that work on every call,
+    // because an update deletes the version directory it came from.
     virtual void OnSpeechModelDirChanged(const base::FilePath& model_dir) = 0;
+
+    // Notified when an install did not happen, whether it was refused before
+    // it started or its download failed. A model already on disk is untouched
+    // by this, so a consumer that only cares about what it can use does not
+    // need to implement it.
+    virtual void OnSpeechModelInstallError() {}
   };
 
   static OnDeviceSpeechModelsState* GetInstance();
@@ -50,6 +57,10 @@ class OnDeviceSpeechModelsState {
   // Sets the component install directory, which `GetModelDir()` is derived
   // from. An empty path clears the state.
   void SetInstallDir(const base::FilePath& install_dir);
+
+  // Reports that an install did not happen. Leaves the install directory
+  // alone, because a model already downloaded stays usable.
+  void NotifyInstallError();
 
   const base::FilePath& GetInstallDir() const;
 

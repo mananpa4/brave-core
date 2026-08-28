@@ -43,6 +43,11 @@ void OnDeviceSpeechModelsState::SetInstallDir(
   NotifyModelDirChanged();
 }
 
+void OnDeviceSpeechModelsState::NotifyInstallError() {
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
+  observers_.Notify(&Observer::OnSpeechModelInstallError);
+}
+
 void OnDeviceSpeechModelsState::NotifyModelDirChanged() {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   observers_.Notify(&Observer::OnSpeechModelDirChanged, model_dir_);

@@ -9,18 +9,18 @@
 #include <iterator>
 #include <memory>
 #include <string>
-#include <utility>
 #include <vector>
 
 #include "base/feature_list.h"
 #include "base/files/file_path.h"
 #include "base/files/file_util.h"
 #include "base/functional/bind.h"
-#include "base/functional/callback_helpers.h"
+#include "base/location.h"
 #include "base/memory/raw_ptr.h"
 #include "base/memory/scoped_refptr.h"
 #include "base/no_destructor.h"
-#include "base/task/bind_post_task.h"
+#include "base/scoped_observation.h"
+#include "base/task/sequenced_task_runner.h"
 #include "base/values.h"
 #include "base/version.h"
 #include "brave/components/brave_component_updater/browser/brave_on_demand_updater.h"
@@ -31,6 +31,7 @@
 #include "components/component_updater/component_updater_service.h"
 #include "components/prefs/pref_change_registrar.h"
 #include "components/prefs/pref_service.h"
+#include "components/update_client/crx_update_item.h"
 #include "components/update_client/update_client.h"
 #include "components/update_client/update_client_errors.h"
 #include "crypto/sha2.h"
@@ -59,11 +60,18 @@ bool IsComponentAllowed(const PrefService* local_state) {
          (!local_state || local_state->GetBoolean(prefs::kBraveLocalAIEnabled));
 }
 
-// Owns the component registration for the whole session and watches the master
-// switch so it stays in sync with it. Registering and removing the model both
-// go through the one `ComponentInstaller` this holds, which is what orders a
-// removal against an install rather than racing it on an unrelated sequence.
-class OnDeviceSpeechModelsComponentRegistrar {
+// Owns the component registration for the whole session and follows the master
+// switch so it stays in sync with it. It is also the one place that decides
+// what counts as an install failing, weighing what registering answered
+// against what the update service reports, and publishes that to
+// `OnDeviceSpeechModelsState`. A success reaches the same observers from the
+// policy instead, as the install directory `ComponentReady` hands over.
+//
+// Registering and removing the model both go through the one
+// `ComponentInstaller` this holds, which is what orders a removal against an
+// install rather than racing it on an unrelated sequence.
+class OnDeviceSpeechModelsComponentRegistrar
+    : public component_updater::ServiceObserver {
  public:
   static OnDeviceSpeechModelsComponentRegistrar* GetInstance() {
     static base::NoDestructor<OnDeviceSpeechModelsComponentRegistrar> instance;
@@ -91,24 +99,20 @@ class OnDeviceSpeechModelsComponentRegistrar {
 
   void Shutdown() {
     pref_change_registrar_.Reset();
+    cus_observation_.Reset();
     cus_ = nullptr;
     installer_.reset();
     registration_pending_ = false;
-    RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
   }
 
   // Registers the component, which also requests the download. Joins a
   // registration already in flight instead of starting a second one.
-  void Register(component_updater::Callback callback) {
-    // Keep delivery consistently asynchronous across all branches below.
-    callback = base::BindPostTaskToCurrentDefault(std::move(callback));
-
+  void Register() {
     if (!cus_ || !IsComponentAllowed(pref_change_registrar_.prefs())) {
-      std::move(callback).Run(update_client::Error::INVALID_ARGUMENT);
+      ReportError();
       return;
     }
 
-    pending_callbacks_.push_back(std::move(callback));
     if (registration_pending_) {
       return;
     }
@@ -124,14 +128,14 @@ class OnDeviceSpeechModelsComponentRegistrar {
   friend base::NoDestructor<OnDeviceSpeechModelsComponentRegistrar>;
 
   OnDeviceSpeechModelsComponentRegistrar() = default;
-  ~OnDeviceSpeechModelsComponentRegistrar() = default;
+  ~OnDeviceSpeechModelsComponentRegistrar() override = default;
 
   void Sync() {
     if (!IsComponentAllowed(pref_change_registrar_.prefs())) {
       Unregister();
       return;
     }
-    Register(base::DoNothing());
+    Register();
   }
 
   void OnRegistered() {
@@ -140,7 +144,6 @@ class OnDeviceSpeechModelsComponentRegistrar {
     // left to finish against. Falling through would read the prefs it dropped
     // as the master switch being off and remove the model.
     if (!cus_) {
-      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
       return;
     }
     // The switch turned off while this was in flight, so the unregister it ran
@@ -149,7 +152,7 @@ class OnDeviceSpeechModelsComponentRegistrar {
     // finish the removal here.
     if (!IsComponentAllowed(pref_change_registrar_.prefs())) {
       Unregister();
-      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+      ReportError();
       return;
     }
     // Registering has already published whatever was on disk, so a model
@@ -158,15 +161,52 @@ class OnDeviceSpeechModelsComponentRegistrar {
     // BraveOnDemandUpdater.
     if (brave_component_updater::BraveOnDemandUpdater::GetInstance()
             ->is_component_update_disabled()) {
-      RunPendingCallbacks(update_client::Error::INVALID_ARGUMENT);
+      ReportError();
       return;
+    }
+    // Watched from the first download we ask for, because that is how its
+    // outcome arrives. Every path above returns without asking for one.
+    if (!cus_observation_.IsObserving()) {
+      cus_observation_.Observe(cus_);
     }
     brave_component_updater::BraveOnDemandUpdater::GetInstance()
         ->EnsureInstalled(
             kOnDeviceSpeechModelsComponentId,
             base::BindOnce(
-                &OnDeviceSpeechModelsComponentRegistrar::RunPendingCallbacks,
+                &OnDeviceSpeechModelsComponentRegistrar::OnEnsureInstalled,
                 base::Unretained(this)));
+  }
+
+  void OnEnsureInstalled(update_client::Error error) {
+    if (OnDeviceSpeechModelsState::GetInstance()->IsModelInstalled()) {
+      return;
+    }
+
+    if (error != update_client::Error::NONE &&
+        error != update_client::Error::UPDATE_IN_PROGRESS) {
+      ReportError();
+    }
+
+    // If NONE or UPDATE_IN_PROGRESS, we wait for OnEvent (kUpdated, kUpToDate,
+    // or kUpdateError) terminal state to check if model is installed to report
+    // error or not.
+  }
+
+  // component_updater::ServiceObserver:
+  void OnEvent(const update_client::CrxUpdateItem& item) override {
+    if (item.id != kOnDeviceSpeechModelsComponentId) {
+      return;
+    }
+
+    // Reports an error when the update reached a terminal state and the model
+    // is still not installed, whether it errored, landed without publishing,
+    // or the server had nothing to offer.
+    if (!OnDeviceSpeechModelsState::GetInstance()->IsModelInstalled() &&
+        (item.state == update_client::ComponentState::kUpdated ||
+         item.state == update_client::ComponentState::kUpToDate ||
+         item.state == update_client::ComponentState::kUpdateError)) {
+      ReportError();
+    }
   }
 
   void Unregister() {
@@ -184,12 +224,14 @@ class OnDeviceSpeechModelsComponentRegistrar {
     }
   }
 
-  void RunPendingCallbacks(update_client::Error error) {
-    std::vector<component_updater::Callback> callbacks;
-    callbacks.swap(pending_callbacks_);
-    for (auto& callback : callbacks) {
-      std::move(callback).Run(error);
-    }
+  // Posted rather than published inline, so that an observer never runs while
+  // whoever asked for the install is still inside the call, part way through
+  // setting that install up.
+  void ReportError() {
+    base::SequencedTaskRunner::GetCurrentDefault()->PostTask(
+        FROM_HERE, base::BindOnce([] {
+          OnDeviceSpeechModelsState::GetInstance()->NotifyInstallError();
+        }));
   }
 
   void EnsureInstaller() {
@@ -203,14 +245,14 @@ class OnDeviceSpeechModelsComponentRegistrar {
   // Held from `Start` until `Shutdown`, which is also what tells an in-flight
   // registration that it landed too late to be finished.
   raw_ptr<component_updater::ComponentUpdateService> cus_ = nullptr;
+  base::ScopedObservation<component_updater::ComponentUpdateService,
+                          component_updater::ServiceObserver>
+      cus_observation_{this};
   PrefChangeRegistrar pref_change_registrar_;
   // True from `Register` until `OnRegistered`. The component is absent from
   // the update service for that whole window, so a second `Register` would
   // register it twice and an `Unregister` would find nothing to unregister.
   bool registration_pending_ = false;
-  // Answered together, because everyone who asked while one registration was
-  // in flight is waiting on that same registration.
-  std::vector<component_updater::Callback> pending_callbacks_;
   // Reused: registration and uninstall share the installer's task runner, so a
   // per-registration instance would let an uninstall delete what the next
   // registration installed.
@@ -299,10 +341,8 @@ void ShutdownOnDeviceSpeechModelsComponentRegistration() {
   OnDeviceSpeechModelsComponentRegistrar::GetInstance()->Shutdown();
 }
 
-void MaybeRegisterOnDeviceSpeechModelsComponent(
-    component_updater::Callback callback) {
-  OnDeviceSpeechModelsComponentRegistrar::GetInstance()->Register(
-      std::move(callback));
+void MaybeRegisterOnDeviceSpeechModelsComponent() {
+  OnDeviceSpeechModelsComponentRegistrar::GetInstance()->Register();
 }
 
 }  // namespace local_ai
