@@ -148,6 +148,7 @@ source_set("ui") {
 
   public_deps = [
     ":ui_public_dependencies",
+    "//chrome/browser/ui/views:chrome_views_delegate",
     "//chrome/browser/ui/views/extensions:extensions_menu_main_page_view",
     "//chrome/browser/ui/views/tabs:tab_container",
     "//chrome/browser/ui/views/tabs:tab_group",
