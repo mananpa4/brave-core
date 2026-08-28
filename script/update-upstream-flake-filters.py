@@ -8,9 +8,11 @@ Update the auto-generated filter files for flaky upstream tests.
 
 For each upstream test suite that Brave runs, finds tests whose flake
 rate in Chromium's LUCI Analysis data exceeds the threshold over the
-lookback period and writes them to test/filters/generated/<suite>.filter.
-Those files are picked up automatically by `npm run test` (see
-build/commands/lib/testUtils.js).
+lookback period and writes them to
+test/filters/generated/<suite>-<platform>.filter. Flake rates are
+computed per platform from the matching upstream bots, so a test only
+flaky on e.g. Linux is only filtered there. Those files are picked up
+automatically by `npm run test` (see build/commands/lib/testUtils.js).
 
 Candidate tests are discovered through failure clusters
 (Clusters.QueryClusterSummaries), then each candidate's flake rate is
@@ -36,6 +38,7 @@ from lib.luci_analysis import (
     MIN_MEANINGFUL_VERDICTS,
     analyze_stats,
     get_flakiness_stats,
+    get_test_variants,
     query_cluster_failures,
     query_cluster_summaries,
 )
@@ -56,6 +59,16 @@ DEFAULT_SUITES = [
 
 GENERATED_FILTERS_DIR = os.path.join(BRAVE_CORE_ROOT, "test", "filters",
                                      "generated")
+
+# Platforms Brave runs upstream test suites on, mapped to the "os"
+# prefixes of the corresponding upstream bots. Bots for other platforms
+# (e.g. ChromeOS, Android) are ignored. The platform names must match
+# those used by getApplicableFilters in build/commands/lib/testUtils.js.
+PLATFORM_OS_PREFIXES = {
+    "linux": ("Ubuntu", "Linux"),
+    "macos": ("Mac", ),
+    "windows": ("Windows", ),
+}
 
 # For parameterized test families (wildcard clusters), only the variants
 # with the most recent failures are checked individually.
@@ -183,21 +196,66 @@ def collect_candidate_test_ids(suite, days):
     return sorted(test_ids)
 
 
-def analyze_candidates(test_ids, days):
-    """Compute flakiness stats for each candidate test ID."""
+def fetch_candidate_stats(test_ids, days):
+    """Fetch raw per-variant flakiness stats for each candidate test ID."""
 
-    def analyze_one(test_id):
-        return test_id, analyze_stats(get_flakiness_stats(test_id, days))
+    def fetch_one(test_id):
+        return test_id, get_flakiness_stats(test_id, days)
 
     with ThreadPoolExecutor(max_workers=STATS_WORKERS) as executor:
-        return dict(executor.map(analyze_one, test_ids))
+        return dict(executor.map(fetch_one, test_ids))
 
 
-def build_filter_content(suite, entries, days, min_flake_rate):
+def platform_for_os(os_name):
+    """Map an upstream bot "os" variant value to a Brave platform.
+
+    Returns None for platforms Brave doesn't run (e.g. ChromeOS).
+    """
+    for platform, prefixes in PLATFORM_OS_PREFIXES.items():
+        if os_name.startswith(prefixes):
+            return platform
+    return None
+
+
+def resolve_variant_platforms(stats_by_test_id):
+    """Map each variant hash seen in the stats to a Brave platform.
+
+    Variant hashes are shared between tests that run on the same bot
+    config, so one QueryVariants call typically resolves the hashes of
+    most tests in a suite; further calls are only made for tests whose
+    stats contain still-unknown hashes.
+    """
+    platform_by_hash = {}
+    for test_id, groups in stats_by_test_id.items():
+        if all(g.get("variantHash") in platform_by_hash for g in groups):
+            continue
+        for entry in get_test_variants(test_id):
+            os_name = entry.get("variant", {}).get("def", {}).get("os", "")
+            platform_by_hash[entry["variantHash"]] = platform_for_os(os_name)
+        # Don't re-query for hashes QueryVariants didn't return.
+        for group in groups:
+            platform_by_hash.setdefault(group.get("variantHash"), None)
+    return platform_by_hash
+
+
+def analyze_per_platform(groups, platform_by_hash):
+    """Compute per-platform flakiness analyses from raw stats groups."""
+    analyses = {}
+    for platform in PLATFORM_OS_PREFIXES:
+        platform_groups = [
+            g for g in groups
+            if platform_by_hash.get(g.get("variantHash")) == platform
+        ]
+        analyses[platform] = analyze_stats(platform_groups)
+    return analyses
+
+
+def build_filter_content(suite, platform, entries, days, min_flake_rate):
     """Build the content of a generated filter file.
 
     Args:
         suite: Test suite name.
+        platform: Brave platform name (e.g. "linux").
         entries: List of (gtest_name, analysis_dict) tuples.
         days: Lookback window in days.
         min_flake_rate: Flake rate threshold (fraction).
@@ -209,8 +267,10 @@ def build_filter_content(suite, entries, days, min_flake_rate):
         "## AUTO-GENERATED FILE -- DO NOT EDIT.",
         "##",
         f"## Upstream {suite} tests with a flake rate >="
-        f" {min_flake_rate:.1%} over the",
-        f"## past {days} days per Chromium LUCI Analysis. Regenerate with:",
+        f" {min_flake_rate:.1%} on",
+        f"## {platform} bots over the past {days} days per Chromium LUCI"
+        " Analysis.",
+        "## Regenerate with:",
         "##   python3 script/update-upstream-flake-filters.py",
     ]
     for gtest_name, analysis in sorted(entries):
@@ -224,29 +284,37 @@ def build_filter_content(suite, entries, days, min_flake_rate):
     return "\n".join(lines) + "\n"
 
 
-def update_suite_filter(suite, days, min_flake_rate):
-    """Regenerate the filter file for one suite."""
+def update_suite_filters(suite, days, min_flake_rate):
+    """Regenerate the per-platform filter files for one suite."""
     log(f"[{suite}] Discovering candidate flaky tests...")
     test_ids = collect_candidate_test_ids(suite, days)
     log(f"[{suite}] Checking flake rate of {len(test_ids)} candidates...")
-    analyses = analyze_candidates(test_ids, days)
+    stats_by_test_id = fetch_candidate_stats(test_ids, days)
+    platform_by_hash = resolve_variant_platforms(stats_by_test_id)
 
-    entries = []
-    for test_id, analysis in analyses.items():
-        if analysis["meaningful_verdicts"] < MIN_MEANINGFUL_VERDICTS:
-            continue
-        if analysis["flake_rate"] < min_flake_rate:
-            continue
+    entries_by_platform = {platform: [] for platform in PLATFORM_OS_PREFIXES}
+    for test_id, groups in stats_by_test_id.items():
         gtest_name = structured_id_to_gtest_name(test_id)
-        if gtest_name:
-            entries.append((gtest_name, analysis))
+        if not gtest_name:
+            continue
+        analyses = analyze_per_platform(groups, platform_by_hash)
+        for platform, analysis in analyses.items():
+            if analysis["meaningful_verdicts"] < MIN_MEANINGFUL_VERDICTS:
+                continue
+            if analysis["flake_rate"] < min_flake_rate:
+                continue
+            entries_by_platform[platform].append((gtest_name, analysis))
 
-    path = os.path.join(GENERATED_FILTERS_DIR, f"{suite}.filter")
     os.makedirs(GENERATED_FILTERS_DIR, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(build_filter_content(suite, entries, days, min_flake_rate))
-    log(f"[{suite}] Wrote {len(entries)} entries to"
-        f" {os.path.relpath(path, BRAVE_CORE_ROOT)}")
+    for platform, entries in entries_by_platform.items():
+        path = os.path.join(GENERATED_FILTERS_DIR,
+                            f"{suite}-{platform}.filter")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(
+                build_filter_content(suite, platform, entries, days,
+                                     min_flake_rate))
+        log(f"[{suite}] Wrote {len(entries)} entries to"
+            f" {os.path.relpath(path, BRAVE_CORE_ROOT)}")
 
 
 def main():
@@ -278,7 +346,7 @@ def main():
         sys.exit(1)
 
     for suite in args.suites:
-        update_suite_filter(suite, args.days, args.min_flake_rate / 100.0)
+        update_suite_filters(suite, args.days, args.min_flake_rate / 100.0)
 
 
 if __name__ == "__main__":
