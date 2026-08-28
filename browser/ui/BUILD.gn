@@ -117,6 +117,7 @@ source_set("ui") {
     "//chrome/browser/ui/tabs:tabs_public",
     "//chrome/browser/ui/toolbar",
     "//chrome/browser/ui/views/extensions:extensions_menu_main_page_view",
+    "//chrome/browser/ui/views/frame:contents_web_view",
     "//chrome/browser/ui/webui:chrome_web_ui_controller_factory",
     "//media",
   ]
@@ -150,6 +151,7 @@ source_set("ui") {
     ":ui_public_dependencies",
     "//chrome/browser/ui/views:chrome_views_delegate",
     "//chrome/browser/ui/views/extensions:extensions_menu_main_page_view",
+    "//chrome/browser/ui/views/frame:contents_web_view",
     "//chrome/browser/ui/views/tabs:tab_container",
     "//chrome/browser/ui/views/tabs:tab_group",
   ]
