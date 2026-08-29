@@ -1,0 +1,23 @@
+diff --git a/third_party/blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc b/third_party/blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc
+index f23178ea67bf9e6fcac724db51f30798e5928f8b..dc49db3851f77059c5802e092c901f3e93e0fee4 100644
+--- a/third_party/blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc
++++ b/third_party/blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc
+@@ -809,6 +809,18 @@ HTMLFencedFrameElement::FencedFrameDelegate::Create(
+     HTMLFencedFrameElement* outer_element) {
+   DCHECK(RuntimeEnabledFeatures::FencedFramesEnabled(
+       outer_element->GetExecutionContext()));
++  // The browser process may have the `blink::features::kFencedFrames` feature
++  // disabled (e.g. by embedders), in which case it treats the
++  // CreateFencedFrame message sent below as a bad message and kills this
++  // renderer. Keep the element inert instead.
++  if (!features::IsFencedFramesEnabled()) {
++    outer_element->GetDocument().AddConsoleMessage(
++        MakeGarbageCollected<ConsoleMessage>(
++            mojom::blink::ConsoleMessageSource::kJavaScript,
++            mojom::blink::ConsoleMessageLevel::kWarning,
++            "Can't create a fenced frame. Fenced frames are disabled."));
++    return nullptr;
++  }
+ 
+   // If the frame embedding a fenced frame is a detached frame, the execution
+   // context will be null. That makes it impossible to check the sandbox flags,
