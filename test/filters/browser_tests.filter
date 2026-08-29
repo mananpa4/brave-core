@@ -136,6 +136,8 @@
 -NotificationContentDetectionLoggingEnabledBrowserTest.ReportUnwarnedNotificationAsSpam*
 -NotificationContentDetectionLoggingEnabledBrowserTest.ReportWarnedNotificationAsSpam*
 -OnDeviceSpeechRecognitionImplGeminiNanoConversationBrowserTest.AvailableAndInstall
+-OnDeviceSpeechRecognitionImplSpeechRecognitionSmallExpertModelBrowserTest.AvailableAndInstall
+-OnDeviceSpeechRecognitionImplSpeechRecognitionSmallExpertModelMultiLanguageBrowserTest.AvailableAndInstallSupportedLanguage
 -OnDeviceSpeechRecognitionImplTinyGemma*BrowserTest.*
 -NotificationContentDetectionServiceFactoryBrowserTest.DisabledForGuestMode
 -NotificationContentDetectionServiceFactoryBrowserTest.DisabledForIncognitoMode
@@ -184,11 +186,10 @@
 -BoundSessionOAuthMultiloginStandardTest.*
 -BoundSessionOAuthMultiloginStandardWithPrototypeFallbackTest.StartsNewBoundSession
 
-# kSigninAllowed is false in Brave, so ComputeFirstRunDevicePolicyEffect always
-# returns kDisabled.
--ProfilePickerUtilsBrowserTest.ComputeFirstRunDevicePolicyEffect
--ProfilePickerUtilsPolicyBrowserTest.ComputeFirstRunDevicePolicyEffect/BrowserSignin1
-
+# kSigninAllowed is false in Brave, so ComputeFirstRunSkipReason always returns
+# kDisabled.
+-ProfilePickerUtilsBrowserTest.ComputeFirstRunSkipReasonProfileAlreadyExists
+-ProfilePickerUtilsPolicyBrowserTest.ComputeFirstRunSkipReason/BrowserSignin1
 
 # Read anything is disabled
 -All/ContextMenuBrowserTestMenuSimplification.OpenInReadingMode/*
@@ -321,6 +322,8 @@
 # display an additional confirmation infobar for P3A
 -All/InfoBarContainerSplitTabTest.InfobarsAreIndependentInSplitTabs/Prioritization*
 -All/KnownInterceptionDisclosurePlatformBrowserTest.*
+-All/OSCryptAsyncAvailabilityInfoBarBrowserTest.ShowsTheRelaunchPromptOnTheActiveTab/LegacyInfobar
+-All/OSCryptAsyncAvailabilityInfoBarBrowserTest.ShowsTheRelaunchPromptOnTheActiveTab/MigratedInfobar
 -BrowserInfoBarManagerBrowserTest.*
 -ConfirmInfobarCustomLayoutBrowserTest.ShowsDefaultLayout
 -HeadlessModeInfobarBrowserTest.InfoBarsCanBeDisabled/*
