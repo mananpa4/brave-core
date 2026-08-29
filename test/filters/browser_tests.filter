@@ -318,6 +318,13 @@
 -ManifestV3WebRequestApiTest.ResetURLLoaderFactoriesOnMayHaveProxiesTransitions
 -ManifestV3WebRequestApiTest.ResetURLLoaderFactoryDoesntBreakRegistration
 
+# This test expects ServiceWorker.AutoPreload.Dispatched to be true for
+# extensions that only have the declarativeNetRequest permission, but our
+# always-installed brave_extension component still declares (unused, vestigial)
+# webRequest/webRequestBlocking permissions, so WebRequestAPI::
+# HasWebRequestExtension() always returns true and AutoPreload never dispatches.
+-ManifestV3WebRequestServiceWorkerAutoPreloadTest.DeclarativeNetRequestNavigation/EnabledAllowDNR
+
 # These tests fail because they expect the infobar count to be 1, but we
 # display an additional confirmation infobar for P3A
 -All/InfoBarContainerSplitTabTest.InfobarsAreIndependentInSplitTabs/Prioritization*
@@ -470,6 +477,7 @@
 -All/SearchKeepAliveRequestTrackerBrowserTest.BasicPrefetchFunctionality/*
 -All/SearchKeepAliveRequestTrackerBrowserTest.BlockedByClient/*
 -SearchPreloadBrowserTest*.*
+-SearchPreloadUnifiedMetricsDisabledBrowserTest.*
 -ServiceWorker/ExtensionBackForwardCacheBrowserTest.ChromeRuntimeConnectUsageInIframeWithIframeNavigation/0
 -ServiceWorker/ExtensionBackForwardCacheBrowserTest.ChromeRuntimeConnectUsageInIframeWithoutIframeNavigation/0
 -ServiceWorker/ExtensionBackForwardCacheBrowserTest.ChromeTabsConnectWithMultipleReceivers/0
@@ -1691,6 +1699,7 @@
 -ControlledFrameDisabledPermissionUsbTest.WebUSB/*
 -ControlledFrameDisabledPermissionWebBluetoothTest.WebBluetooth/*
 -ControlledFrameNewWindowBrowserTest.*
+-ControlledFrameNewWindowHidBrowserTest.*
 -ControlledFramePermissionStatusLeakTest.*
 -ControlledFramePermissionRequestTest.*
 -ControlledFramePermissionRequestWebHidTest.*

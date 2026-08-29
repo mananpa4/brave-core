@@ -104,6 +104,15 @@
 # This test fails because we use different search engine keywords.
 -SearchEngineChoiceEligibilityTest.ChoiceScreenConditions_SkipFor3p_Waffle
 
+# This test assumes Google is the default search engine for the JP test fixture,
+# but Brave overrides the per-country default DSE (see
+# regional_capabilities_utils.cc's JP entry in the default-engine map and
+# template_url_prepopulate_data_resolver.cc's GetPrepopulatedFallbackSearch
+# override), so JP resolves to a Yahoo JP engine instead. That engine also
+# carries our own prepopulate_id, not upstream's yahoo_jp/yahoo_jp_next id, so
+# it can't classify as kLegacy/kNew and always records kUnknown.
+-SearchEngineSplitTemplateURLServiceSplitRegionTest.SearchEngineSplitProfileLoadMetrics_SplitRegion
+
 # These tests fail because upstream doesn't expect passwords to be syncable
 -SyncPrefsMigrationTest.GlobalToAccount_CustomPassphrase
 -SyncPrefsMigrationTest.GlobalToAccount_CustomState
