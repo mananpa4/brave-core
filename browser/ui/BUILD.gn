@@ -152,14 +152,14 @@ source_set("ui") {
     "//chrome/browser/ui/views:chrome_views_delegate",
     "//chrome/browser/ui/views/extensions:extensions_menu_main_page_view",
     "//chrome/browser/ui/views/frame:contents_web_view",
-    "//chrome/browser/ui/views/tabs:tab_container",
-    "//chrome/browser/ui/views/tabs:tab_group",
   ]
 
   if (toolkit_views) {
     public_deps += [
       "//chrome/browser/ui/views/extensions:extensions_menu_entry_view",
       "//chrome/browser/ui/views/extensions:extensions_menu_item_view",
+      "//chrome/browser/ui/views/tabs:tab_container",
+      "//chrome/browser/ui/views/tabs:tab_group",
       "//chrome/browser/ui/views/tabs/hovercard",
     ]
   }
