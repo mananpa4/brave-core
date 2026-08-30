@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- Brave Settings WebUI strings (included from brave_generated_resources.grd). -->
+<!-- Dowdes Settings WebUI strings (included from brave_generated_resources.grd). -->
 <grit-part>
 
   <!--Add new items to the appropriate sections below -->
 
   <!-- Strings not associated with a particular section-->
-  <message name="IDS_SETTINGS_RESTART_NOTICE" desc="Notifies the user that they need to relaunch Brave">
-    Your changes will take effect the next time you relaunch Brave.
+  <message name="IDS_SETTINGS_RESTART_NOTICE" desc="Notifies the user that they need to relaunch Dowdes">
+    Your changes will take effect the next time you relaunch Dowdes.
   </message>
-  <message name="IDS_SETTINGS_RELAUNCH_BUTTON_LABEL" desc="Notifies the user that they need to relaunch Brave">
+  <message name="IDS_SETTINGS_RELAUNCH_BUTTON_LABEL" desc="Notifies the user that they need to relaunch Dowdes">
     Relaunch Now
   </message>
   <message name="IDS_SETTINGS_SELECT_VALUE_YES" desc="Select value">
@@ -22,12 +22,12 @@
   </message>
 
   <!-- Settings / Get started -->
-  <message name="IDS_SETTINGS_BRAVE_GET_STARTED_TITLE" desc="The title for the Get Started section in settings">
+  <message name="IDS_SETTINGS_DOWDES_GET_STARTED_TITLE" desc="The title for the Get Started section in settings">
     Get started
   </message>
 
   <!-- Settings / Get started / Profile name and icon -->
-  <message name="IDS_SETTINGS_BRAVE_EDIT_PROFILE" desc="Title to edit the profile user name and picture">
+  <message name="IDS_SETTINGS_DOWDES_EDIT_PROFILE" desc="Title to edit the profile user name and picture">
     Profile name and icon
   </message>
 
@@ -46,27 +46,27 @@
   </message>
 
   <!-- Settings / Appearance -->
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_THEMES" desc="The label for brave theme change setting options">
-    Brave colors
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_THEMES" desc="The label for brave theme change setting options">
+    Dowdes colors
   </message>
-  <message name="IDS_BRAVE_THEME_TYPE_LIGHT" desc="Text for light theme type">
+  <message name="IDS_DOWDES_THEME_TYPE_LIGHT" desc="Text for light theme type">
     Light
   </message>
-  <message name="IDS_BRAVE_THEME_TYPE_DARK" desc="Text for dark theme type">
+  <message name="IDS_DOWDES_THEME_TYPE_DARK" desc="Text for dark theme type">
     Dark
   </message>
   <if expr="is_linux">
-    <message name="IDS_BRAVE_THEME_TYPE_SYSTEM" desc="Text for system theme type">
+    <message name="IDS_DOWDES_THEME_TYPE_SYSTEM" desc="Text for system theme type">
       Same as Linux
     </message>
   </if>
   <if expr="is_win">
-    <message name="IDS_BRAVE_THEME_TYPE_SYSTEM" desc="Text for system theme type">
+    <message name="IDS_DOWDES_THEME_TYPE_SYSTEM" desc="Text for system theme type">
       Same as Windows
     </message>
   </if>
   <if expr="is_macosx">
-    <message name="IDS_BRAVE_THEME_TYPE_SYSTEM" desc="Text for system theme type">
+    <message name="IDS_DOWDES_THEME_TYPE_SYSTEM" desc="Text for system theme type">
       Same as macOS
     </message>
     <message name="IDS_SHOW_TOOLBAR_IN_FULL_SCREEN" desc="Text for showing toolbar in fullscreen">
@@ -82,8 +82,8 @@
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_GET_MORE_THEMES" desc="The label for opening theme web store">
     Get more themes
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_DEFAULT_IMAGES_OPTION_LABEL" desc="The label for choosing default images over super referral">
-    Brave default images
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_DEFAULT_IMAGES_OPTION_LABEL" desc="The label for choosing default images over super referral">
+    Dowdes default images
   </message>
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TOOLBAR_SECTION" desc="The label for section containing settings related to toolbar">
     Toolbar
@@ -197,73 +197,73 @@
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_SHOW_VERTICAL_TABS" desc="The label for showing tabs vertically">
     Use vertical tabs
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_USE_TREE_TABS" desc="The label for using tree tabs" formatter_data="webui=BraveSettings">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_USE_TREE_TABS" desc="The label for using tree tabs" formatter_data="webui=DowdesSettings">
     Use tree tabs
   </message>
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_SHOW_TITLE_BAR" desc="The label for showing window title when vertical tab strip is enabled.">
     Show title bar
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_HIDE_COMPLETELY_WHEN_COLLPASED" desc="The label for hiding vertical tabs completely when collapsed" formatter_data="webui=BraveSettings">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_HIDE_COMPLETELY_WHEN_COLLPASED" desc="The label for hiding vertical tabs completely when collapsed" formatter_data="webui=DowdesSettings">
     Hide completely when minimized
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_ALWAYS_HIDE_TAB_CLOSE_BUTTON" desc="The label for always hiding tab close button" formatter_data="webui=BraveSettings">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_ALWAYS_HIDE_TAB_CLOSE_BUTTON" desc="The label for always hiding tab close button" formatter_data="webui=DowdesSettings">
     Always hide tab close button
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_MIDDLE_CLICK_CLOSE_TAB" desc="The label for allowing middle button click to close tabs" formatter_data="webui=BraveSettings">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_MIDDLE_CLICK_CLOSE_TAB" desc="The label for allowing middle button click to close tabs" formatter_data="webui=DowdesSettings">
     Allow middle button click to close tabs
   </message>
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_USE_FLOATING_VERTICAL_TABS" desc="The label for enabling floating mode for vertical tab strip">
     Auto expand on hover when minimized
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_HOVER_MODE" desc="The label for the settings select controlling what happens when a user hovers over a tab.">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_HOVER_MODE" desc="The label for the settings select controlling what happens when a user hovers over a tab.">
     Tab hover mode
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_VERTICAL_TAB_POSITION" desc="Title for radio group to set vertical tab position">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_VERTICAL_TAB_POSITION" desc="Title for radio group to set vertical tab position">
     Position
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_VERTICAL_TAB_EXPANDED_STATE_PER_WINDOW" desc="Title for checkbox to set expanded state per window">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_VERTICAL_TAB_EXPANDED_STATE_PER_WINDOW" desc="Title for checkbox to set expanded state per window">
     Auto expand vertical tabs independently per window
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_VERTICAL_TAB_SHOW_SCROLLBAR" desc="Title for checkbox to show scrollbar on vertical tabs">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_VERTICAL_TAB_SHOW_SCROLLBAR" desc="Title for checkbox to show scrollbar on vertical tabs">
     Show scrollbar
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_HORIZONTAL_SCROLL_BUTTONS" desc="Title for checkbox to show scroll buttons next to the horizontal tab strip when tabs overflow">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_HORIZONTAL_SCROLL_BUTTONS" desc="Title for checkbox to show scroll buttons next to the horizontal tab strip when tabs overflow">
     Show scroll buttons on horizontal tab strip
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_VERTICAL_TAB_ON_RIGHT" desc="The label for radio button to show vertical tab on right">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_VERTICAL_TAB_ON_RIGHT" desc="The label for radio button to show vertical tab on right">
     Show on the right
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_VERTICAL_TAB_ON_LEFT" desc="The label for radio button to show vertical tab on left">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_VERTICAL_TAB_ON_LEFT" desc="The label for radio button to show vertical tab on left">
     Show on the left
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_HOVER_MODE_CARD" desc="The label name of the tab hover mode where a card with the title and origin of the site is shown.">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_HOVER_MODE_CARD" desc="The label name of the tab hover mode where a card with the title and origin of the site is shown.">
     Card
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_HOVER_MODE_CARD_WITH_PREVIEW" desc="The label name of the tab hover mode where a card with the title, origin, and a preview of the site is shown.">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_HOVER_MODE_CARD_WITH_PREVIEW" desc="The label name of the tab hover mode where a card with the title, origin, and a preview of the site is shown.">
     Card with preview
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_HOVER_MODE_TOOLTIP" desc="The label name of the tab hover mode where a tooltip with the site title is shown.">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_HOVER_MODE_TOOLTIP" desc="The label name of the tab hover mode where a tooltip with the site title is shown.">
     Tooltip
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_MIN_WIDTH_MODE" desc="Label for horizontal tab minimum width setting">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_MIN_WIDTH_MODE" desc="Label for horizontal tab minimum width setting">
     Minimum tab width
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_MIN_WIDTH_MINIMUM" desc="Tab minimum width option: narrowest tabs">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_MIN_WIDTH_MINIMUM" desc="Tab minimum width option: narrowest tabs">
     Minimum (Default)
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_MIN_WIDTH_MEDIUM" desc="Tab minimum width option: medium width">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_MIN_WIDTH_MEDIUM" desc="Tab minimum width option: medium width">
     Medium
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_MIN_WIDTH_LARGE" desc="Tab minimum width option: half of full tab width">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_MIN_WIDTH_LARGE" desc="Tab minimum width option: half of full tab width">
     Large
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_TAB_MIN_WIDTH_FULL" desc="Tab minimum width option: full standard tab width">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_TAB_MIN_WIDTH_FULL" desc="Tab minimum width option: full standard tab width">
     Full width
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_SCROLLABLE_HORIZONTAL_TAB_STRIP" desc="Title for toggle that enables scrolling the horizontal tab strip when many tabs are open">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_SCROLLABLE_HORIZONTAL_TAB_STRIP" desc="Title for toggle that enables scrolling the horizontal tab strip when many tabs are open">
     Use scrollable tab strip
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_BRAVE_SHARED_PINNED_TAB" desc="The label name of a toggle button for Shared Pinned Tab feature">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_DOWDES_SHARED_PINNED_TAB" desc="The label name of a toggle button for Shared Pinned Tab feature">
     Show pinned tabs in all windows
   </message>
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_SHOW_BOOKMARKS_BUTTON" desc="The label for whether the bookmarks button should be shown or not">
@@ -275,7 +275,7 @@
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_LOCATION_BAR_IS_WIDE" desc="The label for whether the location bar should display wide or not">
     Use wide address bar
   </message>
-  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_USE_COMPACT_HORIZONTAL_TABS" desc="The label for the toggle to enable compact horizontal tabs mode" formatter_data="webui=BraveSettings">
+  <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_TABS_USE_COMPACT_HORIZONTAL_TABS" desc="The label for the toggle to enable compact horizontal tabs mode" formatter_data="webui=DowdesSettings">
     Use compact mode
   </message>
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_WEB_VIEW_ROUNDED_CORNERS" desc="The label for whether the main content areas should have rounded corners">
@@ -299,8 +299,8 @@
   <message name="IDS_SETTINGS_APPEARANCE_SETTINGS_USE_AUTOCOMPLETE_LEO" desc="The label for settings checkbox en/disabling autcomplete provider with Leo assistant">
     Leo AI Assistant
   </message>
-  <message name="IDS_SETTINGS_SHOW_BRAVE_NEWS_BUTTON_LABEL" desc="The label for the settings switch controlling whether the Brave News button is shown in the toolbar">
-    Show Brave News button
+  <message name="IDS_SETTINGS_SHOW_DOWDES_NEWS_BUTTON_LABEL" desc="The label for the settings switch controlling whether the Dowdes News button is shown in the toolbar">
+    Show Dowdes News button
   </message>
   <message name="IDS_SETTINGS_SHOW_LEO_BUTTON_LABEL" desc="The label for the settings switch controlling whether the Leo button is shown in the toolbar">
     Show Leo AI button
@@ -367,10 +367,10 @@
   </if>
 
   <!-- Settings / Autofill -->
-  <message name="IDS_SETTINGS_BRAVE_AUTOFILL_PRIVATE_WINDOWS_LABEL" desc="The label to enable autofill in private profiles">
+  <message name="IDS_SETTINGS_DOWDES_AUTOFILL_PRIVATE_WINDOWS_LABEL" desc="The label to enable autofill in private profiles">
     Allow auto-fill in private windows
   </message>
-  <message name="IDS_SETTINGS_BRAVE_AUTOFILL_PRIVATE_WINDOWS_DESC" desc="The description for the label to enable autofill in private profiles">
+  <message name="IDS_SETTINGS_DOWDES_AUTOFILL_PRIVATE_WINDOWS_DESC" desc="The description for the label to enable autofill in private profiles">
     Info from regular windows can be read/auto-filled in private windows
   </message>
 
@@ -378,8 +378,8 @@
   <message name="IDS_SETTINGS_NEW_TAB" desc="The text label for the New Tab settings page">
     New Tab Page
   </message>
-  <message name="IDS_SETTINGS_NEW_TAB_BRAVE_REWARDS" desc="The label for Brave Rewards show/hide feature toggle">
-    Brave Rewards
+  <message name="IDS_SETTINGS_NEW_TAB_DOWDES_REWARDS" desc="The label for Dowdes Rewards show/hide feature toggle">
+    Dowdes Rewards
   </message>
   <message name="IDS_SETTINGS_NEW_TAB_NEW_TAB_PAGE_SHOWS" desc="The label for New Tab Page shows customization">
     New tab page shows
@@ -410,7 +410,7 @@
         Click Pin and confirm in the following Windows notification
       </message>
       <message name="IDS_SETTINGS_SHORTCUT_PINNED" desc="The label for pinned state description">
-        Brave is already pinned
+        Dowdes is already pinned
       </message>
     </if>
     <if expr="is_macosx">
@@ -421,7 +421,7 @@
         Dock
       </message>
       <message name="IDS_SETTINGS_SHORTCUT_PINNED" desc="The label for docked state description">
-        Brave is already in Dock
+        Dowdes is already in Dock
       </message>
     </if>
   </if>
@@ -442,19 +442,19 @@
   <message name="IDS_SETTINGS_SITE_SETTINGS_SHIELDS_DOWN" desc="Label for shields status down site settings.">
     Shields Down
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_TITLE" desc="The title for Brave shields section in settings">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_TITLE" desc="The title for Dowdes shields section in settings">
     Shields
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_TITLE" desc="The title for Brave shields Defaults sub-section in settings">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_TITLE" desc="The title for Dowdes shields Defaults sub-section in settings">
     Block trackers and ads which follow you across the web
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_DESCRIPTION_1" desc="The description for Brave shields Defaults sub-section in settings">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_DESCRIPTION_1" desc="The description for Dowdes shields Defaults sub-section in settings">
     These are the default Shields settings. They apply to all websites unless you change something in the Shields panel on a particular site. Changing these won't affect your existing per-site settings.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_DESCRIPTION_2" desc="The description for Brave shields Defaults sub-section in settings.">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_DESCRIPTION_2" desc="The description for Dowdes shields Defaults sub-section in settings.">
     This will block most ads on websites.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_SHOW_STATS_BLOCKED_BADGE_LABEL" desc="Default Brave show stats blocked badge control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_SHOW_STATS_BLOCKED_BADGE_LABEL" desc="Default Dowdes show stats blocked badge control setting label">
     Show the number of blocked items on the Shields icon
   </message>
   <message name="IDS_SETTINGS_DE_AMP_LABEL" desc="The label to activate De-AMP feature">
@@ -469,13 +469,13 @@
   <message name="IDS_SETTINGS_DEBOUNCE_SUB_LABEL" desc="The sub-label describing debounce feature">
     Enable support for bypassing top-level redirect tracking URLs.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_REDUCE_LANGUAGE_CONTROL_LABEL" desc="Default Brave reduce language control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_REDUCE_LANGUAGE_CONTROL_LABEL" desc="Default Dowdes reduce language control setting label">
     Prevent sites from fingerprinting me based on my language preferences
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_REDUCE_LANGUAGE_SUBITEM" desc="Description that shows under main toggle setting for reduce language control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_REDUCE_LANGUAGE_SUBITEM" desc="Description that shows under main toggle setting for reduce language control setting label">
     Enabling this setting reduces how much web sites can learn about your language preferences
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_AD_CONTROL_LABEL" desc="Default Brave block cross-site trackers control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_AD_CONTROL_LABEL" desc="Default Dowdes block cross-site trackers control setting label">
     Trackers &amp; ads blocking
   </message>
   <message name="IDS_SETTINGS_BLOCK_ADS_TRACKERS_AGGRESSIVE" desc="Select value">
@@ -487,10 +487,10 @@
   <message name="IDS_SETTINGS_ALLOW_ADS_TRACKERS" desc="Select value">
     Disabled
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_NO_SCRIPT_CONTROL_LABEL" desc="Default Brave script blocking control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_NO_SCRIPT_CONTROL_LABEL" desc="Default Dowdes script blocking control setting label">
     Block scripts
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_FINGERPRINTING_CONTROL_LABEL" desc="Default Brave fingerprinting control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_FINGERPRINTING_CONTROL_LABEL" desc="Default Dowdes fingerprinting control setting label">
     Block fingerprinting
   </message>
   <message name="IDS_SETTINGS_STANDARD_FINGERPRINTING" desc="Select value">
@@ -502,7 +502,7 @@
   <message name="IDS_SETTINGS_STRICT_FINGERPRINTING" desc="Select value">
     Strict, may break sites
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_HTTPS_UPGRADE_CONTROL_LABEL" desc="Default Brave https upgrade control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_HTTPS_UPGRADE_CONTROL_LABEL" desc="Default Dowdes https upgrade control setting label">
     Upgrade connections to HTTPS
   </message>
   <message name="IDS_SETTINGS_STANDARD_HTTPS_UPGRADE" desc="Select value">
@@ -514,10 +514,10 @@
   <message name="IDS_SETTINGS_STRICT_HTTPS_UPGRADE" desc="Select value">
     Strict
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_COOKIE_CONTROL_LABEL" desc="Default Brave cookies control setting label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_COOKIE_CONTROL_LABEL" desc="Default Dowdes cookies control setting label">
     Block cookies
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_COOKIE_CONTROL_BLOCK_ALL_DEPRECATED_LABEL" desc="Block all cookies deprecation warning">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_COOKIE_CONTROL_BLOCK_ALL_DEPRECATED_LABEL" desc="Block all cookies deprecation warning">
     The "Block all Cookies" option has been deprecated. To learn how to force-enable this option, visit <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>our help page<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_BLOCK_3RD_PARTY_COOKIES" desc="Select value">
@@ -529,251 +529,251 @@
   <message name="IDS_SETTINGS_BLOCK_ALL_COOKIES" desc="Select value">
     Block all cookies
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_DEFAULT_VIEW_LABEL" desc="Default Brave view title label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_DEFAULT_VIEW_LABEL" desc="Default Dowdes view title label">
     Default view
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_SIMPLE_VIEW_LABEL" desc="Default Brave simple view title label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_SIMPLE_VIEW_LABEL" desc="Default Dowdes simple view title label">
     Simple view
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_DEFAULTS_ADVANCED_VIEW_LABEL" desc="Default Brave advanced view title label">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_DEFAULTS_ADVANCED_VIEW_LABEL" desc="Default Dowdes advanced view title label">
     Advanced view
   </message>
 
   <!-- Settings / Shields / ContentFilters -->
-  <message name="IDS_BRAVE_ADBLOCK_CONTENT_FILTERING_LABEL" desc="Label for Content Filtering">
+  <message name="IDS_DOWDES_ADBLOCK_CONTENT_FILTERING_LABEL" desc="Label for Content Filtering">
     Content filtering
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CONTENT_FILTER_LABEL_DESCRIPTION" desc="Long description describing what Content Filtering does">
+  <message name="IDS_DOWDES_ADBLOCK_CONTENT_FILTER_LABEL_DESCRIPTION" desc="Long description describing what Content Filtering does">
     Enable custom filters that block regional and language-specific trackers and Annoyances
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_LABEL" desc="Label for custom filters lists section">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_LABEL" desc="Label for custom filters lists section">
     Add custom filter lists
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_DESC" desc="Description for custom filters lists section">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_DESC" desc="Description for custom filters lists section">
     Add additional lists created and maintained by your trusted community.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_NOTE" desc="Note for custom filters lists section">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_CUSTOM_FILTERS_LISTS_NOTE" desc="Note for custom filters lists section">
     Only subscribe to lists from entities you trust. Your browser will periodically check for list updates from the URL you enter, revealing your IP address to their server.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_FILTERS_LABEL" desc="Label for custom filters section">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_FILTERS_LABEL" desc="Label for custom filters section">
     Create custom filters
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_FILTERS_DESC" desc="Description for custom filters section">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_FILTERS_DESC" desc="Description for custom filters section">
     Add custom filters you've created, one per line, in the field below. Be sure to use the <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Adblock filter syntax<ph name="END_LINK">&lt;/a&gt;</ph>.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_LISTS_BUTTON_LABEL" desc="Label for button that adds filter lists URL">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_LISTS_BUTTON_LABEL" desc="Label for button that adds filter lists URL">
     Add
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_FILTER_LISTS_TABLE_TITLE_HEADER" desc="List URL header label for custom filters table">
+  <message name="IDS_DOWDES_ADBLOCK_FILTER_LISTS_TABLE_TITLE_HEADER" desc="List URL header label for custom filters table">
     List title
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_FILTER_LISTS_TABLE_UPDATED_HEADER" desc="Last updated header label for custom filters table">
+  <message name="IDS_DOWDES_ADBLOCK_FILTER_LISTS_TABLE_UPDATED_HEADER" desc="Last updated header label for custom filters table">
     Last updated
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UPDATE_NOW_BUTTON_LABEL" desc="Button label to update the custom filter lists item">
+  <message name="IDS_DOWDES_ADBLOCK_UPDATE_NOW_BUTTON_LABEL" desc="Button label to update the custom filter lists item">
     Update now
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_VIEW_SOURCE_BUTTON_LABEL" desc="Button label to view custom filter lists item source">
+  <message name="IDS_DOWDES_ADBLOCK_VIEW_SOURCE_BUTTON_LABEL" desc="Button label to view custom filter lists item source">
     View source
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UNSUBSCRIBE_BUTTON_LABEL" desc="Button label to delete custom filter lists item from the table">
+  <message name="IDS_DOWDES_ADBLOCK_UNSUBSCRIBE_BUTTON_LABEL" desc="Button label to delete custom filter lists item from the table">
     Unsubscribe
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_SAVE_BUTTON_LABEL" desc="Button label to save custom filters text">
+  <message name="IDS_DOWDES_ADBLOCK_SAVE_BUTTON_LABEL" desc="Button label to save custom filters text">
     Save changes
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_TRACKING_FILTERS_LABEL" desc="Title for tracking filters">
+  <message name="IDS_DOWDES_ADBLOCK_TRACKING_FILTERS_LABEL" desc="Title for tracking filters">
     Filter lists
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_TRACKING_FILTERS_DESC" desc="Description for tracking filters section">
+  <message name="IDS_DOWDES_ADBLOCK_TRACKING_FILTERS_DESC" desc="Description for tracking filters section">
     Additional popular community lists. Note that enabling too many filters will degrade browsing speeds.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_SUBSCRIBE_URL_DOWNLOAD_FAILED" desc="A label shown when a subscription has failed to download for the first time">
+  <message name="IDS_DOWDES_ADBLOCK_SUBSCRIBE_URL_DOWNLOAD_FAILED" desc="A label shown when a subscription has failed to download for the first time">
    Download failed
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_SUBSCRIBE_URL_UPDATE_FAILED" desc="A label shown when a subscription has failed to download on a subsquent update">
+  <message name="IDS_DOWDES_ADBLOCK_SUBSCRIBE_URL_UPDATE_FAILED" desc="A label shown when a subscription has failed to download on a subsquent update">
    Update failed
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_LISTS_LABEL" desc="A label to indicate custom lists table">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_LISTS_LABEL" desc="A label to indicate custom lists table">
    Custom lists
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_SHOW_FULL_LISTS_BUTTON_LABEL" desc="A button label to expand full custom filter lists">
+  <message name="IDS_DOWDES_ADBLOCK_SHOW_FULL_LISTS_BUTTON_LABEL" desc="A button label to expand full custom filter lists">
     Show full list
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UPDATE_LISTS_BUTTON_LABEL" desc="A button label to update all active filter lists">
+  <message name="IDS_DOWDES_ADBLOCK_UPDATE_LISTS_BUTTON_LABEL" desc="A button label to update all active filter lists">
     Update lists
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UPDATE_LISTS_RETRY_BUTTON_LABEL" desc="A button label to retry the update of all active filter lists">
+  <message name="IDS_DOWDES_ADBLOCK_UPDATE_LISTS_RETRY_BUTTON_LABEL" desc="A button label to retry the update of all active filter lists">
     Update failed - Retry
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UPDATE_LISTS_UPDATED_BUTTON_LABEL" desc="A button label when list updates have finished">
+  <message name="IDS_DOWDES_ADBLOCK_UPDATE_LISTS_UPDATED_BUTTON_LABEL" desc="A button label when list updates have finished">
     Lists updated
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_UPDATE_LISTS_UPDATING_BUTTON_LABEL" desc="A button label when lists are updating">
+  <message name="IDS_DOWDES_ADBLOCK_UPDATE_LISTS_UPDATING_BUTTON_LABEL" desc="A button label when lists are updating">
     Lists updating
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_FILTER_LISTS_INPUT_PLACEHOLDER" desc="A placeholder label for the input form to ask the user to enter a URL">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_FILTER_LISTS_INPUT_PLACEHOLDER" desc="A placeholder label for the input form to ask the user to enter a URL">
     Enter filter list URL
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CONTENT_FILTERS" desc="A button label that navigates to Content Filters page">
+  <message name="IDS_DOWDES_ADBLOCK_CONTENT_FILTERS" desc="A button label that navigates to Content Filters page">
     Content Filters
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_FILTER_LISTS_INPUT_PLACEHOLDER" desc="A placeholder label for the input form to allow the user to filter from a list of content filters">
+  <message name="IDS_DOWDES_ADBLOCK_FILTER_LISTS_INPUT_PLACEHOLDER" desc="A placeholder label for the input form to allow the user to filter from a list of content filters">
     Filter lists
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_DEVELOPER_MODE_LABEL" desc="Label for custom scriptlets lists section">
+  <message name="IDS_DOWDES_ADBLOCK_DEVELOPER_MODE_LABEL" desc="Label for custom scriptlets lists section">
     Developer mode
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_DEVELOPER_MODE_DESC" desc="Label for custom scriptlets lists section">
+  <message name="IDS_DOWDES_ADBLOCK_DEVELOPER_MODE_DESC" desc="Label for custom scriptlets lists section">
     Allow adding custom filters and scriptlets
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLETS_LIST_LABEL" desc="Label for custom scriptlets lists section">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLETS_LIST_LABEL" desc="Label for custom scriptlets lists section">
     Custom scriptlets
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_CUSTOM_SCRIPTLET_BUTTON" desc="A label for the add custom scriptlet button">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_CUSTOM_SCRIPTLET_BUTTON" desc="A label for the add custom scriptlet button">
     Add new scriptlet
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_ADD_CUSTOM_SCRIPTLET_DIALOG_TITLE" desc="A title for the add custom scriptlet dialog">
+  <message name="IDS_DOWDES_ADBLOCK_ADD_CUSTOM_SCRIPTLET_DIALOG_TITLE" desc="A title for the add custom scriptlet dialog">
     Add new scriptlet
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_EDIT_CUSTOM_SCRIPTLET_DIALOG_TITLE" desc="A title for the edit custom scriptlet dialog">
+  <message name="IDS_DOWDES_ADBLOCK_EDIT_CUSTOM_SCRIPTLET_DIALOG_TITLE" desc="A title for the edit custom scriptlet dialog">
     Edit scriptlet
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_NAME_LABEL" desc="A label for the custom scriptlet name field">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_NAME_LABEL" desc="A label for the custom scriptlet name field">
     Name
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_CONTENT_LABEL" desc="A label for the custom scriptlet content field">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_CONTENT_LABEL" desc="A label for the custom scriptlet content field">
     Content
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_CANCEL_BUTTON" desc="A label for the custom scriptlet content cancel button">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_CANCEL_BUTTON" desc="A label for the custom scriptlet content cancel button">
     Cancel
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_SAVE_BUTTON" desc="A label for the custom scriptlet content save button">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_DIALOG_SAVE_BUTTON" desc="A label for the custom scriptlet content save button">
     Save
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_DELETE_CONFIRMATION" desc="A confirmation message for the custom scriptlet deletion">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_DELETE_CONFIRMATION" desc="A confirmation message for the custom scriptlet deletion">
     Are you sure you want to delete this scriptlet? If this scriptlet is used in any custom filter, it will no longer work.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_ALREADY_EXISTS_ERROR" desc="Error message">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_ALREADY_EXISTS_ERROR" desc="Error message">
     Scriptlet already exists.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_INVALID_NAME_ERROR" desc="Error message">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_INVALID_NAME_ERROR" desc="Error message">
     Invalid scriptlet name.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_NOT_FOUND_ERROR" desc="Error message">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_NOT_FOUND_ERROR" desc="Error message">
     Scriptlet is not found.
   </message>
-  <message name="IDS_BRAVE_ADBLOCK_CUSTOM_SCRIPTLET_WARNING" desc="A warning message in Scriptlet editor.">
+  <message name="IDS_DOWDES_ADBLOCK_CUSTOM_SCRIPTLET_WARNING" desc="A warning message in Scriptlet editor.">
     Don’t paste code here that you don’t understand or haven’t reviewed yourself. This could allow attackers to steal your identity or take control of your computer.
   </message>
 
-  <message name="IDS_SETTINGS_BRAVE_SHORTCUTS_TITLE" desc="The text label for the shortcuts settings page">
+  <message name="IDS_SETTINGS_DOWDES_SHORTCUTS_TITLE" desc="The text label for the shortcuts settings page">
     Shortcuts
   </message>
 
-  <!-- Settings / Brave Origin -->
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_TITLE" desc="The title for the Brave Origin section in settings">
-    Brave Origin
+  <!-- Settings / Dowdes Origin -->
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_TITLE" desc="The title for the Dowdes Origin section in settings">
+    Dowdes Origin
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_RESTART_NOTICE" desc="Notifies the user that a browser restart is needed for all Brave Origin changes to fully take effect">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_RESTART_NOTICE" desc="Notifies the user that a browser restart is needed for all Dowdes Origin changes to fully take effect">
     Some changes require a browser restart to fully take effect.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ADS_SECTION_TITLE" desc="The title for the 'ads' section of Brave Origin in settings">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ADS_SECTION_TITLE" desc="The title for the 'ads' section of Dowdes Origin in settings">
     Ads
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_REWARDS_TOGGLE_TITLE" desc="The title for toggling the 'Rewards' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_REWARDS_TOGGLE_TITLE" desc="The title for toggling the 'Rewards' feature on/off for Dowdes Origin">
     Rewards
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ANALYTICS_SECTION_TITLE" desc="The title for the 'analytics' section of Brave Origin in settings">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ANALYTICS_SECTION_TITLE" desc="The title for the 'analytics' section of Dowdes Origin in settings">
     Analytics
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_FEATURES_SECTION_TITLE" desc="The title for the 'features' section of Brave Origin in settings">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_FEATURES_SECTION_TITLE" desc="The title for the 'features' section of Dowdes Origin in settings">
     Features
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_LEO_AI_TOGGLE_TITLE" desc="The title for toggling the 'Leo AI' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_LEO_AI_TOGGLE_TITLE" desc="The title for toggling the 'Leo AI' feature on/off for Dowdes Origin">
     Leo AI
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_LOCAL_AI_TOGGLE_TITLE" desc="The title for toggling the 'On-Device AI' master switch (history embeddings and any future on-device AI features) on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_LOCAL_AI_TOGGLE_TITLE" desc="The title for toggling the 'On-Device AI' master switch (history embeddings and any future on-device AI features) on/off for Dowdes Origin">
     On-Device AI
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_NEWS_TOGGLE_TITLE" desc="The title for toggling the 'News' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_NEWS_TOGGLE_TITLE" desc="The title for toggling the 'News' feature on/off for Dowdes Origin">
     News
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_TALK_TOGGLE_TITLE" desc="The title for toggling the 'News' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_TALK_TOGGLE_TITLE" desc="The title for toggling the 'News' feature on/off for Dowdes Origin">
     Talk
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_WAYBACK_MACHINE_TOGGLE_TITLE" desc="The title for toggling the 'wayback machine' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_WAYBACK_MACHINE_TOGGLE_TITLE" desc="The title for toggling the 'wayback machine' feature on/off for Dowdes Origin">
     Wayback Machine
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_SPEED_READER_TOGGLE_TITLE" desc="The title for toggling the 'speedreader' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_SPEED_READER_TOGGLE_TITLE" desc="The title for toggling the 'speedreader' feature on/off for Dowdes Origin">
     Speedreader
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_PLAYLIST_TOGGLE_TITLE" desc="The title for toggling the 'playlist' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_PLAYLIST_TOGGLE_TITLE" desc="The title for toggling the 'playlist' feature on/off for Dowdes Origin">
     Playlist
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_EMAIL_ALIASES_TOGGLE_TITLE" desc="The title for toggling the 'email aliases' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_EMAIL_ALIASES_TOGGLE_TITLE" desc="The title for toggling the 'email aliases' feature on/off for Dowdes Origin">
     Email Aliases
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_WEB_DISCOVERY_PROJECT_TOGGLE_TITLE" desc="The title for toggling the 'web discovery project' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_WEB_DISCOVERY_PROJECT_TOGGLE_TITLE" desc="The title for toggling the 'web discovery project' feature on/off for Dowdes Origin">
     Web Discovery Project
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_P3A_TOGGLE_TITLE" desc="The title for toggling the 'privacy preserving analytics' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_P3A_TOGGLE_TITLE" desc="The title for toggling the 'privacy preserving analytics' feature on/off for Dowdes Origin">
     Privacy preserving analytics
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_STATS_REPORTING_TOGGLE_TITLE" desc="The title for toggling the 'statistics reporting' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_STATS_REPORTING_TOGGLE_TITLE" desc="The title for toggling the 'statistics reporting' feature on/off for Dowdes Origin">
     Statistics reporting
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_TOR_WINDOWS_TOGGLE_TITLE" desc="The title for toggling the 'tor windows' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_TOR_WINDOWS_TOGGLE_TITLE" desc="The title for toggling the 'tor windows' feature on/off for Dowdes Origin">
     Tor windows
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_VPN_TOGGLE_TITLE" desc="The title for toggling the 'vpn' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_VPN_TOGGLE_TITLE" desc="The title for toggling the 'vpn' feature on/off for Dowdes Origin">
     VPN
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_WALLET_TOGGLE_TITLE" desc="The title for toggling the 'wallet' feature on/off for Brave Origin">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_WALLET_TOGGLE_TITLE" desc="The title for toggling the 'wallet' feature on/off for Dowdes Origin">
     Wallet
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_CROSS_PROFILE_SUB_LABEL" desc="The sub-label shown under Brave Origin toggles that apply browser-wide rather than to the current profile">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_CROSS_PROFILE_SUB_LABEL" desc="The sub-label shown under Dowdes Origin toggles that apply browser-wide rather than to the current profile">
     Affects all browser profiles
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_RESET_TO_DEFAULTS_TITLE" desc="The title for resetting the toggles for Brave Origin back to their default values">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_RESET_TO_DEFAULTS_TITLE" desc="The title for resetting the toggles for Dowdes Origin back to their default values">
     Reset to defaults
   </message>
 
-  <!-- Settings / Brave Origin Onboarding -->
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_TITLE" desc="The section title for the Brave Origin onboarding in settings">
-    Brave Origin
+  <!-- Settings / Dowdes Origin Onboarding -->
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_TITLE" desc="The section title for the Dowdes Origin onboarding in settings">
+    Dowdes Origin
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_HEADING_TITLE" desc="The heading title for the Brave Origin onboarding section">
-    Customize your browser while still supporting Brave
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_HEADING_TITLE" desc="The heading title for the Dowdes Origin onboarding section">
+    Customize your browser while still supporting Dowdes
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_DESCRIPTION" desc="The first paragraph describing Brave Origin in the onboarding section">
-    Brave Origin is a paid version of the browser for users who don't need all the features that support Brave as a business, but still want the privacy that only Brave offers. Origin users will continue to benefit from our industry-leading privacy, adblock, and speed (via Shields), as well as regular software updates, Chromium patches, and security and privacy improvements.
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_DESCRIPTION" desc="The first paragraph describing Dowdes Origin in the onboarding section">
+    Dowdes Origin is a paid version of the browser for users who don't need all the features that support Dowdes as a business, but still want the privacy that only Dowdes offers. Origin users will continue to benefit from our industry-leading privacy, adblock, and speed (via Shields), as well as regular software updates, Chromium patches, and security and privacy improvements.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_BUY_NOW" desc="The label for the Buy now button in Brave Origin onboarding">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_BUY_NOW" desc="The label for the Buy now button in Dowdes Origin onboarding">
     Buy now
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_RESTORE_PURCHASE" desc="The label for the button to restore a previous Brave Origin purchase">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_RESTORE_PURCHASE" desc="The label for the button to restore a previous Dowdes Origin purchase">
     Restore purchase
   </message>
-  <message name="IDS_SETTINGS_BRAVE_ORIGIN_ONBOARDING_LEARN_MORE" desc="The label for the Learn more link in Brave Origin onboarding">
+  <message name="IDS_SETTINGS_DOWDES_ORIGIN_ONBOARDING_LEARN_MORE" desc="The label for the Learn more link in Dowdes Origin onboarding">
     Learn more
   </message>
 
-  <!-- Settings / Brave Rewards -->
-  <message name="IDS_SETTINGS_BRAVE_REWARDS_TITLE" desc="The text label for the Rewards settings page">
-    Brave Rewards
+  <!-- Settings / Dowdes Rewards -->
+  <message name="IDS_SETTINGS_DOWDES_REWARDS_TITLE" desc="The text label for the Rewards settings page">
+    Dowdes Rewards
   </message>
-  <message name="IDS_SETTINGS_BRAVE_REWARDS_DISABLED_LABEL" desc="The text label for the Rewards disabled state">
-    Brave Rewards is disabled
+  <message name="IDS_SETTINGS_DOWDES_REWARDS_DISABLED_LABEL" desc="The text label for the Rewards disabled state">
+    Dowdes Rewards is disabled
   </message>
-  <message name="IDS_SETTINGS_BRAVE_REWARDS_DISABLED_SUB_LABEL" desc="The text sublabel for the Rewards disabled state">
+  <message name="IDS_SETTINGS_DOWDES_REWARDS_DISABLED_SUB_LABEL" desc="The text sublabel for the Rewards disabled state">
     Open Rewards panel to enable and get started
   </message>
-  <message name="IDS_SETTINGS_BRAVE_REWARDS_PAGE_LABEL" desc="The text label for the link to the Rewards settings page">
-    Open full Brave Rewards settings
+  <message name="IDS_SETTINGS_DOWDES_REWARDS_PAGE_LABEL" desc="The text label for the link to the Rewards settings page">
+    Open full Dowdes Rewards settings
   </message>
-  <message name="IDS_SETTINGS_BRAVE_REWARDS_SHOW_BRAVE_REWARDS_BUTTON_LABEL" desc="The label for settings switch controlling the visibility of Brave Rewards button">
-    Show Brave Rewards button
+  <message name="IDS_SETTINGS_DOWDES_REWARDS_SHOW_DOWDES_REWARDS_BUTTON_LABEL" desc="The label for settings switch controlling the visibility of Dowdes Rewards button">
+    Show Dowdes Rewards button
   </message>
 
   <!-- Settings / Adblock-Only mode -->
@@ -784,13 +784,13 @@
     Use Adblock-Only mode
   </message>
   <message name="IDS_SETTINGS_AD_BLOCK_ONLY_MODE_DESC" desc="The description for settings option to enable shields Adblock-Only mode">
-    Adblock-Only mode retains core ad blocking rules of Brave Shields. Warning: removes all privacy protections. Please note that for individual websites broken by Brave's privacy protections, you can set Shields to DOWN. This is an experimental mode. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+    Adblock-Only mode retains core ad blocking rules of Dowdes Shields. Warning: removes all privacy protections. Please note that for individual websites broken by Dowdes's privacy protections, you can set Shields to DOWN. This is an experimental mode. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_AD_BLOCK_ONLY_MODE_ALERT_TITLE" desc="Title for the alert shown when Adblock-Only mode is enabled">
     Shields options are currently disabled.
   </message>
   <message name="IDS_SETTINGS_AD_BLOCK_ONLY_MODE_ALERT_DESC" desc="Description for the alert shown when Adblock-Only mode is enabled">
-    Adblock-Only mode retains core ad blocking rules of Brave Shields and turns off privacy protections. If you would like to enable standard Shields, please disable this mode.
+    Adblock-Only mode retains core ad blocking rules of Dowdes Shields and turns off privacy protections. If you would like to enable standard Shields, please disable this mode.
   </message>
   <message name="IDS_SETTINGS_AD_BLOCK_ONLY_MODE_ALERT_TURN_OFF_BUTTON" desc="Alert button text to turn off Adblock-Only mode">
     Turn off Adblock-Only mode
@@ -800,26 +800,26 @@
   <message name="IDS_SETTINGS_SOCIAL_BLOCKING_DEFAULTS_TITLE" desc="The title the settings section which has options for blocking third-party embeds, commonly from social media sites">
     Social media blocking
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_FACEBOOK_EMBEDDED_POSTS_LABEL" desc="Label for a switch control which allows Facebook embedded posts">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_FACEBOOK_EMBEDDED_POSTS_LABEL" desc="Label for a switch control which allows Facebook embedded posts">
     Allow Facebook logins and embedded posts
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_TWITTER_EMBEDDED_TWEETS_LABEL" desc="Label for a switch control which allows Twitter embedded tweets">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_TWITTER_EMBEDDED_TWEETS_LABEL" desc="Label for a switch control which allows Twitter embedded tweets">
     Allow X (previously Twitter) embedded tweets
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SHIELDS_LINKEDIN_EMBEDDED_POSTS_LABEL" desc="Label for a switch control which allows LinkedIn embedded posts">
+  <message name="IDS_SETTINGS_DOWDES_SHIELDS_LINKEDIN_EMBEDDED_POSTS_LABEL" desc="Label for a switch control which allows LinkedIn embedded posts">
     Allow LinkedIn embedded posts
   </message>
 
 
   <!-- Settings / Privacy and security -->
   <message name="IDS_SETTINGS_COOKIE_CONTROLLED_BY_SHIELDS_HEADER_TEXT" desc="Text for the header explaining some cookies controlled by Shields settings.">
-    Some cookie settings are controlled by Brave Shields. You can see them &lt;a href="/content/braveShields"&gt;here&lt;/a&gt;.
+    Some cookie settings are controlled by Dowdes Shields. You can see them &lt;a href="/content/braveShields"&gt;here&lt;/a&gt;.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_BLOCK_COOKIES_LINK_ROW_LABEL" desc="This text is the label of a page. Here, it serves as a button that opens the new page.">
+  <message name="IDS_SETTINGS_DOWDES_BLOCK_COOKIES_LINK_ROW_LABEL" desc="This text is the label of a page. Here, it serves as a button that opens the new page.">
     Block cookies
   </message>
   <message name="IDS_SETTINGS_COOKIE_CONTROLLED_BY_SHIELDS_TOOLTIP_TEXT" desc="Text for the tooltip explaining cookies generated by Shields settings.">
-    This setting is controlled by Brave Shields.
+    This setting is controlled by Dowdes Shields.
   </message>
   <message name="IDS_SETTINGS_COOKIE_CONTROLLED_BY_GOOGLE_SIGN_IN_TOOLTIP_TEXT" desc="Text for the tooltip explaining cookies generated by Google Sign-in settings.">
     This setting is controlled by Google Sign-in.
@@ -852,7 +852,7 @@
     Local history retention
   </message>
   <message name="IDS_SETTINGS_HISTORY_RETENTION_SUB_LABEL" desc="Description for the setting that controls how long browsing history is retained">
-    How long Brave stores your browsing history locally
+    How long Dowdes stores your browsing history locally
   </message>
   <message name="IDS_SETTINGS_HISTORY_RETENTION_ONE_DAY" desc="Dropdown option that keeps browsing history for one day">
     1 day
@@ -879,11 +879,11 @@
     Forever
   </message>
   <!-- Diagnostic reports -->
-  <message name="IDS_BRAVE_DIAGNOSTIC_REPORTS_PREF" desc="The label of the checkbox to enable/disable sending diagnostic reports (crashes, hangs).">
+  <message name="IDS_DOWDES_DIAGNOSTIC_REPORTS_PREF" desc="The label of the checkbox to enable/disable sending diagnostic reports (crashes, hangs).">
     Automatically send diagnostic reports
   </message>
-  <message name="IDS_BRAVE_DIAGNOSTIC_REPORTS_PREF_DESC" desc="The description of the checkbox to enable/disable sending diagnostic reports (crashes, hangs).">
-    Help improve Brave's product stability by automatically sending diagnostic reports when the Brave Browser crashes or freezes
+  <message name="IDS_DOWDES_DIAGNOSTIC_REPORTS_PREF_DESC" desc="The description of the checkbox to enable/disable sending diagnostic reports (crashes, hangs).">
+    Help improve Dowdes's product stability by automatically sending diagnostic reports when the Dowdes Browser crashes or freezes
   </message>
   <!-- Request OTR -->
   <if expr="enable_request_otr">
@@ -908,9 +908,9 @@
       Show Privacy settings tuning notification on compatible sites
     </message>
     <message name="IDS_SETTINGS_PSST_SUB_LABEL" desc="Privacy settings tuning sub-label">
-      Allows Brave to automatically suggest (and adjust) site-specific privacy settings.
+      Allows Dowdes to automatically suggest (and adjust) site-specific privacy settings.
     </message>
-    <message name="IDS_SETTINGS_BRAVE_ORIGIN_PSST_TOGGLE_TITLE" desc="The title for toggling the 'psst' feature on/off for Brave Origin">
+    <message name="IDS_SETTINGS_DOWDES_ORIGIN_PSST_TOGGLE_TITLE" desc="The title for toggling the 'psst' feature on/off for Dowdes Origin">
       Privacy Settings Tuning Tool
     </message>
   </if>
@@ -919,35 +919,35 @@
       Block Microsoft Recall
     </message>
     <message name="IDS_SETTINGS_WINDOWS_RECALL_DISABLED_SUBLABEL" desc="Windows Recall setting sub-label">
-      Block the Recall feature on Microsoft Windows computers from automatically taking screenshots of any open Brave tabs.
+      Block the Recall feature on Microsoft Windows computers from automatically taking screenshots of any open Dowdes tabs.
     </message>
   </if>
   <!-- Data collection -->
-  <message name="IDS_BRAVE_DATA_COLLECTION_SETTINGS_SECTION" desc="Open Data collection settings section">
+  <message name="IDS_DOWDES_DATA_COLLECTION_SETTINGS_SECTION" desc="Open Data collection settings section">
     Data collection
   </message>
-  <message name="IDS_BRAVE_SETTINGS_SPONSORED_ADS_ENABLED_TITLE" desc="Title of the settings toggle that enables Sponsored Ads">
+  <message name="IDS_DOWDES_SETTINGS_SPONSORED_ADS_ENABLED_TITLE" desc="Title of the settings toggle that enables Sponsored Ads">
     Enable Sponsored Ads
   </message>
-  <message name="IDS_BRAVE_SETTINGS_SPONSORED_ADS_ENABLED_DESC" desc="Description under the settings toggle that enables Sponsored Ads">
-    Help support Brave's mission to build an independent, user-first Web with Sponsored Ads. We measure ad performance privately, without identifying you.
+  <message name="IDS_DOWDES_SETTINGS_SPONSORED_ADS_ENABLED_DESC" desc="Description under the settings toggle that enables Sponsored Ads">
+    Help support Dowdes's mission to build an independent, user-first Web with Sponsored Ads. We measure ad performance privately, without identifying you.
   </message>
 
   <!-- Settings / Privacy and security / Clear Browsing Data dialog -->
-  <message name="IDS_SETTINGS_BRAVE_ON_EXIT" desc="Clear Browsing Data dialog On exit tab label">
+  <message name="IDS_SETTINGS_DOWDES_ON_EXIT" desc="Clear Browsing Data dialog On exit tab label">
     Delete data on exit
   </message>
-  <message name="IDS_SETTINGS_CLEAR_BRAVE_ADS_DATA" desc="The label for the link to clear 'Brave Ads' data">
-    Clear Brave Ads data...
+  <message name="IDS_SETTINGS_CLEAR_DOWDES_ADS_DATA" desc="The label for the link to clear 'Dowdes Ads' data">
+    Clear Dowdes Ads data...
   </message>
-  <message name="IDS_SETTINGS_CLEAR_BRAVE_ADS_DATA_TOAST_LABEL" desc="The label for the toast shown after Brave Ads data is cleared">
-    Brave Ads data cleared
+  <message name="IDS_SETTINGS_CLEAR_DOWDES_ADS_DATA_TOAST_LABEL" desc="The label for the toast shown after Dowdes Ads data is cleared">
+    Dowdes Ads data cleared
   </message>
-  <message name="IDS_SETTINGS_CLEAR_BRAVE_ADS_DATA_ERROR_TOAST_LABEL" desc="The label for the toast shown when clearing Brave Ads data fails">
-    Couldn't clear Brave Ads data. Try again.
+  <message name="IDS_SETTINGS_CLEAR_DOWDES_ADS_DATA_ERROR_TOAST_LABEL" desc="The label for the toast shown when clearing Dowdes Ads data fails">
+    Couldn't clear Dowdes Ads data. Try again.
   </message>
   <message name="IDS_SETTINGS_RESET_REWARDS_DATA" desc="The label for opening rewards manage wallet dialog">
-    Reset Brave Rewards data...
+    Reset Dowdes Rewards data...
   </message>
 
   <!-- Settings / Privacy and security / Cookies and other site data -->
@@ -1029,13 +1029,13 @@
 
   <!-- Settings / Privacy and security / Security -->
   <!-- Safe browsing -->
-  <message name="IDS_SETTINGS_BRAVE_SAFEBROWSING_STANDARD_BULLET_TWO" desc="Second bullet point under the safe browsing standard protection mode">
-    Checks URLs with a list of unsafe sites stored in Brave.
+  <message name="IDS_SETTINGS_DOWDES_SAFEBROWSING_STANDARD_BULLET_TWO" desc="Second bullet point under the safe browsing standard protection mode">
+    Checks URLs with a list of unsafe sites stored in Dowdes.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SAFEBROWSING_NONE_DESC" desc="Description for safe browsing no protection mode">
+  <message name="IDS_SETTINGS_DOWDES_SAFEBROWSING_NONE_DESC" desc="Description for safe browsing no protection mode">
     Does not protect you against dangerous websites, downloads, and extensions.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SAFEBROWSING_STANDARD_DESC" desc="Description for safe browsing standard protection mode">
+  <message name="IDS_SETTINGS_DOWDES_SAFEBROWSING_STANDARD_DESC" desc="Description for safe browsing standard protection mode">
     Protects against sites, downloads, and extensions that are known to be dangerous.
   </message>
 
@@ -1101,218 +1101,218 @@
   </message>
 
   <!-- AI chat setting -->
-  <message name="IDS_SETTINGS_SITE_SETTINGS_BRAVE_OPEN_AI_CHAT" desc="Label for opening Leo AI chat site settings.">
+  <message name="IDS_SETTINGS_SITE_SETTINGS_DOWDES_OPEN_AI_CHAT" desc="Label for opening Leo AI chat site settings.">
     Leo AI chat
   </message>
-  <message name="IDS_SETTINGS_SITE_SETTINGS_BRAVE_OPEN_AI_CHAT_ASK" desc="Label for the enabled option of opening Leo AI chat site settings.">
+  <message name="IDS_SETTINGS_SITE_SETTINGS_DOWDES_OPEN_AI_CHAT_ASK" desc="Label for the enabled option of opening Leo AI chat site settings.">
     Sites can ask to open Leo AI chat
   </message>
-  <message name="IDS_SETTINGS_SITE_SETTINGS_BRAVE_OPEN_AI_CHAT_BLOCK" desc="Label for the disabled option of opening Leo AI chat site settings.">
+  <message name="IDS_SETTINGS_SITE_SETTINGS_DOWDES_OPEN_AI_CHAT_BLOCK" desc="Label for the disabled option of opening Leo AI chat site settings.">
     Don't allow site to open Leo AI chat
   </message>
 
   <!-- Settings / Sync -->
-  <message name="IDS_SETTINGS_BRAVE_SYNC_TITLE" desc="The title for Brave Sync in settings">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_TITLE" desc="The title for Dowdes Sync in settings">
     Sync
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_SETUP_ACTION_LABEL" desc="Brave Sync setup action label">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_SETUP_ACTION_LABEL" desc="Dowdes Sync setup action label">
     Start using sync
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_SETUP_TITLE" desc="Title for the Brave Sync settings setup section">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_SETUP_TITLE" desc="Title for the Dowdes Sync settings setup section">
     Sync Setup
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_SETUP_SUBTITLE" desc="Subtitle for the Brave Sync settings setup section">
-    To start, you will need Brave installed on all the devices you plan to sync. Then, securely link them together with a sync code.
+  <message name="IDS_SETTINGS_DOWDES_SYNC_SETUP_SUBTITLE" desc="Subtitle for the Dowdes Sync settings setup section">
+    To start, you will need Dowdes installed on all the devices you plan to sync. Then, securely link them together with a sync code.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_MANAGE_ACTION_LABEL" desc="Brave Sync manage action label">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_MANAGE_ACTION_LABEL" desc="Dowdes Sync manage action label">
     Manage your synced devices
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_COULD_NOT_SYNC_ACTION_LABEL" desc="Could not sync devices action label. It is displayed in the case when Brave Sync could not decrypt code words and start work">
-    Could not sync Brave on your devices
+  <message name="IDS_SETTINGS_DOWDES_SYNC_COULD_NOT_SYNC_ACTION_LABEL" desc="Could not sync devices action label. It is displayed in the case when Dowdes Sync could not decrypt code words and start work">
+    Could not sync Dowdes on your devices
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_MANAGER_TITLE" desc="Brave Sync manager title">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_MANAGER_TITLE" desc="Dowdes Sync manager title">
     Sync Manager
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_SETTINGS_TITLE" desc="Brave Sync settings title">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_SETTINGS_TITLE" desc="Dowdes Sync settings title">
     Sync Settings
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_SETTINGS_SUBTITLE" desc="Brave Sync settings subtitle">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_SETTINGS_SUBTITLE" desc="Dowdes Sync settings subtitle">
     Manage what information you would like to sync between devices. These settings only affect this device.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_TITLE" desc="Brave Sync device list title">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_TITLE" desc="Dowdes Sync device list title">
     Device List
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_SUBTITLE" desc="Brave Sync device list subtitle">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_SUBTITLE" desc="Dowdes Sync device list subtitle">
     The device list below includes all devices in your sync chain. Each device can be managed from any other device.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_NAME_COLUMN" desc="Brave Sync device list table column title for device name">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_NAME_COLUMN" desc="Dowdes Sync device list table column title for device name">
     Device Name
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_NAME_THIS_DEVICE" desc="Brave Sync device list label for device which is the device the user is currently using">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_NAME_THIS_DEVICE" desc="Dowdes Sync device list label for device which is the device the user is currently using">
     <ph name="DEVICE_NAME">$1<ex>my-computer-1</ex></ph> (This Device)
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_LAST_ACTIVE_COLUMN" desc="Brave Sync device list table column title for last active date">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_LAST_ACTIVE_COLUMN" desc="Dowdes Sync device list table column title for last active date">
     Last Active
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_DEVICE_LIST_REMOVE_COLUMN" desc="Brave Sync device list table column title for remove other device buttons">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_DEVICE_LIST_REMOVE_COLUMN" desc="Dowdes Sync device list table column title for remove other device buttons">
     Remove
   </message>
-  <message name="IDS_BRAVE_SYNC_SETUP_TITLE" desc="The Brave Sync title.">
+  <message name="IDS_DOWDES_SYNC_SETUP_TITLE" desc="The Dowdes Sync title.">
     Sync Setup
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_WORD_COUNT" desc="Text for Brave Sync word count message.">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_WORD_COUNT" desc="Text for Dowdes Sync word count message.">
     Word count: <ph name="WORD_COUNT">$1<ex>24</ex></ph>
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_COPIED_TEXT" desc="The success state telling the user that a secret code was copied to the clipboard">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_COPIED_TEXT" desc="The success state telling the user that a secret code was copied to the clipboard">
     Copied!
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_QR_IMAGE_ALT" desc="The description of the QR image, for accessibility and screen readers.">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_QR_IMAGE_ALT" desc="The description of the QR image, for accessibility and screen readers.">
     A QR code to be scanned with a mobile device in order to transmit your sync code
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SYNC_QR_ERROR" desc="The message to be displayed when there is an error generating a QR code of the sync password">
+  <message name="IDS_SETTINGS_DOWDES_SYNC_QR_ERROR" desc="The message to be displayed when there is an error generating a QR code of the sync password">
     There was an error displaying the QR code, please refresh and try again.
   </message>
-  <message name="IDS_BRAVE_SYNC_SETUP_DESCRIPTION" desc="The Sync phrase explaining what happens when you start a new sync chain. Appears when sync is disabled.">
-    To start, you will need Brave installed on all the devices you plan to sync. To chain them together, start a sync chain that you will use to securely link all of your devices together.
+  <message name="IDS_DOWDES_SYNC_SETUP_DESCRIPTION" desc="The Sync phrase explaining what happens when you start a new sync chain. Appears when sync is disabled.">
+    To start, you will need Dowdes installed on all the devices you plan to sync. To chain them together, start a sync chain that you will use to securely link all of your devices together.
   </message>
-  <message name="IDS_BRAVE_SYNC_START_NEW_CHAIN_BUTTON" desc="The Sync button that triggers a modal to start a new sync chian">
+  <message name="IDS_DOWDES_SYNC_START_NEW_CHAIN_BUTTON" desc="The Sync button that triggers a modal to start a new sync chian">
     Start a new Sync Chain
   </message>
-  <message name="IDS_BRAVE_SYNC_ENTER_CODE_BUTTON" desc="The Sync button that triggers a modal asking for the sync chain code passphrase">
+  <message name="IDS_DOWDES_SYNC_ENTER_CODE_BUTTON" desc="The Sync button that triggers a modal asking for the sync chain code passphrase">
     I have a Sync Code
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_BUTTON" desc="The Sync button `view sync code` for viewing the passphrase and qr code needed to add a new device. triggers a modal with sync code">
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_BUTTON" desc="The Sync button `view sync code` for viewing the passphrase and qr code needed to add a new device. triggers a modal with sync code">
     View Sync Code
   </message>
-  <message name="IDS_BRAVE_SYNC_CHOOSE_DEVICE_MOBILE_TITLE" desc="The Sync Phone/tablet word below the phone/tablet image. Appears in the `choose device type` modal">
+  <message name="IDS_DOWDES_SYNC_CHOOSE_DEVICE_MOBILE_TITLE" desc="The Sync Phone/tablet word below the phone/tablet image. Appears in the `choose device type` modal">
     Phone/Tablet
   </message>
-  <message name="IDS_BRAVE_SYNC_CHOOSE_DEVICE_COMPUTER_TITLE" desc="The Sync Computer word below the computer image. Appears in the `choose device type` modal">
+  <message name="IDS_DOWDES_SYNC_CHOOSE_DEVICE_COMPUTER_TITLE" desc="The Sync Computer word below the computer image. Appears in the `choose device type` modal">
     Computer
   </message>
-  <message name="IDS_BRAVE_SYNC_SCAN_CODE_TITLE" desc="The Sync title for the `scan sync code` modal">
+  <message name="IDS_DOWDES_SYNC_SCAN_CODE_TITLE" desc="The Sync title for the `scan sync code` modal">
     Sync Chain QR Code
   </message>
-  <message name="IDS_BRAVE_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_1" desc="The Sync instructions for the `scan sync code` modal partial phrase (1)">
-    On your mobile device, navigate to Brave Sync in the Settings panel and click the button
+  <message name="IDS_DOWDES_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_1" desc="The Sync instructions for the `scan sync code` modal partial phrase (1)">
+    On your mobile device, navigate to Dowdes Sync in the Settings panel and click the button
   </message>
-  <message name="IDS_BRAVE_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_2" desc="The Sync instructions for the `scan sync code` modal partial phrase (2)">
+  <message name="IDS_DOWDES_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_2" desc="The Sync instructions for the `scan sync code` modal partial phrase (2)">
     “Scan Sync Code”.
   </message>
-  <message name="IDS_BRAVE_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_3" desc="The Sync instructions for the `scan sync code` modal partial phrase (3)">
+  <message name="IDS_DOWDES_SYNC_SCAN_CODE_DESCRIPTION_PARTIAL_3" desc="The Sync instructions for the `scan sync code` modal partial phrase (3)">
     Use your camera to scan the QR Code below.
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_TITLE" desc="The Sync title for the `view sync code` modal">
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_TITLE" desc="The Sync title for the `view sync code` modal">
     Sync Chain Code
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_1" desc="The Sync instructions for the `view sync code` modal partial phrase (1)">
-    On your target computer, navigate to Brave Sync in settings and click the button
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_1" desc="The Sync instructions for the `view sync code` modal partial phrase (1)">
+    On your target computer, navigate to Dowdes Sync in settings and click the button
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_2" desc="The Sync instructions for the `view sync code` modal partial phrase (2)">
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_2" desc="The Sync instructions for the `view sync code` modal partial phrase (2)">
     “I have a Sync Code”.
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_3" desc="The Sync instructions for the `view sync code` modal partial phrase (3)">
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_DESCRIPTION_PARTIAL_3" desc="The Sync instructions for the `view sync code` modal partial phrase (3)">
     Enter the sync chain code words shown below.
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_WARNING" desc="The warning for the user to keep their sync code private and secure.">
+  <message name="IDS_DOWDES_SYNC_CODE_WARNING" desc="The warning for the user to keep their sync code private and secure.">
     Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.
   </message>
-  <message name="IDS_BRAVE_SYNC_VIEW_CODE_QR_CODE_BUTTON" desc="The Sync description suggesting where to go with the current sync code">
+  <message name="IDS_DOWDES_SYNC_VIEW_CODE_QR_CODE_BUTTON" desc="The Sync description suggesting where to go with the current sync code">
     View QR Code
   </message>
-  <message name="IDS_BRAVE_SYNC_ENTER_CODE_TITLE" desc="The Sync modal title for `enter sync code`">
+  <message name="IDS_DOWDES_SYNC_ENTER_CODE_TITLE" desc="The Sync modal title for `enter sync code`">
     Enter a sync code
   </message>
-  <message name="IDS_BRAVE_SYNC_ENTER_CODE_DESCRIPTION" desc="The Sync modal text for `enter sync code`">
+  <message name="IDS_DOWDES_SYNC_ENTER_CODE_DESCRIPTION" desc="The Sync modal text for `enter sync code`">
     Enter your sync chain passphrase below.
   </message>
-  <message name="IDS_BRAVE_SYNC_ADD_DEVICE_BUTTON" desc="The Sync button `add device` for adding a new device to the sync chain. triggers a modal with device options">
+  <message name="IDS_DOWDES_SYNC_ADD_DEVICE_BUTTON" desc="The Sync button `add device` for adding a new device to the sync chain. triggers a modal with device options">
     Add New Device
   </message>
-  <message name="IDS_BRAVE_SYNC_CHOOSE_DEVICE_TITLE" desc="The Sync title to sync a new device. Appears in the `choose device type` modal">
+  <message name="IDS_DOWDES_SYNC_CHOOSE_DEVICE_TITLE" desc="The Sync title to sync a new device. Appears in the `choose device type` modal">
     Choose Device Type
   </message>
-  <message name="IDS_BRAVE_SYNC_CHOOSE_DEVICE_DESCRIPTION" desc="The Sync title to select which device to sync. Appears in the `choose device type` modal">
+  <message name="IDS_DOWDES_SYNC_CHOOSE_DEVICE_DESCRIPTION" desc="The Sync title to select which device to sync. Appears in the `choose device type` modal">
     Which type of device would you like to sync to?
   </message>
-  <message name="IDS_BRAVE_SYNC_INVALID_SYNC_CODE_TITLE" desc="Error message in dialog for when sync words are invalid (title)">
+  <message name="IDS_DOWDES_SYNC_INVALID_SYNC_CODE_TITLE" desc="Error message in dialog for when sync words are invalid (title)">
     Invalid sync code, please check and try again.
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_INVALID" desc="Text for general sync setup error.">
+  <message name="IDS_DOWDES_SYNC_CODE_INVALID" desc="Text for general sync setup error.">
     This code is invalid
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_EMPTY" desc="Text for empty sync setup code provided error.">
+  <message name="IDS_DOWDES_SYNC_CODE_EMPTY" desc="Text for empty sync setup code provided error.">
     This code is empty
   </message>
-  <message name="IDS_BRAVE_SYNC_INTERNAL_SETUP_ERROR" desc="Text for rarely occured sync setup error.">
+  <message name="IDS_DOWDES_SYNC_INTERNAL_SETUP_ERROR" desc="Text for rarely occured sync setup error.">
     Internal sync setup error
   </message>
-  <message name="IDS_BRAVE_SYNC_INTERNAL_ACCOUNT_DELETE_ERROR" desc="Text for rarely occured permanently delete sync account error.">
+  <message name="IDS_DOWDES_SYNC_INTERNAL_ACCOUNT_DELETE_ERROR" desc="Text for rarely occured permanently delete sync account error.">
     Internal account delete error
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_FROM_DEPRECATED_VERSION" desc="Text for error when trying to use old version sync code after v1 sunset date.">
-    This code was generated by a deprecated version of Brave, please upgrade your other device first
+  <message name="IDS_DOWDES_SYNC_CODE_FROM_DEPRECATED_VERSION" desc="Text for error when trying to use old version sync code after v1 sunset date.">
+    This code was generated by a deprecated version of Dowdes, please upgrade your other device first
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_EXPIRED" desc="Text for error when trying to use the sync code which has expired.">
+  <message name="IDS_DOWDES_SYNC_CODE_EXPIRED" desc="Text for error when trying to use the sync code which has expired.">
     This code has expired. Please generate a new one on your other device and try again.
   </message>
-  <message name="IDS_BRAVE_SYNC_CODE_VALID_FOR_TOO_LONG" desc="Text for error when trying to use the sync code which is valid till the time too far in the future.">
+  <message name="IDS_DOWDES_SYNC_CODE_VALID_FOR_TOO_LONG" desc="Text for error when trying to use the sync code which is valid till the time too far in the future.">
     This code is invalid. Please check that the time and timezone are set correctly on your device.
   </message>
-  <message name="IDS_BRAVE_SYNC_RESET_BUTTON" desc="The Sync button that opens a modal to leave the current sync chain">
+  <message name="IDS_DOWDES_SYNC_RESET_BUTTON" desc="The Sync button that opens a modal to leave the current sync chain">
     Leave Sync Chain
   </message>
-  <message name="IDS_BRAVE_SYNC_RESET_CONFIRMATION" desc="Confirmation message prompt to make sure the user is ok with leaving sync">
+  <message name="IDS_DOWDES_SYNC_RESET_CONFIRMATION" desc="Confirmation message prompt to make sure the user is ok with leaving sync">
     If you reset Sync, you will have to re-enter a sync code from another device in order to sync with it. Are you sure you want to proceed?
   </message>
-  <message name="IDS_BRAVE_SYNC_DELETE_DEVICE_CONFIRMATION" desc="Confirmation message prompt to make sure the user is ok to delete other device from the chain">
+  <message name="IDS_DOWDES_SYNC_DELETE_DEVICE_CONFIRMATION" desc="Confirmation message prompt to make sure the user is ok to delete other device from the chain">
     Are you sure you want to remove the selected device from the sync chain?
   </message>
-  <message name="IDS_BRAVE_SYNC_FINAL_SECURITY_WARNING_TEXT" desc="Confirmation message prompt to make sure the user aware his data will be shared with other devices in chain">
-    Warning: this will share your Brave data, including potentially your passwords, with the device that generated these code words.
+  <message name="IDS_DOWDES_SYNC_FINAL_SECURITY_WARNING_TEXT" desc="Confirmation message prompt to make sure the user aware his data will be shared with other devices in chain">
+    Warning: this will share your Dowdes data, including potentially your passwords, with the device that generated these code words.
 
     Please double check that these code words were generated by a device that you own.
 
     Are you sure you want to do this?
   </message>
-  <message name="IDS_BRAVE_SYNC_PASSPHRASE_DECRYPTION_ERROR_MESSAGE" desc="Warning message that informs user about Brave Sync is not running and browser needs to have access to secure OS passwords store">
-    Brave could not access your operating system's safe storage. This is what's used to secure data such as passwords and cookies; it's also required for Brave Sync to connect your browser profile between devices. This means Brave Sync is not running. To resolve this issue, please see the <ph name="BEGIN_LINK_SYNC_GUIDE">&lt;a target="_blank" href="$1"&gt;</ph>Brave Sync troubleshooting guide<ph name="END_LINK_SYNC_GUIDE">&lt;/a&gt;</ph>.
+  <message name="IDS_DOWDES_SYNC_PASSPHRASE_DECRYPTION_ERROR_MESSAGE" desc="Warning message that informs user about Dowdes Sync is not running and browser needs to have access to secure OS passwords store">
+    Dowdes could not access your operating system's safe storage. This is what's used to secure data such as passwords and cookies; it's also required for Dowdes Sync to connect your browser profile between devices. This means Dowdes Sync is not running. To resolve this issue, please see the <ph name="BEGIN_LINK_SYNC_GUIDE">&lt;a target="_blank" href="$1"&gt;</ph>Dowdes Sync troubleshooting guide<ph name="END_LINK_SYNC_GUIDE">&lt;/a&gt;</ph>.
   </message>
-  <message name="IDS_BRAVE_SYNC_PASSPHRASE_DECRYPTION_SS_UNLOCKED_ERROR_MESSAGE" desc="Warning">
-    It looks like the sync encryption key is different from the one used when you first set up Brave Sync. The easiest fix here is to reset and re-join the sync chain using the passphrase from one of your other synced devices.
+  <message name="IDS_DOWDES_SYNC_PASSPHRASE_DECRYPTION_SS_UNLOCKED_ERROR_MESSAGE" desc="Warning">
+    It looks like the sync encryption key is different from the one used when you first set up Dowdes Sync. The easiest fix here is to reset and re-join the sync chain using the passphrase from one of your other synced devices.
   </message>
-  <message name="IDS_BRAVE_SYNC_LEAVE_AND_REJOIN_THE_CHAIN_BUTTON" desc="Button which does reset the sync and offers to re-join the sync chain">
+  <message name="IDS_DOWDES_SYNC_LEAVE_AND_REJOIN_THE_CHAIN_BUTTON" desc="Button which does reset the sync and offers to re-join the sync chain">
     Reset and re-join sync chain
   </message>
-  <message name="IDS_BRAVE_DELETE_SYNC_ACCOUNT_BUTTON_AND_DIALOG_TITLE" desc="The button that opens Permanently delete account confirmation dialog. Also this string is the dialog title">
+  <message name="IDS_DOWDES_DELETE_SYNC_ACCOUNT_BUTTON_AND_DIALOG_TITLE" desc="The button that opens Permanently delete account confirmation dialog. Also this string is the dialog title">
     Delete Sync account
   </message>
-  <message name="IDS_BRAVE_SYNC_PERMANENTLY_DELETE_ACCOUNT_BUTTON" desc="The Sync button that leads to permanently delete Sync account">
+  <message name="IDS_DOWDES_SYNC_PERMANENTLY_DELETE_ACCOUNT_BUTTON" desc="The Sync button that leads to permanently delete Sync account">
     Permanently delete account
   </message>
-  <message name="IDS_BRAVE_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_1" desc="">
-    Deleting your account will remove your encrypted data from Brave servers and disable Sync on all of your connected devices.
+  <message name="IDS_DOWDES_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_1" desc="">
+    Deleting your account will remove your encrypted data from Dowdes servers and disable Sync on all of your connected devices.
   </message>
-  <message name="IDS_BRAVE_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_2" desc="">
+  <message name="IDS_DOWDES_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_2" desc="">
     It will not however delete the data that is stored locally on those devices.
   </message>
-  <message name="IDS_BRAVE_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_3" desc="">
+  <message name="IDS_DOWDES_SYNC_DELETE_ACCOUNT_DESCRIPTION_PARTIAL_3" desc="">
     This deletion is permanent and there is no way to recover the data. Should you decide to
     start using Sync again, you will need to create a new account and re-add each device one by one.
   </message>
-  <message name="IDS_BRAVE_SYNC_PERMANENTLY_DELETE_ACCOUNT_IN_PROGRESS" desc="The string which indicates that Sync account deletion happens now">
+  <message name="IDS_DOWDES_SYNC_PERMANENTLY_DELETE_ACCOUNT_IN_PROGRESS" desc="The string which indicates that Sync account deletion happens now">
     Account deletion is in progress...
   </message>
-  <message name="IDS_BRAVE_SYNC_JOINING_DELETED_ACCOUNT" desc="The error text for the case when trying to connect to the permanently deleted chain">
+  <message name="IDS_DOWDES_SYNC_JOINING_DELETED_ACCOUNT" desc="The error text for the case when trying to connect to the permanently deleted chain">
     Could not join this sync chain. The sync chain was deleted.
   </message>
-  <message name="IDS_SETTINGS_BRAVE_AUTOFILL_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing autofill settings between multiple browser instances.">
+  <message name="IDS_SETTINGS_DOWDES_AUTOFILL_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing autofill settings between multiple browser instances.">
     Phone numbers, emails, and addresses
   </message>
-  <message name="IDS_SETTINGS_BRAVE_APPS_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing apps between multiple browser instances.">
+  <message name="IDS_SETTINGS_DOWDES_APPS_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing apps between multiple browser instances.">
     Web apps (PWAs)
   </message>
-  <message name="IDS_SETTINGS_BRAVE_PASSWORDS_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing passwords between multiple browser instances.">
+  <message name="IDS_SETTINGS_DOWDES_PASSWORDS_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing passwords between multiple browser instances.">
     Passwords
   </message>
   <message name="IDS_SETTINGS_AI_CHAT_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing Leo AI Chat conversation history between multiple browser instances.">
@@ -1320,11 +1320,11 @@
   </message>
 
   <!-- Settings / Search engine -->
-  <message name="IDS_SETTINGS_BRAVE_SEARCH_ENGINES_SEARCH_SUGGEST_LABEL" desc="The label of the option to enable/disable sending omnibox input to the user's default search engine to get additional suggestions.">
+  <message name="IDS_SETTINGS_DOWDES_SEARCH_ENGINES_SEARCH_SUGGEST_LABEL" desc="The label of the option to enable/disable sending omnibox input to the user's default search engine to get additional suggestions.">
     Improve search suggestions
   </message>
-  <message name="IDS_SETTINGS_BRAVE_SEARCH_ENGINES_SEARCH_SUGGEST_DESC" desc="The desc of the option to enable/disable sending omnibox input to the user's default search engine to get additional suggestions.">
-    When on, Brave sends what you type in the address bar or search box to your default search engine to get better suggestions. When off, Brave only shows suggestions generated on your device. This is always off in private windows.
+  <message name="IDS_SETTINGS_DOWDES_SEARCH_ENGINES_SEARCH_SUGGEST_DESC" desc="The desc of the option to enable/disable sending omnibox input to the user's default search engine to get additional suggestions.">
+    When on, Dowdes sends what you type in the address bar or search box to your default search engine to get better suggestions. When off, Dowdes only shows suggestions generated on your device. This is always off in private windows.
   </message>
   <message name="IDS_SETTINGS_NORMAL_PROFILE_SEARCH_EXPLANATION" desc="Explanation for the search engine setting.">
     Search engine used in the address bar.
@@ -1341,18 +1341,18 @@
   <message name="IDS_SETTINGS_PRIVATE_PROFILE_SEARCH_ENGINE_TITLE" desc="Name of the settings page which displays search engine preferences for private profiles.">
     Search engine for Private Windows
   </message>
-  <message name="IDS_SETTINGS_PRIVATE_PROFILE_SEARCH_ENGINE_CHOICE_SETTINGS_CONFIRMATION_TOAST_LABEL" desc="This confirmation message is intended to help users understand that their choice is now saved. It appears after the user changes their default private search engine in Brave settings. (A search engine provides answers to search queries; this is different from a browser, which displays web pages. A search engine powers many experiences within a browser.)">
-    <ph name="SEARCH_ENGINE_NAME">$1<ex>Brave</ex></ph> is now your default search engine for private windows
+  <message name="IDS_SETTINGS_PRIVATE_PROFILE_SEARCH_ENGINE_CHOICE_SETTINGS_CONFIRMATION_TOAST_LABEL" desc="This confirmation message is intended to help users understand that their choice is now saved. It appears after the user changes their default private search engine in Dowdes settings. (A search engine provides answers to search queries; this is different from a browser, which displays web pages. A search engine powers many experiences within a browser.)">
+    <ph name="SEARCH_ENGINE_NAME">$1<ex>Dowdes</ex></ph> is now your default search engine for private windows
   </message>
-  <message name="IDS_SETTINGS_SEARCH_ENGINE_LIST_BRAVE_SEARCH_DESCRIPTION" desc="The description shown with the Brave Search radio button in the search engines list.">
-    Brave Search is recommended for the best browsing experience while using Brave browser.
+  <message name="IDS_SETTINGS_SEARCH_ENGINE_LIST_DOWDES_SEARCH_DESCRIPTION" desc="The description shown with the Dowdes Search radio button in the search engines list.">
+    Dowdes Search is recommended for the best browsing experience while using Dowdes browser.
   </message>
-  <message name="IDS_SETTINGS_SEARCH_ENGINE_LIST_BRAVE_SEARCH_RECOMMENDED" desc="The label shown in the Brave Search radio button in the search engines list.">
+  <message name="IDS_SETTINGS_SEARCH_ENGINE_LIST_DOWDES_SEARCH_RECOMMENDED" desc="The label shown in the Dowdes Search radio button in the search engines list.">
     Recommended
   </message>
 
   <!-- Settings / Extensions -->
-  <message name="IDS_SETTINGS_BRAVE_DEFAULT_EXTENSIONS_TITLE" desc="The title for Brave default extensions in settings">
+  <message name="IDS_SETTINGS_DOWDES_DEFAULT_EXTENSIONS_TITLE" desc="The title for Dowdes default extensions in settings">
     Extensions
   </message>
   <message name="IDS_SETTINGS_GOOGLE_LOGIN_FOR_EXTENSIONS" desc="Label for a switch control which allows Google login for extension">
@@ -1464,10 +1464,10 @@
     Manifest V2 extensions
   </message>
   <message name="IDS_SETTINGS_MANAGE_EXTENSIONS_V2_SUBLABEL" desc="The sub label of manage v2 extensions link in settings">
-    The following Manifest V2 extensions will be removed from the Chrome Web Store, but are still supported in Brave. Toggle to download and install, or to uninstall.
+    The following Manifest V2 extensions will be removed from the Chrome Web Store, but are still supported in Dowdes. Toggle to download and install, or to uninstall.
   </message>
   <message name="IDS_SETTINGS_MANAGE_EXTENSIONS_V2_WARN" desc="The warning message in v2 extensions in settings.">
-    Brave hosts these Manifest V2 extensions on Brave servers, but does not review or verify their content, security, or behavior. Please see each extension's official page for help. Read Brave's plans for Manifest V2 <ph name="BEGIN_LINK">&lt;a target="_blank" rel="noreferrer" href="$1"&gt;</ph>here<ph name="END_LINK">&lt;/a&gt;</ph>.
+    Dowdes hosts these Manifest V2 extensions on Dowdes servers, but does not review or verify their content, security, or behavior. Please see each extension's official page for help. Read Dowdes's plans for Manifest V2 <ph name="BEGIN_LINK">&lt;a target="_blank" rel="noreferrer" href="$1"&gt;</ph>here<ph name="END_LINK">&lt;/a&gt;</ph>.
   </message>
   <message name="IDS_SETTINGS_MANAGE_EXTENSIONS_V2_TOAST_CONFIRM" desc="The label of the error toast button in settings">
     Close
@@ -1502,10 +1502,10 @@
   <message name="IDS_SETTINGS_MANAGE_EXTENSIONS_LABEL" desc="The label of manage extensions link in settings">
     Manage extensions
   </message>
-  <message name="IDS_BRAVE_SETTINGS_GET_MORE_EXTENSIONS_LABEL" desc="The label of get more extensions link in settings">
+  <message name="IDS_DOWDES_SETTINGS_GET_MORE_EXTENSIONS_LABEL" desc="The label of get more extensions link in settings">
     Get more extensions
   </message>
-  <message name="IDS_BRAVE_SETTINGS_GET_MORE_EXTENSIONS_SUBLABEL" desc="The sub-label of get more extensions link in settings">
+  <message name="IDS_DOWDES_SETTINGS_GET_MORE_EXTENSIONS_SUBLABEL" desc="The sub-label of get more extensions link in settings">
     Open Web Store
   </message>
 
@@ -1519,17 +1519,17 @@
   <message name="IDS_SETTINGS_DEFAULT_CARDANO_WALLET_DESC" desc="The default cryptocurrency wallet for the Cardano blockchain">
     Default Cardano wallet
   </message>
-  <message name="IDS_BRAVE_WALLET_WEB3_PROVIDER_BRAVE" desc="Select control value for which web3 provider to use">
-    Brave Wallet
+  <message name="IDS_DOWDES_WALLET_WEB3_PROVIDER_DOWDES" desc="Select control value for which web3 provider to use">
+    Dowdes Wallet
   </message>
-  <message name="IDS_BRAVE_WALLET_WEB3_PROVIDER_ASK" desc="Select control value for which web3 provider to use">
+  <message name="IDS_DOWDES_WALLET_WEB3_PROVIDER_ASK" desc="Select control value for which web3 provider to use">
     Ask
   </message>
-  <message name="IDS_BRAVE_WALLET_WEB3_PROVIDER_NONE" desc="Select control value for which web3 provider to use">
+  <message name="IDS_DOWDES_WALLET_WEB3_PROVIDER_NONE" desc="Select control value for which web3 provider to use">
     Extensions (no fallback)
   </message>
-  <message name="IDS_BRAVE_WALLET_WEB3_PROVIDER_BRAVE_PREFER_EXTENSIONS" desc="Select control value for which web3 provider to use">
-    Extensions (Brave Wallet fallback)
+  <message name="IDS_DOWDES_WALLET_WEB3_PROVIDER_DOWDES_PREFER_EXTENSIONS" desc="Select control value for which web3 provider to use">
+    Extensions (Dowdes Wallet fallback)
   </message>
   <message name="IDS_SETTINGS_DEFAULT_BASE_CURRENCY_DESC" desc="The default base currency to use for the wallet prices">
     Default base currency
@@ -1537,8 +1537,8 @@
   <message name="IDS_SETTINGS_DEFAULT_BASE_CRYPTOCURRENCY_DESC" desc="The default base cryptocurrency to use for the wallet prices">
     Default base cryptocurrency
   </message>
-  <message name="IDS_SETTINGS_SHOW_BRAVE_WALLET_ICON_ON_TOOLBAR" desc="The description for showing the Brave wallet panel icon on the toolbar">
-    Show Brave Wallet button
+  <message name="IDS_SETTINGS_SHOW_DOWDES_WALLET_ICON_ON_TOOLBAR" desc="The description for showing the Dowdes wallet panel icon on the toolbar">
+    Show Dowdes Wallet button
   </message>
   <message name="IDS_SETTINGS_ENABLE_NFT_DISCOVERY_LABEL" desc="The label for enabling NFT discovery">
     Enable NFT discovery
@@ -1546,17 +1546,17 @@
   <message name="IDS_SETTINGS_ENABLE_NFT_DISCOVERY_DESC" desc="The description for enabling NFT discovery">
     Automatically add NFTs you own to the Wallet using third party APIs.
   </message>
-  <message name="IDS_SETTINGS_ENABLE_BRAVE_WALLET_IN_PRIVATE_WINDOWS_LABEL" desc="The label for enabling private window support">
-    Enable Brave Wallet in Private Windows
+  <message name="IDS_SETTINGS_ENABLE_DOWDES_WALLET_IN_PRIVATE_WINDOWS_LABEL" desc="The label for enabling private window support">
+    Enable Dowdes Wallet in Private Windows
   </message>
-  <message name="IDS_SETTINGS_ENABLE_BRAVE_WALLET_IN_PRIVATE_WINDOWS_DESC" desc="The description for enabling private window support">
+  <message name="IDS_SETTINGS_ENABLE_DOWDES_WALLET_IN_PRIVATE_WINDOWS_DESC" desc="The description for enabling private window support">
     Warning: Reusing a wallet address in a private window session can enable a site to link a private window session to a non-private window session
   </message>
-  <message name="IDS_SETTINGS_AUTO_LOCK_MINUTES" desc="The title for the amount of minutes it takes for the Brave Wallet to automatically lock">
-    Automatically lock Brave Wallet
+  <message name="IDS_SETTINGS_AUTO_LOCK_MINUTES" desc="The title for the amount of minutes it takes for the Dowdes Wallet to automatically lock">
+    Automatically lock Dowdes Wallet
   </message>
-  <message name="IDS_SETTINGS_AUTO_LOCK_MINUTES_DESC" desc="The description for the amount of minutes it takes for the Brave Wallet to automatically lock">
-    The number of minutes to wait until the Brave Wallet is automatically locked
+  <message name="IDS_SETTINGS_AUTO_LOCK_MINUTES_DESC" desc="The description for the amount of minutes it takes for the Dowdes Wallet to automatically lock">
+    The number of minutes to wait until the Dowdes Wallet is automatically locked
   </message>
   <message name="IDS_SETTINGS_WALLET_NETWORKS_ITEM" desc="The label for opening wallet networks list">
     Wallet Networks
@@ -1597,7 +1597,7 @@
   <message name="IDS_SETTINGS_WALLET_RESET_CONFIRMATION_PHRASE" desc="The phrase users should type to reset wallet">
     Yes
   </message>
-  <message name="IDS_BRAVE_WALLET_TRANSACTION_SIMULATIONS_DESC" desc="The description for the user's opt-in status of the transaction simulations service">
+  <message name="IDS_DOWDES_WALLET_TRANSACTION_SIMULATIONS_DESC" desc="The description for the user's opt-in status of the transaction simulations service">
     See the results of transactions before you sign. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>&lt;u&gt;Learn more&lt;/u&gt;<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
 
@@ -1623,7 +1623,7 @@
   <message name="IDS_SETTINGS_WALLET_POLKADOT_NETWORK_LIST_TITLE" desc="The title of the list with wallet Polkadot networks">
     Polkadot networks
   </message>
-  <message name="IDS_SETTINGS_SHOW_BRAVE_WALLET_TEST_NETWORKS" desc="The description for showing the Brave wallet test networks">
+  <message name="IDS_SETTINGS_SHOW_DOWDES_WALLET_TEST_NETWORKS" desc="The description for showing the Dowdes wallet test networks">
     Show test networks
   </message>
 
@@ -1720,10 +1720,10 @@
   </message>
 
   <!-- Settings / Content -->
-  <message name="IDS_SETTINGS_BRAVE_MRU_CYCLING_LABEL" desc="The label to activate MRU cycling with Ctrl-tab">
+  <message name="IDS_SETTINGS_DOWDES_MRU_CYCLING_LABEL" desc="The label to activate MRU cycling with Ctrl-tab">
     Cycle through the most recently used tabs with Ctrl-Tab
   </message>
-  <message name="IDS_SETTINGS_SHOW_BRAVE_WAYBACK_MACHINE_PROMPT" desc="The label describing the 'wayback machine' toggle option">
+  <message name="IDS_SETTINGS_SHOW_DOWDES_WAYBACK_MACHINE_PROMPT" desc="The label describing the 'wayback machine' toggle option">
     Show Wayback Machine prompt on 404 pages
   </message>
 
@@ -1739,7 +1739,7 @@
   </message>
 
   <!-- Settings / Leo Assistant -->
-  <message name="IDS_SETTINGS_LEO_ASSISTANT" desc="Title for an item in the 'Leo Assistant' section of Brave Settings">
+  <message name="IDS_SETTINGS_LEO_ASSISTANT" desc="Title for an item in the 'Leo Assistant' section of Dowdes Settings">
     Leo
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_SHOW_ICON_ON_TOOLBAR_LABEL" desc="The text for settings option">
@@ -1776,7 +1776,7 @@
     Clear Leo data
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_RESET_AND_CLEAR_DATA_CONFIRMATION_LABEL" desc="The confirmation window message for reset option">
-    Resetting Leo AI will require you to opt-in to use Brave Leo AI in the future and will also clear your chat history, customizations, and memories. Clearing your chat history will delete all your previous conversations with Brave Leo AI. This action can't be undone.
+    Resetting Leo AI will require you to opt-in to use Dowdes Leo AI in the future and will also clear your chat history, customizations, and memories. Clearing your chat history will delete all your previous conversations with Dowdes Leo AI. This action can't be undone.
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_AUTOCOMPLETE_LINK" desc="A label for a link to settings page to adjust autocomplete suggestion based on Leo">
     Adjust autocomplete suggestions
@@ -1791,10 +1791,10 @@
     About Leo AI
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_ABOUT_LEO_DESC_1" desc="Description for the about Leo assistant section">
-    Brave Leo provides privacy-first AI chat and other AI-powered interfaces in the browser. Leo never learns from your data or uses it for model training. All requests are proxied through an anonymizing server.
+    Dowdes Leo provides privacy-first AI chat and other AI-powered interfaces in the browser. Leo never learns from your data or uses it for model training. All requests are proxied through an anonymizing server.
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_ABOUT_LEO_DESC_2" desc="Description for learning more about Leo privacy policy">
-    Read more about how Brave protects your use of AI in Leo's privacy policy. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+    Read more about how Dowdes protects your use of AI in Leo's privacy policy. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_MODEL_SELECTION_LABEL" desc="Label for selecting default model">
     Default model for new conversations
@@ -1866,7 +1866,7 @@
     The maximum number of tokens the model can process in a single interaction. A larger context size allows the model to handle longer conversations. Different models support different maximum context sizes.
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_PROXY_NOTE" desc="A note for users when adding model server info">
-    Brave doesn't proxy these requests, please read privacy terms of the chosen provider.
+    Dowdes doesn't proxy these requests, please read privacy terms of the chosen provider.
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_ENDPOINT_ERROR" desc="An error note for users when url is invalidated">
     Non-local endpoints should employ the HTTPS protocol for secure data transmission.
@@ -1881,7 +1881,7 @@
     Private IPs Not Allowed
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_PRIVATE_IP_NOT_ALLOWED_BODY" desc="Body text for private IP not allowed dialog">
-    The address you entered appears to be from a private network—like your router or a local server. Brave blocks these automatically to keep you safe, but you can enable them if you're confident it's secure.
+    The address you entered appears to be from a private network—like your router or a local server. Dowdes blocks these automatically to keep you safe, but you can enable them if you're confident it's secure.
   </message>
   <message name="IDS_SETTINGS_LEO_ASSISTANT_PRIVATE_IP_NOT_ALLOWED_INSTRUCTIONS" desc="Instructions on how to enable private IPs">
     To proceed, visit brave://flags/, search for "brave-ai-chat-allow-private-ips," and enable the feature. Once enabled, you can use private network addresses in Leo settings.
@@ -2017,14 +2017,14 @@
   </message>
 
   <!-- Settings / Survey Panelist -->
-  <message name="IDS_SETTINGS_SURVEY_PANELIST" desc="Title for an item in the 'Survey Panelist' section of Brave Settings">
+  <message name="IDS_SETTINGS_SURVEY_PANELIST" desc="Title for an item in the 'Survey Panelist' section of Dowdes Settings">
     Survey Panelist
   </message>
   <message name="IDS_SETTINGS_SURVEY_PANELIST_LABEL" desc="The text for settings option to enable survey panelist">
-    Allow Brave surveys
+    Allow Dowdes surveys
   </message>
   <message name="IDS_SETTINGS_SURVEY_PANELIST_DESC" desc="The description for settings option to enable survey panelist">
-    Allows Brave to show links to private surveys in the new tab page. Surveys help us build better features and measure the effectiveness of browser-based ad campaigns. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+    Allows Dowdes to show links to private surveys in the new tab page. Surveys help us build better features and measure the effectiveness of browser-based ad campaigns. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
 
   <!-- Settings / Playlist -->
@@ -2052,114 +2052,114 @@
 
 <!-- Avatars. Generated via zsh and node:
         declare -i a=56
-        for file in $(cat < avatarlist); do node -e "console.log(\`<message name=\"IDS_BRAVE_AVATAR_LABEL_$a\" desc=\"The label for the $file avatar.\">
+        for file in $(cat < avatarlist); do node -e "console.log(\`<message name=\"IDS_DOWDES_AVATAR_LABEL_$a\" desc=\"The label for the $file avatar.\">
     \${\`$file\`.split('_').map(w => w[0].toUpperCase() + w.substr(1)).join(' ').replace('.png', '')}
 </message>\`)"; a=a+1; done | pbcopy
       -->
-  <message name="IDS_BRAVE_AVATAR_LABEL_PLACEHOLDER" desc="The label for the avatar_edgy_rewards.png avatar.">
+  <message name="IDS_DOWDES_AVATAR_LABEL_PLACEHOLDER" desc="The label for the avatar_edgy_rewards.png avatar.">
     Avatar Edgy Rewards
   </message>
   <if expr="not is_android">
-    <message name="IDS_BRAVE_AVATAR_LABEL_56" desc="The label for the avatar_edgy_brave.png avatar.">
-      Avatar Edgy Brave
+    <message name="IDS_DOWDES_AVATAR_LABEL_56" desc="The label for the avatar_edgy_brave.png avatar.">
+      Avatar Edgy Dowdes
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_57" desc="The label for the avatar_edgy_ocean.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_57" desc="The label for the avatar_edgy_ocean.png avatar.">
       Avatar Edgy Ocean
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_58" desc="The label for the avatar_edgy_grass.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_58" desc="The label for the avatar_edgy_grass.png avatar.">
       Avatar Edgy Grass
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_59" desc="The label for the avatar_edgy_corn.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_59" desc="The label for the avatar_edgy_corn.png avatar.">
       Avatar Edgy Corn
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_60" desc="The label for the avatar_edgy_royal.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_60" desc="The label for the avatar_edgy_royal.png avatar.">
       Avatar Edgy Royal
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_61" desc="The label for the avatar_edgy_ninja.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_61" desc="The label for the avatar_edgy_ninja.png avatar.">
       Avatar Edgy Ninja
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_62" desc="The label for the avatar_paladin_rewards.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_62" desc="The label for the avatar_paladin_rewards.png avatar.">
       Avatar Paladin Rewards
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_63" desc="The label for the avatar_paladin_brave.png avatar.">
-      Avatar Paladin Brave
+    <message name="IDS_DOWDES_AVATAR_LABEL_63" desc="The label for the avatar_paladin_brave.png avatar.">
+      Avatar Paladin Dowdes
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_64" desc="The label for the avatar_paladin_ocean.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_64" desc="The label for the avatar_paladin_ocean.png avatar.">
       Avatar Paladin Ocean
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_65" desc="The label for the avatar_paladin_grass.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_65" desc="The label for the avatar_paladin_grass.png avatar.">
       Avatar Paladin Grass
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_66" desc="The label for the avatar_paladin_corn.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_66" desc="The label for the avatar_paladin_corn.png avatar.">
       Avatar Paladin Corn
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_67" desc="The label for the avatar_paladin_royal.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_67" desc="The label for the avatar_paladin_royal.png avatar.">
       Avatar Paladin Royal
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_68" desc="The label for the avatar_paladin_ninja.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_68" desc="The label for the avatar_paladin_ninja.png avatar.">
       Avatar Paladin Ninja
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_69" desc="The label for the avatar_gleam_rewards.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_69" desc="The label for the avatar_gleam_rewards.png avatar.">
       Avatar Gleam Rewards
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_70" desc="The label for the avatar_gleam_brave.png avatar.">
-      Avatar Gleam Brave
+    <message name="IDS_DOWDES_AVATAR_LABEL_70" desc="The label for the avatar_gleam_brave.png avatar.">
+      Avatar Gleam Dowdes
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_71" desc="The label for the avatar_gleam_ocean.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_71" desc="The label for the avatar_gleam_ocean.png avatar.">
       Avatar Gleam Ocean
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_72" desc="The label for the avatar_gleam_grass.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_72" desc="The label for the avatar_gleam_grass.png avatar.">
       Avatar Gleam Grass
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_73" desc="The label for the avatar_gleam_corn.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_73" desc="The label for the avatar_gleam_corn.png avatar.">
       Avatar Gleam Corn
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_74" desc="The label for the avatar_gleam_royal.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_74" desc="The label for the avatar_gleam_royal.png avatar.">
       Avatar Gleam Royal
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_75" desc="The label for the avatar_gleam_ninja.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_75" desc="The label for the avatar_gleam_ninja.png avatar.">
       Avatar Gleam Ninja
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_76" desc="The label for the avatar_oval_rewards.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_76" desc="The label for the avatar_oval_rewards.png avatar.">
       Avatar Oval Rewards
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_77" desc="The label for the avatar_oval_brave.png avatar.">
-      Avatar Oval Brave
+    <message name="IDS_DOWDES_AVATAR_LABEL_77" desc="The label for the avatar_oval_brave.png avatar.">
+      Avatar Oval Dowdes
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_78" desc="The label for the avatar_oval_ocean.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_78" desc="The label for the avatar_oval_ocean.png avatar.">
       Avatar Oval Ocean
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_79" desc="The label for the avatar_oval_grass.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_79" desc="The label for the avatar_oval_grass.png avatar.">
       Avatar Oval Grass
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_80" desc="The label for the avatar_oval_corn.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_80" desc="The label for the avatar_oval_corn.png avatar.">
       Avatar Oval Corn
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_81" desc="The label for the avatar_oval_royal.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_81" desc="The label for the avatar_oval_royal.png avatar.">
       Avatar Oval Royal
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_82" desc="The label for the avatar_oval_ninja.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_82" desc="The label for the avatar_oval_ninja.png avatar.">
       Avatar Oval Ninja
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_83" desc="The label for the avatar_bonbon_rewards.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_83" desc="The label for the avatar_bonbon_rewards.png avatar.">
       Avatar Bonbon Rewards
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_84" desc="The label for the avatar_bonbon_brave.png avatar.">
-      Avatar Bonbon Brave
+    <message name="IDS_DOWDES_AVATAR_LABEL_84" desc="The label for the avatar_bonbon_brave.png avatar.">
+      Avatar Bonbon Dowdes
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_85" desc="The label for the avatar_bonbon_ocean.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_85" desc="The label for the avatar_bonbon_ocean.png avatar.">
       Avatar Bonbon Ocean
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_86" desc="The label for the avatar_bonbon_grass.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_86" desc="The label for the avatar_bonbon_grass.png avatar.">
       Avatar Bonbon Grass
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_87" desc="The label for the avatar_bonbon_corn.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_87" desc="The label for the avatar_bonbon_corn.png avatar.">
       Avatar Bonbon Corn
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_88" desc="The label for the avatar_bonbon_royal.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_88" desc="The label for the avatar_bonbon_royal.png avatar.">
       Avatar Bonbon Royal
     </message>
-    <message name="IDS_BRAVE_AVATAR_LABEL_89" desc="The label for the avatar_bonbon_ninja.png avatar.">
+    <message name="IDS_DOWDES_AVATAR_LABEL_89" desc="The label for the avatar_bonbon_ninja.png avatar.">
       Avatar Bonbon Ninja
     </message>
   </if>

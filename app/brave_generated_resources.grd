@@ -174,10 +174,10 @@
   </translations>
   <release seq="1">
     <messages fallback_to_english="true">
-      <!-- Brave Settings WebUI strings -->
+      <!-- Dowdes Settings WebUI strings -->
       <part file="brave_settings_strings.grdp" />
 
-      <!-- Brave App Management strings -->
+      <!-- Dowdes App Management strings -->
       <part file="brave_app_management.grdp" />
 
       <!-- Custom profile image strings -->
@@ -186,13 +186,13 @@
       <!--Add new items to the appropriate sections below -->
 
       <!-- Profile menu -->
-      <message name="IDS_PROFILE_MENU_BRAVE_PLACEHOLDER_PROFILE_NAME" desc="Placeholder profile name, used when the user did not enter a name for their profile.">
+      <message name="IDS_PROFILE_MENU_DOWDES_PLACEHOLDER_PROFILE_NAME" desc="Placeholder profile name, used when the user did not enter a name for their profile.">
         Personal
       </message>
 
       <!-- App Menu -->
-      <message name="IDS_SHOW_BRAVE_REWARDS" desc="The show Brave Rewards menu in the app menu">
-        Brave Rewards
+      <message name="IDS_SHOW_DOWDES_REWARDS" desc="The show Dowdes Rewards menu in the app menu">
+        Dowdes Rewards
       </message>
       <message name="IDS_BOOKMAR_BAR_MENU_SHOW_ALWAYS" desc="The name of the context menu item to always show bookmark bar">
         Always
@@ -214,10 +214,10 @@
         Copy clean link
       </message>
       <if expr="use_titlecase">
-        <message name="IDS_BRAVE_NEW_INCOGNITO_WINDOW" desc="The text label of a menu item for opening a new Private window">
+        <message name="IDS_DOWDES_NEW_INCOGNITO_WINDOW" desc="The text label of a menu item for opening a new Private window">
           New &amp;Private Window
         </message>
-        <message name="IDS_SHOW_BRAVE_WEBCOMPAT_REPORTER" desc="The menu item to report a broken site in the app menu">
+        <message name="IDS_SHOW_DOWDES_WEBCOMPAT_REPORTER" desc="The menu item to report a broken site in the app menu">
           Report a Broken Site
         </message>
         <message name="IDS_COPY_CLEAN_LINK" desc="The name of the context menu item to copy clean link">
@@ -228,10 +228,10 @@
         </message>
       </if>
       <if expr="not use_titlecase">
-        <message name="IDS_BRAVE_NEW_INCOGNITO_WINDOW" desc="The text label of a menu item for opening a new Private window">
+        <message name="IDS_DOWDES_NEW_INCOGNITO_WINDOW" desc="The text label of a menu item for opening a new Private window">
           New &amp;private window
         </message>
-        <message name="IDS_SHOW_BRAVE_WEBCOMPAT_REPORTER" desc="The menu item to report a broken site in the app menu">
+        <message name="IDS_SHOW_DOWDES_WEBCOMPAT_REPORTER" desc="The menu item to report a broken site in the app menu">
           Report a broken site
         </message>
         <message name="IDS_COPY_CLEAN_LINK" desc="The name of the context menu item to copy clean link">
@@ -241,13 +241,13 @@
            Only on the new tab page
         </message>
       </if>
-      <message name="IDS_SHOW_BRAVE_SYNC" desc="The show brave sync menu in the app menu">
+      <message name="IDS_SHOW_DOWDES_SYNC" desc="The show brave sync menu in the app menu">
         Sync
       </message>
-      <message name="IDS_SHOW_BRAVE_WALLET" desc="The show Brave Wallet menu item (app menu)">
+      <message name="IDS_SHOW_DOWDES_WALLET" desc="The show Dowdes Wallet menu item (app menu)">
         Wallet
       </message>
-      <message name="IDS_TOGGLE_AI_CHAT" desc="The show Brave Leo AI Chat menu item (app menu)">
+      <message name="IDS_TOGGLE_AI_CHAT" desc="The show Dowdes Leo AI Chat menu item (app menu)">
         Leo AI
       </message>
       <message name="IDS_OPEN_MORE_OTHER_DEVICES_SESSIONS" desc="The history sub-menu item to show sessions from other devices">
@@ -392,7 +392,7 @@
         </message>
       </if>
       <message name="IDS_WIDEVINE_INSTALL_MESSAGE" desc="Bubble info text when Widevine is not installed. 'Widevine' is the name of a plugin and should not be translated.">
-        Widevine is sometimes needed to play media on a webpage. It's a Google extension loaded from Google servers, which Brave cannot inspect. By installing, you'll agree to Google's terms of use.
+        Widevine is sometimes needed to play media on a webpage. It's a Google extension loaded from Google servers, which Dowdes cannot inspect. By installing, you'll agree to Google's terms of use.
       </message>
       <message name="IDS_WIDEVINE_PERMISSIONS_BUBBLE_FOOTNOTE_TEXT" desc="Message shown on the bottom of the widevine permissions bubble.">
         <ph name="LEARN_MORE_ABOUT_WIDEVINE">$1<ex>Learn more about Widevine</ex></ph>.
@@ -404,7 +404,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       <message name="IDS_PERMISSIONS_BUBBLE_SETTINGS_EXTENSIONS_LINK" desc="Settings extenions link in the widevine permission bubble footnote description." translateable="false">
         brave://settings/extensions
       </message>
-      <message name="IDS_BRAVE_PERMISSIONS_BUBBLE_PROMPT" desc="The label that is used to introduce permission request details to the user in a popup.">
+      <message name="IDS_DOWDES_PERMISSIONS_BUBBLE_PROMPT" desc="The label that is used to introduce permission request details to the user in a popup.">
         <ph name="SITE_NAME">$1<ex>google.com</ex></ph> is asking you to
       </message>
 
@@ -420,8 +420,8 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Extensions -->
-      <message name="IDS_UNVETTED_EXTENSION_INSTALL_PROMPT_TITLE" desc="Titlebar of the extension or app installation prompt which was not vetted by Brave. Asks the user if they want to install a particular extension or app.">
-        Brave does not review extensions for security and safety. Install "<ph name="EXTENSION_NAME">$1<ex>Gmail Checker</ex></ph>" only if you trust the developer.
+      <message name="IDS_UNVETTED_EXTENSION_INSTALL_PROMPT_TITLE" desc="Titlebar of the extension or app installation prompt which was not vetted by Dowdes. Asks the user if they want to install a particular extension or app.">
+        Dowdes does not review extensions for security and safety. Install "<ph name="EXTENSION_NAME">$1<ex>Gmail Checker</ex></ph>" only if you trust the developer.
       </message>
 
       <!-- Permissions -->
@@ -430,7 +430,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Tor -->
-      <message name="IDS_BRAVE_TOR_SETTINGS_SECTION" desc="Open Tor settings section">
+      <message name="IDS_DOWDES_TOR_SETTINGS_SECTION" desc="Open Tor settings section">
         Tor windows
       </message>
       <message name="IDS_NEW_TOR_IDENTITY" desc="The text label of a menu item for requesting new Tor identity">
@@ -471,22 +471,22 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Sync Infobars -->
-      <message name="IDS_BRAVE_SYNC_ACCOUNT_DELETED_INFOBAR_MESSAGE" desc="Message text shown to users who's Sync account was deleted. Is used along with IDS_BRAVE_SYNC_ACCOUNT_DELETED_INFOBAR_LINK_TEXT">
-        This Brave Sync account was deleted from another device. If you didn’t mean to disable Sync,<ph name="LINK_TEXT">$1<ex>re-create the account</ex></ph>
+      <message name="IDS_DOWDES_SYNC_ACCOUNT_DELETED_INFOBAR_MESSAGE" desc="Message text shown to users who's Sync account was deleted. Is used along with IDS_DOWDES_SYNC_ACCOUNT_DELETED_INFOBAR_LINK_TEXT">
+        This Dowdes Sync account was deleted from another device. If you didn’t mean to disable Sync,<ph name="LINK_TEXT">$1<ex>re-create the account</ex></ph>
       </message>
-      <message name="IDS_BRAVE_SYNC_ACCOUNT_DELETED_INFOBAR_LINK_TEXT" desc="Link text shown to users who's Sync account was deleted. When user clicks the link, Sync Setup page is opened. Is used along with IDS_BRAVE_SYNC_ACCOUNT_DELETED_INFOBAR_MESSAGE">
-        <ph name="INFOBAR_TEXT">$1<ex>This Brave Sync account was deleted from another device. If you didn’t mean to disable Sync,</ex></ph>re-create the account
+      <message name="IDS_DOWDES_SYNC_ACCOUNT_DELETED_INFOBAR_LINK_TEXT" desc="Link text shown to users who's Sync account was deleted. When user clicks the link, Sync Setup page is opened. Is used along with IDS_DOWDES_SYNC_ACCOUNT_DELETED_INFOBAR_MESSAGE">
+        <ph name="INFOBAR_TEXT">$1<ex>This Dowdes Sync account was deleted from another device. If you didn’t mean to disable Sync,</ex></ph>re-create the account
       </message>
-      <message name="IDS_BRAVE_SYNC_ACCOUNT_DELETED_INFOBAR_BUTTON" desc="Button text shown to users who's Sync account was disabled. This button prevents further show of the infobar.">
+      <message name="IDS_DOWDES_SYNC_ACCOUNT_DELETED_INFOBAR_BUTTON" desc="Button text shown to users who's Sync account was disabled. This button prevents further show of the infobar.">
         OK
       </message>
-      <message name="IDS_BRAVE_SYNC_CANNOT_RUN_INFOBAR_MESSAGE" desc="Message text shown to users when Sync service cannot run and additional attention is required">
-        Sync service could not be started, Brave Sync is not running
+      <message name="IDS_DOWDES_SYNC_CANNOT_RUN_INFOBAR_MESSAGE" desc="Message text shown to users when Sync service cannot run and additional attention is required">
+        Sync service could not be started, Dowdes Sync is not running
       </message>
-      <message name="IDS_BRAVE_SYNC_CANNOT_RUN_INFOBAR_DONT_SHOW_BUTTON" desc="Button text on Sync is not running informer. This button makes the informer fo not appear again">
+      <message name="IDS_DOWDES_SYNC_CANNOT_RUN_INFOBAR_DONT_SHOW_BUTTON" desc="Button text on Sync is not running informer. This button makes the informer fo not appear again">
         Don't show again
       </message>
-      <message name="IDS_BRAVE_SYNC_CANNOT_RUN_INFOBAR_CHECK_DETAILS_BUTTON" desc="Button text on Sync is not running informer. This button opens Sync settings">
+      <message name="IDS_DOWDES_SYNC_CANNOT_RUN_INFOBAR_CHECK_DETAILS_BUTTON" desc="Button text on Sync is not running informer. This button opens Sync settings">
         Check details
       </message>
 
@@ -496,22 +496,22 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Element Picker -->
-      <message name="IDS_BRAVE_ELEMENT_PICKER_CREATE_BTN_DISABLED_LABEL" desc="Label for Element picker's create button in disabled state">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_CREATE_BTN_DISABLED_LABEL" desc="Label for Element picker's create button in disabled state">
         Select element you want to block
       </message>
-      <message name="IDS_BRAVE_ELEMENT_PICKER_CREATE_BTN_ENABLED_LABEL" desc="Label for Element picker's create button in enabled state">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_CREATE_BTN_ENABLED_LABEL" desc="Label for Element picker's create button in enabled state">
         Block Elements
       </message>
-      <message name="IDS_BRAVE_ELEMENT_PICKER_MANAGE_BTN_LABEL" desc="Label for Element picker's manage button">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_MANAGE_BTN_LABEL" desc="Label for Element picker's manage button">
         Manage filters
       </message>
-      <message name="IDS_BRAVE_ELEMENT_PICKER_SHOW_RULES_BTN_LABEL" desc="Label for Element picker's show rules button">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_SHOW_RULES_BTN_LABEL" desc="Label for Element picker's show rules button">
         Show rules
       </message>
-      <message name="IDS_BRAVE_ELEMENT_PICKER_HIDE_RULES_BTN_LABEL" desc="Label for Element picker's hide rules button">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_HIDE_RULES_BTN_LABEL" desc="Label for Element picker's hide rules button">
         Hide rules
       </message>
-      <message name="IDS_BRAVE_ELEMENT_PICKER_QUIT_BTN_LABEL" desc="Label for Element picker's quit button">
+      <message name="IDS_DOWDES_ELEMENT_PICKER_QUIT_BTN_LABEL" desc="Label for Element picker's quit button">
         Cancel
       </message>
 
@@ -533,7 +533,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
           Open Link in Private Window with Tor
         </message>
         <message name="IDS_CONTENT_CONTEXT_OPENLINKTOR_INAPP" desc="Title case: The name of the open a link in private window with Tor command">
-          Open Link in Brave Private Window with Tor
+          Open Link in Dowdes Private Window with Tor
         </message>
       </if>
       <if expr="not use_titlecase">
@@ -544,7 +544,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
           Open link in private window with Tor
         </message>
         <message name="IDS_CONTENT_CONTEXT_OPENLINKTOR_INAPP" desc="The name of the open a link in private window with Tor command">
-          Open link in Brave private window with Tor
+          Open link in Dowdes private window with Tor
         </message>
       </if>
       <!-- Mac Menubar Menus -->
@@ -557,59 +557,59 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         </message>
       </if>
 
-      <!-- Brave Rewards Extension -->
+      <!-- Dowdes Rewards Extension -->
       <if expr="use_titlecase">
-        <message name="IDS_HIDE_BRAVE_REWARDS_ACTION_ICON" desc="The menu item to hide the Brave Rewards icon on the location bar">
-          Hide Brave Rewards Icon
+        <message name="IDS_HIDE_DOWDES_REWARDS_ACTION_ICON" desc="The menu item to hide the Dowdes Rewards icon on the location bar">
+          Hide Dowdes Rewards Icon
         </message>
       </if>
       <if expr="not use_titlecase">
-        <message name="IDS_HIDE_BRAVE_REWARDS_ACTION_ICON" desc="The menu item to hide the Brave Rewards icon on the location bar">
-          Hide Brave Rewards icon
+        <message name="IDS_HIDE_DOWDES_REWARDS_ACTION_ICON" desc="The menu item to hide the Dowdes Rewards icon on the location bar">
+          Hide Dowdes Rewards icon
         </message>
       </if>
 
-      <!-- Brave Wallet Extension -->
+      <!-- Dowdes Wallet Extension -->
       <if expr="use_titlecase">
-        <message name="IDS_HIDE_BRAVE_WALLET_ICON_ON_TOOLBAR" desc="The description for hiding the Brave Wallet icon on the toolbar">
-          Hide Brave Wallet Icon
+        <message name="IDS_HIDE_DOWDES_WALLET_ICON_ON_TOOLBAR" desc="The description for hiding the Dowdes Wallet icon on the toolbar">
+          Hide Dowdes Wallet Icon
         </message>
       </if>
       <if expr="not use_titlecase">
-        <message name="IDS_HIDE_BRAVE_WALLET_ICON_ON_TOOLBAR" desc="The description for hiding the Brave Wallet icon on the toolbar">
-          Hide Brave Wallet icon
+        <message name="IDS_HIDE_DOWDES_WALLET_ICON_ON_TOOLBAR" desc="The description for hiding the Dowdes Wallet icon on the toolbar">
+          Hide Dowdes Wallet icon
         </message>
       </if>
 
       <if expr="use_titlecase">
-        <message name="IDS_HIDE_BRAVE_AI_CHAT_ICON_ON_TOOLBAR" desc="The description for hiding the Brave AI Chat icon on the toolbar">
+        <message name="IDS_HIDE_DOWDES_AI_CHAT_ICON_ON_TOOLBAR" desc="The description for hiding the Dowdes AI Chat icon on the toolbar">
           Hide Leo AI Icon
         </message>
-        <message name="IDS_OPEN_BRAVE_AI_CHAT_FULL_PAGE" desc="The description for opening the Brave AI Chat in a new tab">
+        <message name="IDS_OPEN_DOWDES_AI_CHAT_FULL_PAGE" desc="The description for opening the Dowdes AI Chat in a new tab">
           Open Leo AI in a New Tab
         </message>
-        <message name="IDS_OPEN_BRAVE_AI_CHAT_SIDE_PANEL" desc="The description for opening the Brave AI Chat in the sidebar">
+        <message name="IDS_OPEN_DOWDES_AI_CHAT_SIDE_PANEL" desc="The description for opening the Dowdes AI Chat in the sidebar">
           Open Leo AI in the Sidebar
         </message>
-        <message name="IDS_MANAGE_BRAVE_AI_CHAT" desc="The description for opening the Brave AI Chat settings">
+        <message name="IDS_MANAGE_DOWDES_AI_CHAT" desc="The description for opening the Dowdes AI Chat settings">
           Manage Leo AI Settings
         </message>
       </if>
       <if expr="not use_titlecase">
-        <message name="IDS_HIDE_BRAVE_AI_CHAT_ICON_ON_TOOLBAR" desc="The description for hiding the Brave AI Chat icon on the toolbar">
+        <message name="IDS_HIDE_DOWDES_AI_CHAT_ICON_ON_TOOLBAR" desc="The description for hiding the Dowdes AI Chat icon on the toolbar">
           Hide Leo AI icon
         </message>
-        <message name="IDS_OPEN_BRAVE_AI_CHAT_FULL_PAGE" desc="The description for opening the Brave AI Chat in a new tab">
+        <message name="IDS_OPEN_DOWDES_AI_CHAT_FULL_PAGE" desc="The description for opening the Dowdes AI Chat in a new tab">
           Open Leo AI in a new tab
         </message>
-        <message name="IDS_OPEN_BRAVE_AI_CHAT_SIDE_PANEL" desc="The description for opening the Brave AI Chat in the sidebar">
+        <message name="IDS_OPEN_DOWDES_AI_CHAT_SIDE_PANEL" desc="The description for opening the Dowdes AI Chat in the sidebar">
           Open Leo AI in the sidebar
         </message>
-        <message name="IDS_MANAGE_BRAVE_AI_CHAT" desc="The description for opening the Brave AI Chat settings">
+        <message name="IDS_MANAGE_DOWDES_AI_CHAT" desc="The description for opening the Dowdes AI Chat settings">
           Manage Leo AI settings
         </message>
       </if>
-      <message name="IDS_ABOUT_BRAVE_AI_CHAT" desc="The description for loading the Brave AI Chat about page">
+      <message name="IDS_ABOUT_DOWDES_AI_CHAT" desc="The description for loading the Dowdes AI Chat about page">
         About Leo AI
       </message>
       <message name="IDS_TOOLTIP_AI_CHAT_TOOLBAR_BUTTON" desc="Text for Leo toolbar button for toggling Leo side panel">
@@ -617,68 +617,68 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Screenshot feature strings -->
-      <message name="IDS_BRAVE_SCREENSHOT_TOOLBAR_BUTTON_TOOLTIP" desc="Tooltip for the screenshot toolbar button">
+      <message name="IDS_DOWDES_SCREENSHOT_TOOLBAR_BUTTON_TOOLTIP" desc="Tooltip for the screenshot toolbar button">
         Take a screenshot
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_BUBBLE_TITLE" desc="Title of the screenshot capture bubble">
+      <message name="IDS_DOWDES_SCREENSHOT_BUBBLE_TITLE" desc="Title of the screenshot capture bubble">
         Capture screenshot
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_VISIBLE_AREA" desc="Label for the screenshot action that captures only the currently visible viewport">
+      <message name="IDS_DOWDES_SCREENSHOT_VISIBLE_AREA" desc="Label for the screenshot action that captures only the currently visible viewport">
         Visible area
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_FULL_PAGE" desc="Label for the screenshot action that captures the entire scrollable page">
+      <message name="IDS_DOWDES_SCREENSHOT_FULL_PAGE" desc="Label for the screenshot action that captures the entire scrollable page">
         Full page
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_SELECTED_AREA" desc="Label for the screenshot action that lets the user drag to select a region of the page">
+      <message name="IDS_DOWDES_SCREENSHOT_SELECTED_AREA" desc="Label for the screenshot action that lets the user drag to select a region of the page">
         Selected area
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_PREVIEW_DIALOG_TITLE" desc="Title of the dialog that previews a captured screenshot before it is saved">
+      <message name="IDS_DOWDES_SCREENSHOT_PREVIEW_DIALOG_TITLE" desc="Title of the dialog that previews a captured screenshot before it is saved">
         Screenshot preview
       </message>
-      <message name="IDS_BRAVE_SCREENSHOT_PREVIEW_DIALOG_DOWNLOAD_BUTTON" desc="Label of the button in the screenshot preview dialog that proceeds to save the screenshot">
+      <message name="IDS_DOWDES_SCREENSHOT_PREVIEW_DIALOG_DOWNLOAD_BUTTON" desc="Label of the button in the screenshot preview dialog that proceeds to save the screenshot">
         Download
       </message>
 
       <!-- Extensions page strings -->
-      <message name="IDS_EXTENSIONS_BRAVE_ITEM_SOURCE_WEBSTORE" desc="The text to indicate that an extension is from the Web Extensions Store.">
+      <message name="IDS_EXTENSIONS_DOWDES_ITEM_SOURCE_WEBSTORE" desc="The text to indicate that an extension is from the Web Extensions Store.">
         Web Extensions Store
       </message>
-      <message name="IDS_EXTENSIONS_BRAVE_ITEM_CHROME_WEB_STORE" desc="Label for button to visit the Web Extensions Store.">
+      <message name="IDS_EXTENSIONS_DOWDES_ITEM_CHROME_WEB_STORE" desc="Label for button to visit the Web Extensions Store.">
         View in Web Extensions Store
       </message>
-      <message name="IDS_EXTENSIONS_BRAVE_PRIVATE_WARNING" desc="Warns the user that Brave cannot prevent extensions from recording history in private mode and Tor mode">
-        Warning: Brave cannot prevent extensions from recording your browsing history.
+      <message name="IDS_EXTENSIONS_DOWDES_PRIVATE_WARNING" desc="Warns the user that Dowdes cannot prevent extensions from recording history in private mode and Tor mode">
+        Warning: Dowdes cannot prevent extensions from recording your browsing history.
       </message>
-      <message name="IDS_EXTENSIONS_BRAVE_SPANNING_WARNING" desc="Warns the user that extension will make network connection not through Tor when it is in spanning mode">
+      <message name="IDS_EXTENSIONS_DOWDES_SPANNING_WARNING" desc="Warns the user that extension will make network connection not through Tor when it is in spanning mode">
         If this extension makes network requests, they will not use Tor or private mode.
       </message>
-      <message name="IDS_EXTENSIONS_BRAVE_PRIVATE_AND_TOR_WARNING" desc="Displayed in extensions management UI after an extension is selected to be run in private mode and Tor mode.">
+      <message name="IDS_EXTENSIONS_DOWDES_PRIVATE_AND_TOR_WARNING" desc="Displayed in extensions management UI after an extension is selected to be run in private mode and Tor mode.">
         To disable this extension in private mode and Tor mode, unselect this option.
       </message>
-      <message name="IDS_EXTENSIONS_BRAVE_HOSTED" desc="Displayed in extensions management UI if an extension is hosted on the Brave server.">
-        Brave-hosted
+      <message name="IDS_EXTENSIONS_DOWDES_HOSTED" desc="Displayed in extensions management UI if an extension is hosted on the Dowdes server.">
+        Dowdes-hosted
       </message>
 
       <!-- App shortcuts -->
       <if expr="not is_win">
-        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_BRAVE_NIGHTLY" desc="Name for the Brave Apps Start Menu folder name.">
-          Brave Browser Nightly Apps
+        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_DOWDES_NIGHTLY" desc="Name for the Dowdes Apps Start Menu folder name.">
+          Dowdes Browser Nightly Apps
         </message>
-        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_BRAVE_BETA" desc="Name for the Brave Apps Start Menu folder name.">
-          Brave Browser Beta Apps
+        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_DOWDES_BETA" desc="Name for the Dowdes Apps Start Menu folder name.">
+          Dowdes Browser Beta Apps
         </message>
-        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_BRAVE_DEV" desc="Name for the Brave Apps Start Menu folder name.">
-          Brave Browser Dev Apps
+        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_DOWDES_DEV" desc="Name for the Dowdes Apps Start Menu folder name.">
+          Dowdes Browser Dev Apps
         </message>
-        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_BRAVE_STABLE" desc="Name for the Brave Apps Start Menu folder name.">
-          Brave Browser Apps
+        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_DOWDES_STABLE" desc="Name for the Dowdes Apps Start Menu folder name.">
+          Dowdes Browser Apps
         </message>
-        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_BRAVE_DEVELOPMENT" desc="Name for the Brave Apps Start Menu folder name.">
-          Brave Browser Development Apps
+        <message name="IDS_APP_SHORTCUTS_SUBDIR_NAME_DOWDES_DEVELOPMENT" desc="Name for the Dowdes Apps Start Menu folder name.">
+          Dowdes Browser Development Apps
         </message>
       </if>
 
-      <!-- Brave crash report permission ask dialog -->
+      <!-- Dowdes crash report permission ask dialog -->
       <if expr="not is_android">
         <message name="IDS_CRASH_REPORT_PERMISSION_ASK_DIALOG_OK_BUTTON_LABEL" desc="The text for ok button">
           Allow
@@ -690,13 +690,13 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
           Don't ask again
         </message>
         <message name="IDS_CRASH_REPORT_PERMISSION_ASK_DIALOG_CONTENT_TEXT" desc="The contents for crash report ask dialog">
-          Help improve Brave's product stability by automatically sending diagnostic reports when the Brave Browser crashes or freezes.
+          Help improve Dowdes's product stability by automatically sending diagnostic reports when the Dowdes Browser crashes or freezes.
         </message>
         <message name="IDS_CRASH_REPORT_PERMISSION_ASK_DIALOG_HEADER_TEXT" desc="The header text for crash report ask dialog">
-          <ph name="BROWSER_NAME">$1<ex>Brave Browser</ex></ph> quit unexpectedly.
+          <ph name="BROWSER_NAME">$1<ex>Dowdes Browser</ex></ph> quit unexpectedly.
         </message>
         <message name="IDS_CRASH_REPORT_PERMISSION_ASK_DIALOG_HEADER_TEXT_BROWSER_NAME_PART" desc="This is used for replacing BROWSER_NAME from above HEADER_TEXT.">
-          Brave Browser
+          Dowdes Browser
         </message>
         <message name="IDS_CRASH_REPORT_PERMISSION_ASK_DIALOG_FOOTNOTE_TEXT" desc="The footnote text for crash report ask dialog.">
           You can change <ph name="SETTING_TEXT">$1<ex>this</ex></ph> at any time in browser settings.
@@ -713,7 +713,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
           This site has requested your <ph name="PART_ONE">$1</ph>precise location<ph name="PART_ONE_END">$1</ph>. <ph name="PART_TWO">$1</ph>Learn more<ph name="PART_TWO_END">$1</ph>
         </message>
         <message name="IDS_GEOLOCATION_PERMISSION_BUBBLE_HIGH_ACCURACY_WITHOUT_LOCATION_SERVICE_LABEL" desc="The text for geolocation permission bubble with high accuracy. Each part will be used to get offset in the string">
-          This site has requested your <ph name="PART_ONE">$1</ph>precise location<ph name="PART_ONE_END">$1</ph>. Brave will only able to provide <ph name="PART_TWO">$1</ph>general location<ph name="PART_TWO_END">$1</ph> data due to <ph name="PART_THREE">$1</ph>Location Services<ph name="PART_THREE_END">$1</ph> being disabled. <ph name="PART_FOUR">$1</ph>Learn more<ph name="PART_FOUR_END">$1</ph>
+          This site has requested your <ph name="PART_ONE">$1</ph>precise location<ph name="PART_ONE_END">$1</ph>. Dowdes will only able to provide <ph name="PART_TWO">$1</ph>general location<ph name="PART_TWO_END">$1</ph> data due to <ph name="PART_THREE">$1</ph>Location Services<ph name="PART_THREE_END">$1</ph> being disabled. <ph name="PART_FOUR">$1</ph>Learn more<ph name="PART_FOUR_END">$1</ph>
         </message>
 
         <!-- Closing confirm dialog -->
@@ -735,65 +735,65 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         <message name="IDS_WINDOW_CLOSING_CONFIRM_DLG_DONT_ASK_AGAIN_LABEL" desc="The text for checkbox in the dialog">
           Don't ask me again
         </message>
-        <!-- Brave search conversion promotion -->
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_B_TITLE" desc="The text for the banner type title">
-          Don't Google it. Can't Bing it. Just Brave it.
+        <!-- Dowdes search conversion promotion -->
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_B_TITLE" desc="The text for the banner type title">
+          Don't Google it. Can't Bing it. Just Dowdes it.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_B_DESC" desc="The text for the banner type description">
-          Brave Search doesn't profile you. And it's 100% independent.
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_B_DESC" desc="The text for the banner type description">
+          Dowdes Search doesn't profile you. And it's 100% independent.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_TITLE" desc="The text for the banner type title">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_TITLE" desc="The text for the banner type title">
           Search and you will find. Privately.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DESC" desc="The text for the banner type description">
-          Brave Search doesn't profile you. And it's 100% independent of Big Tech.
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DESC" desc="The text for the banner type description">
+          Dowdes Search doesn't profile you. And it's 100% independent of Big Tech.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_TITLE" desc="The text for the banner type title">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_TITLE" desc="The text for the banner type title">
           AI-infused search with a unique index.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DESC" desc="The text for the banner type description">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DESC" desc="The text for the banner type description">
           Fully private, 100% independent, and with great AI features.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DDG_TITLE" desc="The text for the banner type title">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DDG_TITLE" desc="The text for the banner type title">
           Get better results
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DDG_DESC" desc="The text for the banner type description">
-          Brave Search is independently verified to have better results than Bing (or Bing clones like DuckDuckGo).
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_C_DDG_DESC" desc="The text for the banner type description">
+          Dowdes Search is independently verified to have better results than Bing (or Bing clones like DuckDuckGo).
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DDG_TITLE" desc="The text for the banner type title">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DDG_TITLE" desc="The text for the banner type title">
           Improve search results
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DDG_DESC" desc="The text for the banner type description">
-          Brave Search has better results than DuckDuckGo for most queries. And it’s truly private.
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_PROMOTION_BANNER_TYPE_D_DDG_DESC" desc="The text for the banner type description">
+          Dowdes Search has better results than DuckDuckGo for most queries. And it’s truly private.
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_TRY_BUTTON_LABEL" desc="The text for the try button in the promotion match">
-          Try Brave Search
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_TRY_BUTTON_LABEL" desc="The text for the try button in the promotion match">
+          Try Dowdes Search
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_CLOSE_BUTTON_TOOLTIP" desc="The tooltip text for the dismiss button in a promotion match">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_CLOSE_BUTTON_TOOLTIP" desc="The tooltip text for the dismiss button in a promotion match">
           Dismiss
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_SET_AS_DEFAULT_BUTTON_LABEL" desc="The text for the set as default button in a promotion match">
-          Set Brave as default
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_SET_AS_DEFAULT_BUTTON_LABEL" desc="The text for the set as default button in a promotion match">
+          Set Dowdes as default
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_MAYBE_LATER_BUTTON_TOOLTIP" desc="The tooltip text for the maybe later button in a promotion match">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_MAYBE_LATER_BUTTON_TOOLTIP" desc="The tooltip text for the maybe later button in a promotion match">
           Maybe later
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_MAYBE_LATER_BUTTON_LABEL" desc="The text for the maybe later button in a promotion match">
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_MAYBE_LATER_BUTTON_LABEL" desc="The text for the maybe later button in a promotion match">
           Maybe later
         </message>
-        <message name="IDS_ACC_BRAVE_SEARCH_CONVERSION_DISMISS_BUTTON" desc="Announcement when the dismiss button is focused.">
-          Dismiss Brave search conversion, press Enter to remove this suggestion
+        <message name="IDS_ACC_DOWDES_SEARCH_CONVERSION_DISMISS_BUTTON" desc="Announcement when the dismiss button is focused.">
+          Dismiss Dowdes search conversion, press Enter to remove this suggestion
         </message>
-        <message name="IDS_BRAVE_SEARCH_CONVERSION_BUTTON_LABEL" desc="The text for the search conversion promotion button">
-          Switch to Brave Search
+        <message name="IDS_DOWDES_SEARCH_CONVERSION_BUTTON_LABEL" desc="The text for the search conversion promotion button">
+          Switch to Dowdes Search
         </message>
 
         <!-- web Discovery InfoBar -->
         <message name="IDS_WEB_DISCOVERY_INFOBAR_MESSAGE" desc="The text for web discovery infobar message">
-          Help improve <ph name="SEARCH_NAME">$1<ex>Brave Search</ex></ph> by sending anonymous usage data.  <ph name="MORE_INFO">$2<ex>More info</ex></ph>
+          Help improve <ph name="SEARCH_NAME">$1<ex>Dowdes Search</ex></ph> by sending anonymous usage data.  <ph name="MORE_INFO">$2<ex>More info</ex></ph>
         </message>
-        <message name="IDS_WEB_DISCOVERY_INFOBAR_MESSAGE_BRAVE_SEARCH" desc="The text for brave search part in message">
-          Brave Search
+        <message name="IDS_WEB_DISCOVERY_INFOBAR_MESSAGE_DOWDES_SEARCH" desc="The text for brave search part in message">
+          Dowdes Search
         </message>
         <message name="IDS_WEB_DISCOVERY_INFOBAR_MESSAGE_MORE_INFO" desc="The text for more info link part in message">
           More info
@@ -812,12 +812,12 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         </if>
         <if expr="is_win">
           <message name="IDS_OBSOLETE_SYSTEM_CONFIRM_DIALOG_CONTENT" desc="The text for obsolete system confirm dialog">
-            By clicking OK, you acknowledge that your installation of Brave will NOT receive critical security fixes until you update to Windows 10 or later. This warning will NOT show again.
+            By clicking OK, you acknowledge that your installation of Dowdes will NOT receive critical security fixes until you update to Windows 10 or later. This warning will NOT show again.
           </message>
         </if>
         <if expr="is_macosx">
           <message name="IDS_OBSOLETE_SYSTEM_CONFIRM_DIALOG_CONTENT" desc="The text for obsolete system confirm dialog">
-            By clicking OK, you acknowledge that your installation of Brave will NOT receive critical security fixes until you update to macOS 13 or later. This warning will NOT show again.
+            By clicking OK, you acknowledge that your installation of Dowdes will NOT receive critical security fixes until you update to macOS 13 or later. This warning will NOT show again.
           </message>
         </if>
 
@@ -835,37 +835,37 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         </message>
       </if>
 
-      <!-- Brave Ads -->
-      <message name="IDS_BRAVE_ADS_NOTIFICATION_AD_CLOSE_BUTTON" desc="Text to be spoken for the notification ad close button">
+      <!-- Dowdes Ads -->
+      <message name="IDS_DOWDES_ADS_NOTIFICATION_AD_CLOSE_BUTTON" desc="Text to be spoken for the notification ad close button">
         Close
       </message>
-      <message name="IDS_BRAVE_ADS_NOTIFICATION_AD_ACCESSIBLE_NAME" desc="Text to be spoken when a notification ad is shown">
-        Brave Notification Ad
+      <message name="IDS_DOWDES_ADS_NOTIFICATION_AD_ACCESSIBLE_NAME" desc="Text to be spoken when a notification ad is shown">
+        Dowdes Notification Ad
       </message>
-      <message name="IDS_BRAVE_ADS_SEARCH_RESULT_AD_CLICKED_INFOBAR_MESSAGE" desc="The text label of creative search result ad infobar message">
-        Thanks for supporting Brave Search by clicking a private ad. Unlike Big Tech, we measure ad performance anonymously to preserve your privacy.
+      <message name="IDS_DOWDES_ADS_SEARCH_RESULT_AD_CLICKED_INFOBAR_MESSAGE" desc="The text label of creative search result ad infobar message">
+        Thanks for supporting Dowdes Search by clicking a private ad. Unlike Big Tech, we measure ad performance anonymously to preserve your privacy.
       </message>
-      <message name="IDS_BRAVE_ADS_SEARCH_RESULT_AD_LEARN_MORE_OPT_OUT_CHOICES_LABEL" desc="The text label of creative search result ad learn more / opt out choices link">
+      <message name="IDS_DOWDES_ADS_SEARCH_RESULT_AD_LEARN_MORE_OPT_OUT_CHOICES_LABEL" desc="The text label of creative search result ad learn more / opt out choices link">
         Learn more / opt out choices
       </message>
       <message name="IDS_NEW_TAB_TAKEOVER_INFOBAR_MESSAGE" desc="The text label of new tab takeover infobar message">
-        Sponsored background images support Brave's mission to build an independent, user-first Web. And unlike Big Tech, we measure ad performance anonymously to preserve your privacy.
+        Sponsored background images support Dowdes's mission to build an independent, user-first Web. And unlike Big Tech, we measure ad performance anonymously to preserve your privacy.
       </message>
       <message name="IDS_NEW_TAB_TAKEOVER_INFOBAR_LEARN_MORE_OPT_OUT_CHOICES" desc="The text of new tab takeover infobar learn more / opt out choices link">
         Learn more / opt out choices
       </message>
 
-      <!-- Brave Search -->
+      <!-- Dowdes Search -->
       <message name="IDS_SETTINGS_WEB_DISCOVERY_LABEL" desc="Description that shows settings for toggle Web Discovery">
         Web Discovery Project
       </message>
       <message name="IDS_SETTINGS_WEB_DISCOVERY_SUBLABEL" desc="Description that shows under main toggle setting for Web Discovery">
-        Contribute some anonymous search &amp; browsing data to refine Brave Search.
+        Contribute some anonymous search &amp; browsing data to refine Dowdes Search.
       </message>
 
-      <!-- Brave Tooltips -->
-      <message name="IDS_BRAVE_TOOLTIPS_BRAVE_TOOLTIP_ACCESSIBLE_NAME" desc="Text to be spoken when a tooltip is shown">
-        Brave Tooltip
+      <!-- Dowdes Tooltips -->
+      <message name="IDS_DOWDES_TOOLTIPS_DOWDES_TOOLTIP_ACCESSIBLE_NAME" desc="Text to be spoken when a tooltip is shown">
+        Dowdes Tooltip
       </message>
 
       <!-- Sidebar -->
@@ -995,67 +995,67 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </if>
 
       <!-- Stats -->
-      <message name="IDS_BRAVE_STATS_USAGE_PING_SETTING" desc="Description that shows in settings for toggling stats usage pings">
-        Automatically send daily usage ping to Brave
+      <message name="IDS_DOWDES_STATS_USAGE_PING_SETTING" desc="Description that shows in settings for toggling stats usage pings">
+        Automatically send daily usage ping to Dowdes
       </message>
-      <message name="IDS_BRAVE_STATS_USAGE_PING_SETTING_SUBITEM" desc="Description that shows under main toggle setting for usage pings">
-        This private ping lets Brave estimate active users
+      <message name="IDS_DOWDES_STATS_USAGE_PING_SETTING_SUBITEM" desc="Description that shows under main toggle setting for usage pings">
+        This private ping lets Dowdes estimate active users
       </message>
 
       <!-- P3A -->
-      <message name="IDS_BRAVE_CONFIRM_P3A_INFO_BAR" desc="Text that shows on the info bar where user acknowledges the P3A message">
-        Brave uses privacy-preserving product analytics to estimate the overall usage of certain features
+      <message name="IDS_DOWDES_CONFIRM_P3A_INFO_BAR" desc="Text that shows on the info bar where user acknowledges the P3A message">
+        Dowdes uses privacy-preserving product analytics to estimate the overall usage of certain features
       </message>
-      <message name="IDS_BRAVE_CONFIRM_P3A_INFO_BAR_ACKNOWLEDGE" desc="OK button that shows on the info bar where user acknowledges the P3A message">
+      <message name="IDS_DOWDES_CONFIRM_P3A_INFO_BAR_ACKNOWLEDGE" desc="OK button that shows on the info bar where user acknowledges the P3A message">
         Got it
       </message>
-      <message name="IDS_BRAVE_CONFIRM_P3A_INFO_BAR_DISABLE" desc="Disable button that shows on the info bar where user acknowledges the P3A message">
+      <message name="IDS_DOWDES_CONFIRM_P3A_INFO_BAR_DISABLE" desc="Disable button that shows on the info bar where user acknowledges the P3A message">
         Disable
       </message>
-      <message name="IDS_BRAVE_P3A_ENABLE_SETTING" desc="Description that shows in settings for toggling P3A">
+      <message name="IDS_DOWDES_P3A_ENABLE_SETTING" desc="Description that shows in settings for toggling P3A">
         Allow privacy-preserving product analytics (P3A)
       </message>
-      <message name="IDS_BRAVE_P3A_ENABLE_SETTING_SUBITEM" desc="Description that shows under main toggle setting for P3A">
-        These private responses help Brave estimate the overall usage of certain features and make them better for you
+      <message name="IDS_DOWDES_P3A_ENABLE_SETTING_SUBITEM" desc="Description that shows under main toggle setting for P3A">
+        These private responses help Dowdes estimate the overall usage of certain features and make them better for you
       </message>
 
       <!-- Web3 detection -->
-      <message name="IDS_BRAVE_WALLET_SETTINGS_SECTION" desc="Open Wallet settings section">
+      <message name="IDS_DOWDES_WALLET_SETTINGS_SECTION" desc="Open Wallet settings section">
         Wallet
       </message>
-      <message name="IDS_BRAVE_WEB3_SETTINGS_SECTION" desc="Open Web3 settings section">
+      <message name="IDS_DOWDES_WEB3_SETTINGS_SECTION" desc="Open Web3 settings section">
         Web3
       </message>
-      <message name="IDS_BRAVE_WEB3_DOMAINS_SETTINGS_SECTION" desc="Open Web3 Domains settings section">
+      <message name="IDS_DOWDES_WEB3_DOMAINS_SETTINGS_SECTION" desc="Open Web3 Domains settings section">
         Web3 Domains
       </message>
-      <!-- Brave Wayback Machine -->
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_SORRY_HEADER_TEXT" desc="The label for sorry message when page is not available on bubble">
+      <!-- Dowdes Wayback Machine -->
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_SORRY_HEADER_TEXT" desc="The label for sorry message when page is not available on bubble">
         Sorry, that page is missing.
       </message>
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_CANT_FIND_HEADER_TEXT" desc="The label for sorry message when page is not available on bubble">
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_CANT_FIND_HEADER_TEXT" desc="The label for sorry message when page is not available on bubble">
         Couldn't load saved version
       </message>
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_ASK_ABOUT_CHECK_TEXT" desc="The label for asking to check from wayback machine">
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_ASK_ABOUT_CHECK_TEXT" desc="The label for asking to check from wayback machine">
         Do you want to check if a saved version is available on the Wayback Machine?
       </message>
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_NOT_AVAILABLE_TEXT" desc="The label for wayback machine doesn't have saved version">
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_NOT_AVAILABLE_TEXT" desc="The label for wayback machine doesn't have saved version">
         Wayback Machine couldn't find a saved version of this site.
       </message>
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_CHECK_BUTTON_TEXT" desc="The label for check button on wayback infobar">
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_CHECK_BUTTON_TEXT" desc="The label for check button on wayback infobar">
         Check saved version
       </message>
-      <message name="IDS_BRAVE_WAYBACK_MACHINE_BUBBLE_DISMISS_BUTTON_TEXT" desc="Text to show for the no thanks button.">
+      <message name="IDS_DOWDES_WAYBACK_MACHINE_BUBBLE_DISMISS_BUTTON_TEXT" desc="Text to show for the no thanks button.">
         Dismiss
       </message>
 
-      <!-- Brave's copyright statement -->
-      <message name="IDS_BRAVE_VERSION_UI_LICENSE" desc="The label below the copyright message, containing the URLs.">
-        Brave is made available to you under the <ph name="BEGIN_LINK_MPL">&lt;a target="_blank" href="$1"&gt;</ph>Mozilla Public License 2.0<ph name="END_LINK_MPL">&lt;/a&gt;</ph> (MPL) and includes <ph name="BEGIN_LINK_OSS">&lt;a target="_blank" href="$2"&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph> under a variety of other licenses.
+      <!-- Dowdes's copyright statement -->
+      <message name="IDS_DOWDES_VERSION_UI_LICENSE" desc="The label below the copyright message, containing the URLs.">
+        Dowdes is made available to you under the <ph name="BEGIN_LINK_MPL">&lt;a target="_blank" href="$1"&gt;</ph>Mozilla Public License 2.0<ph name="END_LINK_MPL">&lt;/a&gt;</ph> (MPL) and includes <ph name="BEGIN_LINK_OSS">&lt;a target="_blank" href="$2"&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph> under a variety of other licenses.
         You can read <ph name="BEGIN_LINK_BUILD_INSTRUCTIONS">&lt;a target="_blank" href="$3"&gt;</ph>instructions on how to download and build for yourself<ph name="END_LINK_BUILD_INSTRUCTIONS">&lt;/a&gt;</ph> the specific <ph name="BEGIN_LINK_SOURCE_CODE">&lt;a target="_blank" href="$4"&gt;</ph>source code used to create this copy<ph name="END_LINK_SOURCE_CODE">&lt;/a&gt;</ph>.
       </message>
 
-      <!-- Brave's tab context menu -->
+      <!-- Dowdes's tab context menu -->
       <if expr="not use_titlecase">
         <message name="IDS_TAB_CXMENU_BOOKMARK_ALL_TABS" desc="The label of the tab context menu item for creating a bookmark folder containing an entry for each open tab.">
           Bookmark all tabs...
@@ -1175,22 +1175,22 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         </message>
       </if>
 
-      <!-- Brave VPN -->
+      <!-- Dowdes VPN -->
       <if expr="enable_brave_vpn">
         <message name="IDS_SETTINGS_VPN_PAGE_TITLE" desc="Title of the vpn settings page">
-          Brave VPN
+          Dowdes VPN
         </message>
         <message name="IDS_SETTINGS_VPN_PAGE_USE_WIREGUARD_TITLE" desc="Title of the WireGuard option on the vpn settings page">
-          Use WireGuard protocol in Brave VPN
+          Use WireGuard protocol in Dowdes VPN
         </message>
         <message name="IDS_SETTINGS_VPN_PAGE_SUBLABEL_VPN_CONNECTED" desc="Title of the WireGuard sub label on the vpn settings page when brave vpn connected">
-          This setting cannot be changed while Brave VPN is connected.
+          This setting cannot be changed while Dowdes VPN is connected.
         </message>
         <message name="IDS_SETTINGS_VPN_PAGE_SHOW_IN_SYSTEM_TRAY_WINDOWS" desc="Title of the 'Show system tray' option on the vpn settings page for Windows customers">
           Show VPN Tray Icon
         </message>
         <message name="IDS_SETTINGS_VPN_PAGE_SHOW_IN_SYSTEM_TRAY_WINDOWS_SUBLABEL" desc="Sub title for the 'Show system tray' option on the vpn settings page for Windows customers">
-          When enabled, the Windows taskbar will show the tray icon for Brave VPN.
+          When enabled, the Windows taskbar will show the tray icon for Dowdes VPN.
         </message>
         <message name="IDS_SETTINGS_SHOW_VPN_BUTTON" desc="The label for showing vpn button in the toolbar">
           Show VPN button
@@ -1198,61 +1198,61 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         <message name="IDS_SETTINGS_SHOW_VPN_BUTTON_SUB_LABEL" desc="The sub label for vpn button setting">
             Shows the VPN button in the toolbar
         </message>
-        <message name="IDS_BRAVE_VPN_TOOLBAR_BUTTON_TEXT" desc="Text for vpn button in toolbar.">
+        <message name="IDS_DOWDES_VPN_TOOLBAR_BUTTON_TEXT" desc="Text for vpn button in toolbar.">
           VPN
         </message>
-        <message name="IDS_BRAVE_VPN_TOGGLE_MENU_ITEM_TEXT" desc="Text for vpn toggle button in app menu.">
+        <message name="IDS_DOWDES_VPN_TOGGLE_MENU_ITEM_TEXT" desc="Text for vpn toggle button in app menu.">
           Toggle VPN
         </message>
-        <message name="IDS_BRAVE_VPN_MENU" desc="The Brave VPN item (app menu)">
-          Brave VPN
+        <message name="IDS_DOWDES_VPN_MENU" desc="The Dowdes VPN item (app menu)">
+          Dowdes VPN
         </message>
-        <message name="IDS_BRAVE_VPN_ABOUT_VPN_MENU_ITEM" desc="The menu item for showing about vpn">
-          About Brave VPN
+        <message name="IDS_DOWDES_VPN_ABOUT_VPN_MENU_ITEM" desc="The menu item for showing about vpn">
+          About Dowdes VPN
         </message>
-        <message name="IDS_BRAVE_VPN_STATUS_LABEL_CONNECTING" desc="The text for vpn status label in connecting">
+        <message name="IDS_DOWDES_VPN_STATUS_LABEL_CONNECTING" desc="The text for vpn status label in connecting">
           Connecting...
         </message>
-        <message name="IDS_BRAVE_VPN_STATUS_LABEL_CONNECTED" desc="The text for vpn status label in connected">
+        <message name="IDS_DOWDES_VPN_STATUS_LABEL_CONNECTED" desc="The text for vpn status label in connected">
           Connected
         </message>
-        <message name="IDS_BRAVE_VPN_STATUS_LABEL_DISCONNECTING" desc="The text for vpn status label in disconnecting">
+        <message name="IDS_DOWDES_VPN_STATUS_LABEL_DISCONNECTING" desc="The text for vpn status label in disconnecting">
           Disconnecting...
         </message>
-        <message name="IDS_BRAVE_VPN_STATUS_LABEL_DISCONNECTED" desc="The text for vpn status label in disconnected">
+        <message name="IDS_DOWDES_VPN_STATUS_LABEL_DISCONNECTED" desc="The text for vpn status label in disconnected">
           Disconnected
         </message>
         <if expr="use_titlecase">
-          <message name="IDS_BRAVE_VPN_SHOW_VPN_BUTTON_MENU_ITEM" desc="The menu item for showing vpn button in toolbar">
+          <message name="IDS_DOWDES_VPN_SHOW_VPN_BUTTON_MENU_ITEM" desc="The menu item for showing vpn button in toolbar">
             Show VPN Button in Toolbar
           </message>
-          <message name="IDS_BRAVE_VPN_HIDE_VPN_BUTTON_MENU_ITEM" desc="The menu item for hiding vpn button in toolbar">
+          <message name="IDS_DOWDES_VPN_HIDE_VPN_BUTTON_MENU_ITEM" desc="The menu item for hiding vpn button in toolbar">
             Hide VPN Button in Toolbar
           </message>
-          <message name="IDS_BRAVE_VPN_SHOW_VPN_TRAY_ICON_MENU_ITEM" desc="The menu item for showing vpn tray icon in windows">
+          <message name="IDS_DOWDES_VPN_SHOW_VPN_TRAY_ICON_MENU_ITEM" desc="The menu item for showing vpn tray icon in windows">
             Show VPN Tray Icon
           </message>
-          <message name="IDS_BRAVE_VPN_SHOW_FEEDBACK_MENU_ITEM" desc="The menu item for sending feedback">
+          <message name="IDS_DOWDES_VPN_SHOW_FEEDBACK_MENU_ITEM" desc="The menu item for sending feedback">
             Send Feedback
           </message>
-          <message name="IDS_BRAVE_VPN_MANAGE_MY_PLAN_MENU_ITEM" desc="The menu item for managing my vpn plan">
+          <message name="IDS_DOWDES_VPN_MANAGE_MY_PLAN_MENU_ITEM" desc="The menu item for managing my vpn plan">
             Manage My Plan
           </message>
         </if>
         <if expr="not use_titlecase">
-          <message name="IDS_BRAVE_VPN_SHOW_VPN_BUTTON_MENU_ITEM" desc="The menu item for showing vpn button in toolbar">
+          <message name="IDS_DOWDES_VPN_SHOW_VPN_BUTTON_MENU_ITEM" desc="The menu item for showing vpn button in toolbar">
             Show VPN button in toolbar
           </message>
-          <message name="IDS_BRAVE_VPN_HIDE_VPN_BUTTON_MENU_ITEM" desc="The menu item for hiding vpn button in toolbar">
+          <message name="IDS_DOWDES_VPN_HIDE_VPN_BUTTON_MENU_ITEM" desc="The menu item for hiding vpn button in toolbar">
             Hide VPN button in toolbar
           </message>
-          <message name="IDS_BRAVE_VPN_SHOW_VPN_TRAY_ICON_MENU_ITEM" desc="The menu item for showing vpn tray icon in windows">
+          <message name="IDS_DOWDES_VPN_SHOW_VPN_TRAY_ICON_MENU_ITEM" desc="The menu item for showing vpn tray icon in windows">
             Show VPN tray icon
           </message>
-          <message name="IDS_BRAVE_VPN_SHOW_FEEDBACK_MENU_ITEM" desc="The menu item for sending feedback">
+          <message name="IDS_DOWDES_VPN_SHOW_FEEDBACK_MENU_ITEM" desc="The menu item for sending feedback">
             Send feedback
           </message>
-          <message name="IDS_BRAVE_VPN_MANAGE_MY_PLAN_MENU_ITEM" desc="The menu item for managing my vpn plan">
+          <message name="IDS_DOWDES_VPN_MANAGE_MY_PLAN_MENU_ITEM" desc="The menu item for managing my vpn plan">
             Manage my plan
           </message>
         </if>
@@ -1263,7 +1263,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
         Full Disk Access required
       </message>
       <message name="IDS_FULL_DISK_ACCESS_CONFIRM_DIALOG_MESSAGE" desc="The label for full disk access dialog message">
-        Brave needs Full Disk Access to import your Bookmarks from Safari.
+        Dowdes needs Full Disk Access to import your Bookmarks from Safari.
       </message>
       <message name="IDS_FULL_DISK_ACCESS_CONFIRM_DIALOG_LINK_TEXT" desc="The label for full disk access dialog link text">
         Learn how to grant Full Disk Access from your System Preferences.
@@ -1278,7 +1278,7 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Bookmarks -->
-      <message name="IDS_BRAVE_BOOKMARK_MANAGER_EMPTY_LIST" desc="">
+      <message name="IDS_DOWDES_BOOKMARK_MANAGER_EMPTY_LIST" desc="">
         To add a bookmark, click the bookmark button next to the address bar
       </message>
       <message name="IDS_BOOKMARK_BAR_IMPORT_LINK" desc="text shown for importing ">
@@ -1292,14 +1292,14 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- Importer -->
-      <message name="IDS_BRAVE_IMPORT_FROM_EDGE" desc="browser combo box: Microsoft Edge Legacy">
+      <message name="IDS_DOWDES_IMPORT_FROM_EDGE" desc="browser combo box: Microsoft Edge Legacy">
         Microsoft Edge Legacy
       </message>
       <message name="IDS_IMPORTED_FROM_BOOKMARK_FOLDER" desc="Name for bookmark panel folder imported from another browser">
         Imported from <ph name="BROWSER_NAME">$1<ex>Chrome</ex></ph>.
       </message>
       <!-- These strings below are used by the Chromium importer. Chromium only
-           builds the importer on Desktop, but Brave also has the importer - and
+           builds the importer on Desktop, but Dowdes also has the importer - and
            builds the code - on Android. In Chromium's generated_resources.grd
            this strings are under `<if expr="not is_android">`. To avoid
            patching generated_resources.grd we add these strings to our own
@@ -1529,83 +1529,83 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </if> <!-- enable_playlist_webui -->
 
       <!-- File select -->
-      <message name="IDS_BRAVE_FILE_SELECT_OPEN_TITLE" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_OPEN_TITLE" desc="">
         <ph name="SITE">$1<ex>http://foo.com</ex></ph> wants to open
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_OPEN_TITLE_IFRAME" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_OPEN_TITLE_IFRAME" desc="">
         An embedded page at <ph name="SITE">$1<ex>http://foo.com</ex></ph> wants to open
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_OPEN_TITLE_NONSTANDARD_URL" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_OPEN_TITLE_NONSTANDARD_URL" desc="">
         This page wants to open
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_OPEN_TITLE_NONSTANDARD_URL_IFRAME" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_OPEN_TITLE_NONSTANDARD_URL_IFRAME" desc="">
         An embedded page on this page wants to open
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_SAVE_TITLE" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_SAVE_TITLE" desc="">
         <ph name="SITE">$1<ex>http://foo.com</ex></ph> wants to save
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_SAVE_TITLE_IFRAME" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_SAVE_TITLE_IFRAME" desc="">
         An embedded page at <ph name="SITE">$1<ex>http://foo.com</ex></ph> wants to save
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_SAVE_TITLE_NONSTANDARD_URL" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_SAVE_TITLE_NONSTANDARD_URL" desc="">
         This page wants to save
       </message>
-      <message name="IDS_BRAVE_FILE_SELECT_SAVE_TITLE_NONSTANDARD_URL_IFRAME" desc="">
+      <message name="IDS_DOWDES_FILE_SELECT_SAVE_TITLE_NONSTANDARD_URL_IFRAME" desc="">
         An embedded page on this page wants to save
       </message>
 
       <!-- Tab Search -->
-      <message name="IDS_BRAVE_TAB_SEARCH_TAB_NAME" desc="Tab name for the search tab in the tab search panel">
+      <message name="IDS_DOWDES_TAB_SEARCH_TAB_NAME" desc="Tab name for the search tab in the tab search panel">
         Search
       </message>
-      <message name="IDS_BRAVE_TAB_ORGANIZATION_TAB_NAME" desc="Tab name for the Leo AI tab organization tab in the tab search panel">
+      <message name="IDS_DOWDES_TAB_ORGANIZATION_TAB_NAME" desc="Tab name for the Leo AI tab organization tab in the tab search panel">
         Organize
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_TITLE" desc="Title for the tab organizer page">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_TITLE" desc="Title for the tab organizer page">
         Tab focus
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_SUBTITLE" desc="Subtitle for the tab organizer page">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_SUBTITLE" desc="Subtitle for the tab organizer page">
         Gather all related tabs into a new window
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_SUGGESTED_TOPICS_SUBTITLE" desc="Subtitle for the suggested topics section">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_SUGGESTED_TOPICS_SUBTITLE" desc="Subtitle for the suggested topics section">
         Suggested topics
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_TOPIC_INPUT_PLACEHOLDER" desc="Placeholder text for the input field to enter a topic">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_TOPIC_INPUT_PLACEHOLDER" desc="Placeholder text for the input field to enter a topic">
         Enter a topic to focus on...
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_SUBMIT_BUTTON_LABEL" desc="Label for the submit topic input button">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_SUBMIT_BUTTON_LABEL" desc="Label for the submit topic input button">
         Go
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_UNDO_BUTTON_LABEL" desc="Label for the undo button">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_UNDO_BUTTON_LABEL" desc="Label for the undo button">
         Undo
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_WINDOW_CREATED_MESSAGE" desc="Message shown when a new window is created">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_WINDOW_CREATED_MESSAGE" desc="Message shown when a new window is created">
         New window created for <ph name="TOPIC">$1<ex>Social media</ex></ph>
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_SEND_TAB_DATA_MESSAGE" desc="Description of how tab data is shared with Leo">
-        This feature sends data about your open tabs to Leo, Brave's AI-powered browser assistant.
+      <message name="IDS_DOWDES_ORGANIZE_TAB_SEND_TAB_DATA_MESSAGE" desc="Description of how tab data is shared with Leo">
+        This feature sends data about your open tabs to Leo, Dowdes's AI-powered browser assistant.
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_LEARN_MORE_LABEL" desc="Text of the learn more link">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_LEARN_MORE_LABEL" desc="Text of the learn more link">
         Learn more
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_GO_PREMIUM_BUTTON_LABEL" desc="Text of go premium button">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_GO_PREMIUM_BUTTON_LABEL" desc="Text of go premium button">
         Go Premium
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_DISMISS_BUTTON_LABEL" desc="Text of the dismiss button">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_DISMISS_BUTTON_LABEL" desc="Text of the dismiss button">
         Dismiss
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_PRIVACY_DISCLAIMER" desc="Disclaimer text for enabling the tab focus feature">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_PRIVACY_DISCLAIMER" desc="Disclaimer text for enabling the tab focus feature">
         When opened, this will automatically send the titles and origin of all non-private tabs to Leo to classify them.
       </message>
-      <message name="IDS_BRAVE_ORGANIZE_TAB_ENABLE_BUTTON_LABEL" desc="Text of enable tab focus button">
+      <message name="IDS_DOWDES_ORGANIZE_TAB_ENABLE_BUTTON_LABEL" desc="Text of enable tab focus button">
         Enable
       </message>
 
       <!--PSST -->
-      <message name="IDS_BRAVE_PSST_INFOBAR_MESSAGE" desc="Infobar message body informing the user that Brave's Privacy Settings Suggestion Tool (PSST) can optimize their privacy settings on this site.">
-        Brave can help you optimize this site's privacy settings. Would you like to review Brave's suggestions?
+      <message name="IDS_DOWDES_PSST_INFOBAR_MESSAGE" desc="Infobar message body informing the user that Dowdes's Privacy Settings Suggestion Tool (PSST) can optimize their privacy settings on this site.">
+        Dowdes can help you optimize this site's privacy settings. Would you like to review Dowdes's suggestions?
       </message>
-      <message name="IDS_BRAVE_PSST_INFO_BAR_REVIEW_SUGGESTIONS" desc="Button label for the infobar action that starts the review of Privacy Settings Suggestion Tool (PSST) recommendations.">
+      <message name="IDS_DOWDES_PSST_INFO_BAR_REVIEW_SUGGESTIONS" desc="Button label for the infobar action that starts the review of Privacy Settings Suggestion Tool (PSST) recommendations.">
         Review Suggestions
       </message>
       <message name="IDS_IDC_PSST_LOCATION_BAR_BTN_TOOLTIP" desc="Privacy Settings Suggestion Tool (PSST) location bar's button tooltip text.">
@@ -1618,25 +1618,25 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
           Disable Privacy settings tuning
       </message>
 
-      <!-- Brave policy -->
-      <message name="IDS_BRAVE_CONTROLLED_SETTING_POLICY" desc="Text displayed in the controlled settings bubble when a setting's value is managed by policy.">
-        This setting is managed by your administrator or by another Brave policy.
+      <!-- Dowdes policy -->
+      <message name="IDS_DOWDES_CONTROLLED_SETTING_POLICY" desc="Text displayed in the controlled settings bubble when a setting's value is managed by policy.">
+        This setting is managed by your administrator or by another Dowdes policy.
       </message>
 
       <!--Customize Chrome Panel -->
-      <message name="IDS_BRAVE_CUSTOMIZE_MENU_TOOLBAR_LABEL" desc="The label for the option to customize toolbar icons in the customization menu on the New Tab Page. This is a button which opens a panel for customizing toolbar icons when clicked.">
+      <message name="IDS_DOWDES_CUSTOMIZE_MENU_TOOLBAR_LABEL" desc="The label for the option to customize toolbar icons in the customization menu on the New Tab Page. This is a button which opens a panel for customizing toolbar icons when clicked.">
         Customize toolbar
       </message>
-      <message name="IDS_BRAVE_NTP_CUSTOMIZE_APPEARANCE_LABEL" desc="The label for header of the customize appearance section in customize chrome side panel">
+      <message name="IDS_DOWDES_NTP_CUSTOMIZE_APPEARANCE_LABEL" desc="The label for header of the customize appearance section in customize chrome side panel">
         Theme and colors
       </message>
 
       <!--Password Manager -->
-      <message name="IDS_BRAVE_PASSWORD_MANAGER_UI_EMPTY_STATE_SIGNEDOUT_USERS" desc="A label shown if there are no saved passwords prompting user to import them.">
-        Saved passwords will appear here. To import passwords to <ph name="BRAND">$1<ex>Brave Password Manager</ex></ph> on this device, <ph name="BEGIN_LINK">&lt;a href="#" &gt;</ph> select a CSV file<ph name="END_LINK">&lt;/a&gt;</ph>
+      <message name="IDS_DOWDES_PASSWORD_MANAGER_UI_EMPTY_STATE_SIGNEDOUT_USERS" desc="A label shown if there are no saved passwords prompting user to import them.">
+        Saved passwords will appear here. To import passwords to <ph name="BRAND">$1<ex>Dowdes Password Manager</ex></ph> on this device, <ph name="BEGIN_LINK">&lt;a href="#" &gt;</ph> select a CSV file<ph name="END_LINK">&lt;/a&gt;</ph>
       </message>
-      <message name="IDS_BRAVE_PASSWORD_MANAGER_UI_IMPORT_DESCRIPTION_SIGNEDOUT_USERS" desc="The description for the password import banner in Password Manager settings.">
-        To import passwords to <ph name="BRAND">$1<ex>Brave Password Manager</ex></ph> on this device, select a CSV file
+      <message name="IDS_DOWDES_PASSWORD_MANAGER_UI_IMPORT_DESCRIPTION_SIGNEDOUT_USERS" desc="The description for the password import banner in Password Manager settings.">
+        To import passwords to <ph name="BRAND">$1<ex>Dowdes Password Manager</ex></ph> on this device, select a CSV file
       </message>
       <message name="IDS_LOCAL_AI_TASK_MANAGER_TITLE" desc="The label for the on-device AI background process in the Task Manager.">
         On-Device AI
@@ -1646,19 +1646,19 @@ Or change later at <ph name="SETTINGS_EXTENIONS_LINK">$2<ex>brave://settings/ext
       </message>
 
       <!-- History semantic search disclaimer. Upstream's text implies a
-           round-trip to the vendor with human review; Brave's implementation
+           round-trip to the vendor with human review; Dowdes's implementation
            runs entirely on-device (see
            brave/browser/history_embeddings/README.md), so we ship our own
            string and swap the IDS in chromium_src overrides. -->
-      <message name="IDS_BRAVE_HISTORY_EMBEDDINGS_DISCLAIMER" desc="Disclaimer shown on chrome://history and in the history search IPH promo, indicating that history semantic search runs entirely on-device.">
-        Your searches and page contents are processed on this device. Nothing is sent to Brave or seen by human reviewers.
+      <message name="IDS_DOWDES_HISTORY_EMBEDDINGS_DISCLAIMER" desc="Disclaimer shown on chrome://history and in the history search IPH promo, indicating that history semantic search runs entirely on-device.">
+        Your searches and page contents are processed on this device. Nothing is sent to Dowdes or seen by human reviewers.
       </message>
 
       <!-- Semantic History Search toggle in the chrome://history side bar. -->
-      <message name="IDS_BRAVE_HISTORY_EMBEDDINGS_TOGGLE_LABEL" desc="Label for the toggle on chrome://history that turns Semantic History Search on or off.">
+      <message name="IDS_DOWDES_HISTORY_EMBEDDINGS_TOGGLE_LABEL" desc="Label for the toggle on chrome://history that turns Semantic History Search on or off.">
         Semantic History Search
       </message>
-      <message name="IDS_BRAVE_HISTORY_EMBEDDINGS_TOGGLE_DESCRIPTION" desc="One-line explainer below the Semantic History Search toggle on chrome://history.">
+      <message name="IDS_DOWDES_HISTORY_EMBEDDINGS_TOGGLE_DESCRIPTION" desc="One-line explainer below the Semantic History Search toggle on chrome://history.">
         Index pages you visit locally so you can search your history by meaning. All processing stays on this device.
       </message>
       <!--Add new items to the appropriate sections above -->
