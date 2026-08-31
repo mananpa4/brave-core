@@ -5,6 +5,7 @@
 
 import("//brave/components/brave_ads/buildflags/buildflags.gni")
 import("//brave/components/ntp_background_images/buildflags/buildflags.gni")
+import("//build/config/ui.gni")
 import("//testing/test.gni")
 
 source_set("ntp_background") {
