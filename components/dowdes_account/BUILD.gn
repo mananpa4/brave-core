@@ -1,0 +1,5 @@
+﻿import(" //brave/components/psst/buildflags/buildflags.gni\)
+
+group(\dowdes_account\) {
+ deps = [ \//brave/components/dowdes_account/core\ ]
+}
