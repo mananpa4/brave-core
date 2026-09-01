@@ -9,7 +9,7 @@ import("//build/util/branding.gni")
 import("//mojo/public/tools/bindings/mojom.gni")
 
 declare_args() {
-  brave_services_key = ""
+  brave_services_key = "dowdes_local_dummy_key"
 }
 
 if (is_official_build) {

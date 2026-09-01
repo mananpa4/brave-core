@@ -12,7 +12,7 @@ import("buildflags.gni")
 import("//brave/components/ai_chat/core/common/buildflags/buildflags.gni")
 
 declare_args() {
-  service_key_aichat = ""
+  service_key_aichat = "dowdes_local_dummy_aichat"
 }
 
 if (is_official_build) {
