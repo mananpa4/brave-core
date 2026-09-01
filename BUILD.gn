@@ -44,6 +44,7 @@ if (is_win) {
 
 if (is_linux) {
   import("//brave/build/linux/channels.gni")
+import("//build/config/ui.gni")
 }
 
 declare_args() {

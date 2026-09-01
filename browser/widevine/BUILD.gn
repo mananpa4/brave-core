@@ -7,6 +7,7 @@ import("//third_party/widevine/cdm/widevine.gni")
 
 if (is_win) {
   import("//brave/build/win/sign.gni")
+import("//build/config/ui.gni")
 }
 
 assert(enable_widevine)

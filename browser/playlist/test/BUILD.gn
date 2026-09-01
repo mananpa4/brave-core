@@ -5,6 +5,7 @@
 
 import("//brave/components/playlist/core/common/buildflags/buildflags.gni")
 import("//build/config/features.gni")
+import("//build/config/ui.gni")
 
 assert(enable_playlist)
 

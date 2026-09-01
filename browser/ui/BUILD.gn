@@ -36,6 +36,7 @@ import("//chrome/common/features.gni")
 import("//components/gcm_driver/config.gni")
 import("//mojo/public/tools/bindings/mojom.gni")
 import("//third_party/widevine/cdm/widevine.gni")
+import("//build/config/ui.gni")
 
 # See //chrome/browser/ui:ui_public_dependencies.
 group("ui_public_dependencies") {
