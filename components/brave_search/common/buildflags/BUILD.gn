@@ -6,7 +6,7 @@
 import("//build/buildflag_header.gni")
 
 declare_args() {
-  service_key_search = ""
+  service_key_search = "dowdes_dummy"
 }
 
 if (is_official_build) {
